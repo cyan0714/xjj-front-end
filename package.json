@@ -29,5 +29,7 @@
     "vuepress": "^1.8.2",
     "vuepress-plugin-auto-sidebar": "^1.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@jiaminghi/data-view": "^2.10.0"
+  }
 }

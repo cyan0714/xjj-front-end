@@ -737,6 +737,13 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@babel/runtime@^7.5.5":
+  version "7.16.3"
+  resolved "http://192.168.0.169:8081/repository/npm-public/@babel/runtime/-/runtime-7.16.3.tgz#b86f0db02a04187a3c17caa77de69840165d42d5"
+  integrity sha1-uG8NsCoEGHo8F8qnfeaYQBZdQtU=
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.8.3", "@babel/template@^7.8.6":
   version "7.8.6"
   resolved "http://192.168.0.169:8081/repository/npm-public/@babel/template/-/template-7.8.6.tgz#86b22af15f828dfb086474f964dcc3e39c43ce2b"
@@ -801,6 +808,53 @@
   integrity sha1-aNk1+j6uf91asNf5U/MgXYsr/Ck=
   dependencies:
     "@hapi/hoek" "^8.3.0"
+
+"@jiaminghi/bezier-curve@*":
+  version "0.0.9"
+  resolved "http://192.168.0.169:8081/repository/npm-public/@jiaminghi/bezier-curve/-/bezier-curve-0.0.9.tgz#5196aca93c8b061a612b4c3eabcedf9490cef6ee"
+  integrity sha1-UZasqTyLBhphK0w+q87flJDO9u4=
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+
+"@jiaminghi/c-render@^0.4.3":
+  version "0.4.3"
+  resolved "http://192.168.0.169:8081/repository/npm-public/@jiaminghi/c-render/-/c-render-0.4.3.tgz#982ebd8f71b443bb9507834227834973ebd9b6d8"
+  integrity sha1-mC69j3G0Q7uVB4NCJ4NJc+vZttg=
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "@jiaminghi/bezier-curve" "*"
+    "@jiaminghi/color" "*"
+    "@jiaminghi/transition" "*"
+
+"@jiaminghi/charts@*":
+  version "0.2.18"
+  resolved "http://192.168.0.169:8081/repository/npm-public/@jiaminghi/charts/-/charts-0.2.18.tgz#63ded95200789fc1a1fd04b7fd9e56f58d22d90f"
+  integrity sha1-Y97ZUgB4n8Gh/QS3/Z5W9Y0i2Q8=
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "@jiaminghi/c-render" "^0.4.3"
+
+"@jiaminghi/color@*":
+  version "0.1.1"
+  resolved "http://192.168.0.169:8081/repository/npm-public/@jiaminghi/color/-/color-0.1.1.tgz#bddf9012dfce6982d3829a983ffeb91ee9dda7b6"
+  integrity sha1-vd+QEt/OaYLTgpqYP/65Hundp7Y=
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+
+"@jiaminghi/data-view@^2.10.0":
+  version "2.10.0"
+  resolved "http://192.168.0.169:8081/repository/npm-public/@jiaminghi/data-view/-/data-view-2.10.0.tgz#2146d8fc71b9f24be808238ca050ddb7a4c8949f"
+  integrity sha1-IUbY/HG58kvoCCOMoFDdt6TIlJ8=
+  dependencies:
+    "@babel/runtime" "^7.5.5"
+    "@jiaminghi/charts" "*"
+
+"@jiaminghi/transition@*":
+  version "1.1.11"
+  resolved "http://192.168.0.169:8081/repository/npm-public/@jiaminghi/transition/-/transition-1.1.11.tgz#576d8af092434b34201eba5eaecc79dd33c8ad8c"
+  integrity sha1-V22K8JJDSzQgHrpersx53TPIrYw=
+  dependencies:
+    "@babel/runtime" "^7.5.5"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -6182,6 +6236,11 @@ regenerator-runtime@^0.13.2:
   version "0.13.3"
   resolved "http://192.168.0.169:8081/repository/npm-public/regenerator-runtime/-/regenerator-runtime-0.13.3.tgz#7cf6a77d8f5c6f60eb73c5fc1955b2ceb01e6bf5"
   integrity sha1-fPanfY9cb2Drc8X8GVWyzrAea/U=
+
+regenerator-runtime@^0.13.4:
+  version "0.13.9"
+  resolved "http://192.168.0.169:8081/repository/npm-public/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
+  integrity sha1-iSV0Kpj/2QgUmI11Zq0wyjsmO1I=
 
 regenerator-transform@^0.14.0:
   version "0.14.1"
