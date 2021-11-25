@@ -5,7 +5,8 @@ title: 大屏地图
 众多项目有用到地图组件，每次使用的时候都为找地图资源、地图配置非常头疼，因此为大家整理了一个带有飞线图的海南地图，不需要飞线图直接去掉即可。
 ::: tip
 建议使用<a data-v-b271b2f6="" href="#带飞线图地图" class="">带飞线图地图</a><br/>
-更多配置可查看<a data-v-b271b2f6="" href="http://datav.jiaminghi.com/guide/flylineChart.html" target="_blank">官方文档</a>
+更多配置可查看<a data-v-b271b2f6="" href="http://datav.jiaminghi.com/guide/flylineChart.html" target="_blank">官方文档</a><br/>
+具体实现可参考git <a data-v-b271b2f6="" >http://192.168.0.66/font-end/front-end-template.git</a> 
 :::
 设置一个中心点，若干飞线点，即可得到动态飞线图。
 ```js
@@ -14,6 +15,8 @@ title: 大屏地图
 ## 基础地图
  <mapscreen num="1"/>
  
+  <a href="http://192.168.0.149:8081/index.html#/map1" target="map_link">效果预览</a>
+  
 ```js
 //对应代码
 //template 
@@ -112,6 +115,7 @@ export default {
  
 ## 带文字图标地图
  <mapscreen num="2"/>
+ <a href="http://192.168.0.149:8081/index.html#/map2" target="map_link">效果预览</a>
  
 ```js
 //对应代码
@@ -223,6 +227,7 @@ export default {
 ```
 ## 带飞线图地图
  <mapscreen num="3"/>
+<a href="http://192.168.0.149:8081/index.html#/map3" target="map_link">效果预览</a>
 
 ```js
 //对应代码
