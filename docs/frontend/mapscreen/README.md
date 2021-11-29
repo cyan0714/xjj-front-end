@@ -10,7 +10,7 @@ title: 大屏地图
 :::
 设置一个中心点，若干飞线点，即可得到动态飞线图。
 ```js
-<dv-flyline-chart :config="config" style="width:100%;height:100%;" />
+<dv-flyline-chart :config="config" style="width:740px;height: 600px;" />
 ```
 ## 基础地图
  <mapscreen num="1"/>
