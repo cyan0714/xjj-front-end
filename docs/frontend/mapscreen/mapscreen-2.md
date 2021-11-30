@@ -17,7 +17,7 @@ title: 灵活配置版
 ```js
 //对应代码
 //template 
-<dv-flyline-chart :config="config" style="width:740px;height: 600px;" />
+<dv-flyline-chart :config="config" style="width:600px;height: 600px;" />
 //script
 export default {
 	data() {
@@ -121,7 +121,7 @@ export default {
 ```js
 //对应代码
 //template 
-<dv-flyline-chart-enhanced :config="config" style="width:740px;height: 600px;" />
+<dv-flyline-chart-enhanced :config="config" style="width:600px;height: 600px;" />
 //script
 export default {
 	data() {
@@ -608,7 +608,7 @@ export default {
 ```js
 //对应代码
 //template 
-<dv-flyline-chart-enhanced :config="config" style="width:740px;height: 600px;" />
+<dv-flyline-chart-enhanced :config="config" style="width:600px;height: 600px;" />
 //script
 export default {
 	data() {

@@ -10,7 +10,7 @@ title: 海南大屏地图
 :::
 设置一个中心点，若干飞线点，即可得到动态飞线图。
 ```js
-<dv-flyline-chart :config="config" style="width:740px;height: 600px;" />
+<dv-flyline-chart :config="config" style="width:600px;height: 600px;" />
 ```
 ## 基础地图
  <mapscreen num="1"/>
@@ -20,7 +20,7 @@ title: 海南大屏地图
 ```js
 //对应代码
 //template 
-<dv-flyline-chart :config="config" style="width:740px;height: 600px;" />
+<dv-flyline-chart :config="config" style="width:600px;height: 600px;" />
 //script
 export default {
 	data() {
@@ -120,7 +120,7 @@ export default {
 ```js
 //对应代码
 //template 
-<dv-flyline-chart :config="config" style="width:740px;height: 600px;" />
+<dv-flyline-chart :config="config" style="width:600px;height: 600px;" />
 //script
 export default {
 	data() {
@@ -232,7 +232,7 @@ export default {
 ```js
 //对应代码
 //template 
-<dv-flyline-chart :config="config" style="width:740px;height: 600px;" />
+<dv-flyline-chart :config="config" style="width:600px;height: 600px;" />
 //script
 export default {
 	data() {
