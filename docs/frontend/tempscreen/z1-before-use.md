@@ -4,106 +4,104 @@ title: 快速生成一个大屏页面
 
 ## 介绍
 
-旨在为开发人员快速搭建一个可视化大屏页面，使代码更优雅，更易于维护。
+旨在为开发人员快速搭建一个可视化大屏页面，通过封装以及配置的方式更快生成一个大屏页面，使代码更优雅，更易于维护。
 
-## 封装 base-echart.vue 组件
+## 安装 echarts 依赖
 
-首先在项目根目录下的`src`文件夹下新建一个`base-ui`文件夹，同时新建一个`common`文件夹和`base-echart.vue`文件。
+先 cd 到你的项目下，然后在终端输入以下代码，安装相关依赖。
 
-![catalog construction](../../.vuepress/public/assets/img/content.png)
+- npm 安装
 
-其中`common`文件夹主要放一些公共的图表组件，比如饼图，柱状图，折线图等(稍后会讲解)
-
-将下图中的代码复制到`base-echart.vue`文件中。
-
-<<< @/docs/.vuepress/components/base-echart.vue
-
-## 添加 useEcharts.js 文件
-
-由于上面 import 了`useEchart`，所以应该添加对应文件。下方为`hooks`文件夹下`useEcharts.js`代码，将其复制到`src/hooks/useEcharts.js`中。
-
-```js
-import * as echarts from 'echarts';
-export default function (el) {
-  // 初始化 echarts
-  const echartInstance = echarts.init(el);
-  // echarts 的配置方法
-  const setOptions = options => {
-    echartInstance.setOption(options);
-  };
-  // 监听页面尺寸变化
-  window.addEventListener('resize', () => {
-    echartInstance.resize();
-  });
-  return {
-    echartInstance,
-    setOptions,
-  };
-}
+```sh
+npm install echarts
 ```
 
-## 新建 pie-echart.vue 组件(饼图)
+- yarn 安装
 
-在`base-ui/common`下新建一个`pie-echart.vue`组件，将下方代码复制到该组件中。
+```sh
+yarn add echarts
+```
 
-<<< @/docs/.vuepress/components/pie-echart.vue
+## 新建基础组件
 
-其中，`props` 中的`pieData`为对应大屏页面传过来的要展示的数据(后面有讲)，`objV`为对应大屏传过来的配置信息(后面有讲)，
-`computed`下的`options`为饼图的默认配置(在不传入`objV`的情况下)。
+下图是一个最基本的 vue 的目录结构，在项目根目录下的 src/components 中新建一个 Chart.vue 组件。
 
-## 新建一个大屏页面组件
+![catalog construction](../../.vuepress/public/assets/img/base-content-constructor.png)
 
-在`views`文件夹下新建一个文件夹(如下图的`bigscreen`)，在该文件夹下新建一个`config`文件夹和对应的`.vue`文件。
+该组件的作用是加载并初始化 echarts 容器，并根据配置的变化更新图表。
 
-![目录结构](../../.vuepress/public/assets/img/page-cpn.png)
+下图为 Chart.vue 组件中的配置：
 
-将下方代码复制到对应`.vue`文件中(如上图的`bigscreen.vue`)
+![chart](../../.vuepress/public/assets/img/chart2.png)
 
-<<< @/docs/.vuepress/components/big-screen.vue
+上图中的代码都表示什么意思呢？
 
-如想修改图表默认配置，可以在`views/bigscreen/config`文件夹下新建一个`pie1-config.js`配置文件(如果每个类型图表配置需求不一致，可以新建多个配置文件)，将下方代码复制到该文件。
-::: tip
-配置文件的命名推荐如下形式：图表类型`+`这个图表是第几种配置`+`-config.js。
+> 1. 首先，为了能使用 echarts，我们需要先 import 它；
 
-比如：`pie1-config.js`意思为： 饼图`+`第一种配置的饼图。
+> 2. echarts 官网中规定，要想使 echart 生效，需要一个 dom 元素作为容器并调用它的 init 方法才能进行初始化，那么在 vue 中要想获取 dom 元素就必须给对应标签中添加 ref 属性；
+
+> 3. ref 中保存的元素需要在 dom 加载完成后才会有值，所以可以在 mounted 生命周期中获取；
+
+> 4. 接着创建一个 props 属性 options，该属性用来接收父组件传过来的配置；
+
+> 5. 这时，虽然 Chart.vue 组件能用了，但是当 options(这里的 options 相当于后端传过来的数据)发生变化时，图表不会跟着刷新，为了让图表实时刷新，可以使用 vue 中的 watch；
+
+> 6. echarts 官网规定 echarts 容器必须加宽高，否则不能正常显示图表。
+
+## 新建饼图配置文件
+
+::: tip 提示
+以下内容都以饼图为例进行讲解，掌握后，使用者可以自行添加其他类型的图表组件。
 :::
 
-```js
-export default {
-  // 如果对配置项有不理解的地方，可以去 echarts 官网查文档
-  tooltip: {
-    trigger: 'item',
-    formatter: '{b} : {c} ({d}%)',
-  },
-  legend: {
-    left: 'center',
-    textStyle: {
-      color: '#fff',
-    },
-  },
-  series: [
-    {
-      type: 'pie',
-      radius: ['45%', '65%'],
-      center: ['50%', '50%'],
-      roseType: '',
-      label: {
-        show: true,
-      },
-      labelLine: {
-        show: false,
-      },
-    },
-  ],
-};
-```
+完成上一步后，假设现在需要在页面展示一个饼图，可以按照以下步骤来做：
 
-这样，就生成了一个简单的大屏页面(虽然看起来很丑，但是基本原理就是这样)! 之后再往上添加其他组件就行了。
-![大屏页面](../../.vuepress/public/assets/img/show-page.png)
+在 src 下新建一个 charts 文件夹，然后在该文件夹下新建一个 pieOptions.js 文件，然后去 echarts 官网，找一个饼图的配置，并把配置粘贴上去，如下图所示：
 
-## 各组件的关系图
+![pieOptions](../../.vuepress/public/assets/img/pieOptionsJs.png)
 
-首先在`base-echart.vue`中引入`useEcharts.js`，然后`pie-echart.vue(饼图)`，`bar-echart.vue(柱图)`，`line-echart.vue(折线图)`又依赖`base-echart.vue`，`bigscreen.vue`又依赖各种图表组件。
+下图是 pieOptions.js 中的内容：
 
-![relation graph](../../.vuepress/public/assets/img/relation-graph.png)
-这样层层封装后，只需要传入对应配置和数据即可，以后开发一个页面将会变得非常快！
+![pie-ex](../../.vuepress/public/assets/img/pie-ex.png)
+
+## 新建一个饼图组件
+
+接着，以饼图为例，在 src/components 下新建一个 PieChart.vue 组件，创建此组件的目的是为了复用，以后遇到生成饼图的需求，都可以直接调用此组件。
+
+![pie-ex](../../.vuepress/public/assets/img/pieP.png)
+
+下图为 PieChart.vue 组件对应内容：
+
+![pie-ex](../../.vuepress/public/assets/img/pieChart.png)
+
+## 在 App.vue 中使用
+
+最后，我们在 App.vue 中引用刚刚创建好的饼图组件就可以了，代码如下：
+
+App.vue 的位置：
+
+![pie-ex](../../.vuepress/public/assets/img/appP.png)
+
+App.vue 中的代码：
+
+![pie-ex](../../.vuepress/public/assets/img/app-content.png)
+
+执行 npm run serve 或者 yarn serve （取决于你的 package.json 中定义的脚本是什么）运行代码，至此，一个简单的页面就完成了，效果如下图：
+
+![pie-ex](../../.vuepress/public/assets/img/show-page2.png)
+
+::: tip
+为了演示效果，我给页面背景加了灰色，实际开发中根据需求来配置就行。
+:::
+
+## 各组件关系图
+
+为了便于大家理解，我画了上面出现的几个组件的关系图，大家可以对照这个图再梳理一遍他们之间的关系，首先 App.vue 引用了 PieChart.vue，然后 PieChart.vue 又引用了 Chart.vue 和 pieOptions.js。
+
+![pie-ex](../../.vuepress/public/assets/img/relation-grahp1.png)
+
+## 总结
+
+最后，也许你会问，这样封装好麻烦，我可不可以直接在 PieChart.vue 写所有逻辑，然后让直接让 App.vue 使用不就行了吗？
+
+当然可以，但是一旦将所有逻辑全部写在一个组件中，那么代码将变得非常臃肿，并且难以维护，试想一下如果直接把初始化 echarts 的逻辑以及各个图表的配置文件全部放在一个文件中，然后这时出现了一个新需求：往页面中加一个柱状图，那势必会有很多重复的代码。总之，希望大家都能掌握封装的思想!

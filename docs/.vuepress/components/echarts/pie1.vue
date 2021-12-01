@@ -1,23 +1,23 @@
 <template>
-  <base-echart :options="options" style="background:#C7EDE9"></base-echart>
+  <Chart :options="options"></Chart>
 </template>
 
 <script>
   export default {
     data() {
       return {
-        options:{
+        options: {
           title: {
             text: 'Referer of a Website',
             subtext: 'Fake Data',
-            left: 'center'
+            left: 'center',
           },
           tooltip: {
-            trigger: 'item'
+            trigger: 'item',
           },
           legend: {
             orient: 'vertical',
-            left: 'left'
+            left: 'left',
           },
           series: [
             {
@@ -29,21 +29,21 @@
                 { value: 735, name: 'Direct' },
                 { value: 580, name: 'Email' },
                 { value: 484, name: 'Union Ads' },
-                { value: 300, name: 'Video Ads' }
+                { value: 300, name: 'Video Ads' },
               ],
               emphasis: {
                 itemStyle: {
                   shadowBlur: 10,
                   shadowOffsetX: 0,
-                  shadowColor: 'rgba(0, 0, 0, 0.5)'
-                }
-              }
-            }
-          ]
-        }
+                  shadowColor: 'rgba(0, 0, 0, 0.5)',
+                },
+              },
+            },
+          ],
+        },
       };
     },
-  }
+  };
 </script>
 
 <style></style>
