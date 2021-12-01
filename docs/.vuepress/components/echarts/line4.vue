@@ -1,6 +1,6 @@
 <template>
   <div>
-    <base-echart :options="options" style="background:#D6D5B7"></base-echart>
+    <Chart :options="options"></Chart>
   </div>
 </template>
 
