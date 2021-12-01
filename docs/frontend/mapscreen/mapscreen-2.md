@@ -510,6 +510,18 @@ export default {
 				    coordinate: [0.69, 0.63]
 				  },
 				  {
+				    name: '1230',
+				    coordinate: [0.65, 0.66],
+				    icon: {
+				      show: false,
+				    },
+				    text: {
+				      show: true,
+				      offset: [40, 7],
+				      fontSize: 18
+				    }
+				  },
+				  {
 				    name: '陵水县',
 				    coordinate: [0.54, 0.76]
 				  },

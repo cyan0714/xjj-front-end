@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@jiaminghi/data-view": "^2.10.0",
-    "echarts": "^5.2.2"
+    "echarts": "^5.2.2",
+    "vuepress-plugin-code-copy": "^1.0.6"
   }
 }

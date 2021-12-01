@@ -25,5 +25,6 @@ module.exports = {
   },
   "vuepress-plugin-auto-sidebar": {
     titleMode: "uppercase"
-  }
+  },
+  "vuepress-plugin-code-copy":true
 };
