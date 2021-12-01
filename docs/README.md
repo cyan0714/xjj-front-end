@@ -4,7 +4,7 @@ heroImage: /app.png
 heroText: 智慧城市-前端组件化开发
 tagline: 没有最优秀，只有更优秀，让前端开发变得更加简单
 actionText: 快速开始 →
-actionLink: /frontend/vue/
+actionLink: /frontend/start/
 
 ---
 
