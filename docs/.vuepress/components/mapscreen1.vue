@@ -14,7 +14,7 @@
       return {
         width: 740,
         height: 600,
-        url: global.OUT_LINK + 'map' + this.num,
+        url: global.OUT_LINK + 'e-map1',
       };
     },
     mounted() {},
