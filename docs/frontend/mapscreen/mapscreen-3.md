@@ -130,8 +130,11 @@ export default {
             emphasis: {
               label: {
                 show: true,
+                textStyle: {
+                  color: "#fff",
+                },
               },
-              areaColor: "rgb(213, 214, 79)",
+              areaColor: "#0e56c2",
             },
           },
 
