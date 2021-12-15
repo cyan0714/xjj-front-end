@@ -95,6 +95,7 @@ export default {
         text: ["High", "Low"], // 文本，默认为数值文本
         calculable: true,
       },
+
       toolbox: {
         show: true,
         left: "left",
@@ -112,57 +113,61 @@ export default {
           aspectScale: 1,
           roam: true,
           map: "hainan",
-          silent:true,
-          // 文本位置修正
-          textFixed: {
-            Alaska: [20, -20],
+          label: {
+            formatter: ["{b|{b}}", "{c|{c}}"].join("\n"),
+            show: true,
+            rich: {
+              b: {
+                color: "#fff",
+                lineHeight: 26,
+                fontSize: 15,
+              },
+              c: {
+                color: "#fff",
+                fontSize: 15,
+              },
+            },
           },
           itemStyle: {
-            normal: {
-              label: {
-                show: true,
-                formatter: "{b}\n{c}",
-                fontSize: 10,
-                color: "#fff",
-              },
-              borderWidth: 0,
-            },
+            borderColor: "#2a7fa3",
+            borderWidth: 1.2,
+            shadowColor: "rgba(100, 100, 100, 0.6)",
+            shadowBlur: 100,
+            shadowOffsetX: -10,
+            opacity: 0.9,
             emphasis: {
-              label: {
-                show: true,
-                textStyle: {
-                  color: "#fff",
-                },
-              },
               areaColor: "#0e56c2",
             },
           },
-
           data: [
-            { name: "三沙市", value: 4822023 },
+            { name: "三沙市", value: 114822023 },
             { name: "儋州市", value: 4822023 },
-            { name: "海口市", value: 731449 },
+            { name: "海口市", value: 2685905 },
             { name: "三亚市", value: 6553255 },
-            { name: "白沙黎族自治县", value: 2949131 },
-            { name: "保亭黎族苗族自治县", value: 38041430 },
-            { name: "昌江黎族自治县", value: 5187582 },
+            { name: "白沙县", value: 2949131 },
+            { name: "保亭县", value: 38041430 },
+            { name: "昌江县", value: 5187582 },
             { name: "澄迈县", value: 3590347 },
             { name: "定安县", value: 917092 },
             { name: "东方市", value: 632323 },
-            { name: "乐东黎族自治县", value: 19317568 },
+            { name: "乐东县", value: 19317568 },
             { name: "临高县", value: 9919945 },
-            { name: "陵水黎族自治县", value: 1392313 },
+            { name: "陵水县", value: 1392313 },
             { name: "琼海市", value: 1595728 },
-            { name: "琼中黎族苗族自治县", value: 12875255 },
+            { name: "琼中县", value: 12875255 },
             { name: "屯昌县", value: 6537334 },
             { name: "万宁市", value: 3074186 },
-            { name: "文昌市", value: 2885905 },
+            { name: "文昌市", value: 2085905 },
             { name: "五指山市", value: 4380415 },
           ],
         },
       ],
     };
     this.chart.setOption(option);// 设置配置
+    this.chart.on("click", function (params) {
+      console.log(params);
+      alert("点击了" + params.name + "\n" + params.value);
+    });
   },
 };
 </script>
