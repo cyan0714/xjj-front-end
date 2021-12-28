@@ -4,14 +4,16 @@ title: Echarts版海南地图配置版
 
 ## 描述
 
-使用 dataV 生成的地图往往不如 echarts 地图灵活，下面看看如何使用 echarts 配置一个海南省地图。
+使用 dataV 生成的地图往往不如 echarts 地图灵活，下面看看如何使用 echarts 配置一个海南省地图。<br/>
+具体实现可参考git <a data-v-b271b2f6="" >http://192.168.0.66/font-end/front-end-template.git</a> <br/>
+对应路由访问 /e-map1
 
 ## 基础地图
 
 基本效果如下：
 <mapscreen1/>
 
-<a href="http://192.168.177.12:2021/index.html#/e-map1" target="map_link">效果预览</a>
+<a href="http://192.168.0.149:8081/index.html#/e-map1" target="map_link">效果预览</a>
 
 对应 .vue 文件代码如下
 
