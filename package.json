@@ -37,7 +37,8 @@
     "async-validator": "1.11.5",
     "echarts": "^5.2.2",
     "element-ui": "^2.15.6",
-    "swiper": "^7.4.1",
+    "swiper": "5.x",
+    "vue-awesome-swiper": "^4.1.1",
     "vuepress-plugin-code-copy": "^1.0.6"
   }
 }
