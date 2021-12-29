@@ -11,6 +11,6 @@ module.exports = [
   { text: '开始', link: '/frontend/start/' },
   // { text: 'vue电脑端框架文档', link: '/frontend/vue/' },
   { text: '大屏组件库', link: '/frontend/tempscreen/' },
-  { text: '大屏模板库', link: '/frontend/htmlscreen/' },
+  { text: '模板库', link: '/frontend/htmlscreen/' },
   { text: '大屏地图', link: '/frontend/mapscreen/' },
 ];

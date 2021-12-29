@@ -11,7 +11,7 @@ const navConf = require('./config/navConf.js');
 const headConf = require('./config/headConf.js');
 
 module.exports = {
-  title: '智慧城市-前端组件化开发',
+  title: '智慧城市-前端组件化开发1.0',
   description: '前端开发者技术交流和学习的平台',
   head: headConf,
   plugins: pluginConf,
