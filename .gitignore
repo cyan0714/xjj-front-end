@@ -68,3 +68,5 @@ typings/
 # secretKeyConf.js
 docs/.vuepress/dist
 docs/.vuepress/dist/
+
+package-lock.json

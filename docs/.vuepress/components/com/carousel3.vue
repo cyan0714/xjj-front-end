@@ -15,22 +15,22 @@
       margin: 0;
       text-align: center;
     }
-  }
-  ::v-deep .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  }
-  ::v-deep .el-carousel__item:nth-child(2n + 1) {
+    &:nth-child(2n){
+      background-color: #99a9bf;
+    }
+    &:nth-child(2n + 1) {
     background-color: #d3dce6;
+    }
   }
   ::v-deep .el-carousel__arrow {
     background-color: rgba(0, 0, 0, 0);
+    .el-icon-arrow-right,
+    .el-icon-arrow-left {
+      font-size: 50px;
+      color: #007aff;
+    }
     &:hover {
       background-color: rgba(0, 0, 0, 0);
     }
-  }
-  ::v-deep .el-icon-arrow-right,
-  ::v-deep .el-icon-arrow-left {
-    font-size: 40px;
-    color: #007aff;
   }
 </style>
