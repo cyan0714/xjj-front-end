@@ -7926,6 +7926,11 @@ vuepress@^1.8.2:
     opencollective-postinstall "^2.0.2"
     update-notifier "^4.0.0"
 
+vuescroll@^4.17.3:
+  version "4.17.3"
+  resolved "http://192.168.0.169:8081/repository/npm-public/vuescroll/-/vuescroll-4.17.3.tgz#e1c29372a007e0dff0cee6b4515783d43924f9e1"
+  integrity sha1-4cKTcqAH4N/wzua0UVeD1Dkk+eE=
+
 watchpack@^1.6.0:
   version "1.6.0"
   resolved "http://192.168.0.169:8081/repository/npm-public/watchpack/-/watchpack-1.6.0.tgz#4bc12c2ebe8aa277a71f1d3f14d685c7b446cd00"
