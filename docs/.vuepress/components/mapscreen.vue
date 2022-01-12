@@ -12,7 +12,7 @@
     props: { num: '' },
     data() {
       return {
-        width: 740,
+        width: this.num == 8 ? 1040:740,
         height: 600,
         url: global.OUT_LINK + 'map' + this.num,
       };

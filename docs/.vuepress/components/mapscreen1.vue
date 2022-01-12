@@ -12,9 +12,9 @@
     props: { num: '' },
     data() {
       return {
-        width: 740,
+        width: this.num == 3 ? 1040 : 740,
         height: 600,
-        url: global.OUT_LINK + 'e-map1',
+        url: global.OUT_LINK + 'e-map' + this.num,
       };
     },
     mounted() {},

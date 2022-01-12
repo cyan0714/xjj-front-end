@@ -1,5 +1,5 @@
 ---
-title: DataV版海南大屏地图
+title: DataV版海南地图
 ---
 ## 描述
 众多项目有用到地图组件，每次使用的时候都为找地图资源、地图配置非常头疼，因此为大家整理了一个带有飞线图的海南地图，不需要飞线图直接去掉即可。
@@ -15,8 +15,8 @@ title: DataV版海南大屏地图
 ## 基础地图
  <mapscreen num="1"/>
  
-  <a href="http://192.168.0.149:8081/index.html#/map1" target="map_link">效果预览</a>
-  
+  + <a href="http://192.168.0.149:8081/index.html#/map1" target="map_link">效果预览</a>
+  + [下载相关静态资源](http://192.168.0.149/hns-project-h5/file/map/map1.zip)<br/>
 ```js
 //对应代码
 //template 
@@ -115,8 +115,9 @@ export default {
  
 ## 带文字地图
  <mapscreen num="2"/>
- <a href="http://192.168.0.149:8081/index.html#/map2" target="map_link">效果预览</a>
  
+ + <a href="http://192.168.0.149:8081/index.html#/map2" target="map_link">效果预览</a>
+ + [下载相关静态资源](http://192.168.0.149/hns-project-h5/file/map/map2.zip)<br/>
 ```js
 //对应代码
 //template 
@@ -227,8 +228,9 @@ export default {
 ```
 ## 带飞线图地图
  <mapscreen num="3"/>
-<a href="http://192.168.0.149:8081/index.html#/map3" target="map_link">效果预览</a>
-
+ 
+ + <a href="http://192.168.0.149:8081/index.html#/map3" target="map_link">效果预览</a>
+ + [下载相关静态资源](http://192.168.0.149/hns-project-h5/file/map/map3.zip)<br/>
 ```js
 //对应代码
 //template 

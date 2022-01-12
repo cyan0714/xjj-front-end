@@ -248,7 +248,6 @@ export default {
 ```
 ## 带数量地图
  <mapscreen num="6"/>
- 
   <a href="http://192.168.0.149:8081/index.html#/map6" target="map_link">效果预览</a>
   
 ```js
