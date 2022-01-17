@@ -1,11 +1,11 @@
 <template>
   <div class="example-3d">
     <swiper class="swiper" ref="mySwiper" :options="swiperOptions"  >
-      <swiper-slide>Slide 1</swiper-slide>
+      <swiper-slide></swiper-slide>
       <swiper-slide>Slide 2</swiper-slide>
-      <swiper-slide>Slide 3</swiper-slide>
+      <swiper-slide></swiper-slide>
       <swiper-slide>Slide 4</swiper-slide>
-      <swiper-slide>Slide 5</swiper-slide>
+      <swiper-slide></swiper-slide>
       <swiper-slide>Slide 6</swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -65,13 +65,13 @@
       background-size: cover;
       color: '#fff';
       &:nth-child(1){
-        background-color: #D1BA74;
+        background-image: url('../../public/assets/img/carousel/thumbs2.jpg');
       }
       &:nth-child(3){
-        background-color: #8cc7b5;
+        background-image: url('../../public/assets/img/carousel/thumbs3.jpg');
       }
       &:nth-child(5){
-        background-color: #ECAD9E;
+        background-image: url('../../public/assets/img/carousel/thumbs4.jpg');
       }
     }
     .swiper-pagination {

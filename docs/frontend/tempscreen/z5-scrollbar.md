@@ -5,7 +5,7 @@ sidebarDepth: 2
 
 ## 滚动条
 
-当页面内容的宽高大于页面可视区域宽高时，会在水平和垂直方向出现默认滚动条，可通过以下两种方式进行修改或配置。
+当页面内容的宽高大于页面可视区域宽高时，会在水平和垂直方向出现默认滚动条，可通过以下两种方式进行修改或配置。(建议使用第2种，兼容性比较好)
 
 ### 1. 自定义滚动条样式
 
@@ -73,22 +73,10 @@ yarn add vuescroll
 import Vue from 'vue';
 import vuescroll from 'vuescroll';
 
-// 你可以在这里设置全局配置
 Vue.use(vuescroll, {
   ops: {}, // 在这里设置全局默认配置
   name: 'myScroll' // 在这里自定义组件名字，默认是vueScroll
 });
-
-/*
- * 或者
- */
-
-Vue.use(vuescroll); // install the vuescroll first
-Vue.prototype.$vuescrollConfig = {
-  bar: {
-    background: '#000'
-  }
-};
 ```
 
 **2.局部引入**
@@ -110,17 +98,24 @@ Vue.prototype.$vuescrollConfig = {
 
 **示例**
 
-<scrollbar-bar1 />
+<scrollbar-bar1>
+  <template v-slot:scrollbar>
+    <div class="child-dom" style='height:1400px;width:200%'>
+      vuescrollvuescrollvuescrollvuescrollvuescrollvuescroll
+    </div>
+  </template>
+</scrollbar-bar1>
 
-::: warning 用前须知
-把 vuescroll 放在parent-dom里面，child-dom外面即可。如果你看不到滚动条， 请打检查你的子元素尺寸是否超过了你的父元素尺寸。 出现滚动条的条件与原生滚动条的相同， 即： 子元素的尺寸超出了父元素。
-:::
+
+
+使用步骤：
+1. 注册。将以下代码复制到你项目的`components`文件夹下的一个`.vue`文件中，文件名自取，如`MyScrollbar.vue`。
 
 ```vue
 <template>
-  <div class="parent-dom">
+  <div class="parent-dom" :style="{ width:parentWidth,height:parentHeight }">
     <vuescroll :ops="ops">
-      <div class="child-dom">vuescrollvuescrollvuescrollvuescrollvuescrollvuescrollvuescroll</div>
+      <slot name="scrollbar"></slot>
     </vuescroll>
   </div>
 </template>
@@ -141,62 +136,79 @@ Vue.prototype.$vuescrollConfig = {
           },
           rail: {
             // 轨道的背景色。
-            background: '#00136d',
-            // 轨道的透明度。
+            background: this.railBackground,
+            size: this.railSize,
             opacity: 1,
-            // 轨道的尺寸。
-            size: '16px',
-            // 是否指定轨道的 borderRadius， 如果不那么将会自动设置。
-            specifyBorderRadius: '6px',
-            // 轨道距 x 和 y 轴两端的距离。
-            gutterOfEnds: '6px',
-            // 距离容器的水平和垂直距离。
-            gutterOfSide: '6px',
-            // 是否即使 bar 不存在的情况下也保持显示。
-            keepShow: false,
           },
           bar: {
-            // 是否只在滚动时显示 bar
-            onlyShowBarOnScroll: false,
-            // 滚动条是否保持显示。
-            keepShow: false,
             // 滚动条背景色。
-            background: '#2f6bf6',
-            // 滚动条透明度。
-            opacity: 1,
-            // 是否指定滚动条的 borderRadius， 如果不那么和轨道的保持一致。
-            specifyBorderRadius: false,
-            // 为 bar 设置一个最小尺寸, 从 0 到 1. 如 0.3, 代表 30%。
-            minSize: 0.3,
-            size: '10px',
-            // 是否禁用滚动条。
-            disable: false,
-          },
-          scrollButton: {
-            // 是否启用 scrollButton.
-            enable: false,
-            background: 'red',
-            opacity: 1,
-            // 每次当你点击 scrollButton 所滚动的距离。
-            step: 180,
-            // 每次当你按住 scrollButton 所滚动的距离。
-            mousedownStep: 30,
+            background: this.barBackground,
+            size: this.barSize,
+            keepShow: true,
           },
         },
       };
     },
+    props: {
+      parentWidth:{
+        type:String,
+        default:'100%'
+      },
+      parentHeight:{
+        type:String,
+        default:'300px'
+      },
+      railBackground:{
+        type:String,
+        default:'#00136d'
+      },
+      railSize:{
+        type:String,
+        default:'12px'
+      },
+      barBackground:{
+        type:String,
+        default:'#2f6bf6'
+      },
+      barSize:{
+        type:String,
+        default:'12px'
+      }
+    }
   };
 </script>
-<style scoped lang="scss">
-  .parent-dom {
-    height: 300px;
-    width: 100%;
-    background-color: #ccc;
-  }
-  .child-dom {
-    height: 1400px;
-    width: 200%;
-  }
-</style>
 ```
+
+::: warning 注意
+把 vuescroll 放在parent-dom里面、child-dom外面即可。如果你看不到滚动条， 请检查你的子元素尺寸是否超过了你的父元素尺寸。 出现滚动条的条件与原生滚动条的相同， 即： 子元素的尺寸超出了父元素。
+:::
+
+2. 使用。在需要使用的地方引入该组件即可。
+
+```vue
+<my-scrollbar barBackground='pink'> 
+  <template v-slot:scrollbar>
+    <div class="child-dom" style='height:1400px;width:200%'>
+      这里放需要滚动的内容
+    </div>
+  </template>
+</my-scrollbar>
+```
+效果如下：
+
+<scrollbar-bar1 barBackground='pink'>
+  <template v-slot:scrollbar>
+    <div class="child-dom" style='height:1400px;width:200%'>
+      <div>这里放需要滚动的内容</div>
+    </div>
+  </template>
+</scrollbar-bar1>
+
+除了可以修改滚动条背景颜色(上面例子将滚动条的背景颜色改成了粉色)，也可以修改其他属性，只需要在 `my-scrollbar` 标签中传入对应的 props 就可以了。
+
+::: warning 注意
+重申一遍：应该给子元素一个高度和一个宽度，且这个高度和宽度要大于父元素，这样才能显示出滚动条。  
+但是在实际开发中，我们可能希望让内容来决定容器的高度，这时你可以不给子元素定义宽高，让内容来决定子元素的高度，如果内容超出了父元素的高度则显示滚动条，不超出则不显示。
+:::
+
 更多用法，请移步至[vuescroll官网](https://vuescrolljs.yvescoding.org)

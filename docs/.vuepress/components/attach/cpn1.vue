@@ -1,16 +1,3 @@
----
-title: 附件
-sidebarDepth: 2
----
-
-## 附件
-
-<attach-cpn1 />
-上方为附件效果，想要在项目中使用只需以下两步：
-
-1. 注册。将以下代码复制到你项目的`components`文件夹下的一个`.vue`文件中，文件名自取，如`MyAttachment.vue`。
-
-```vue
 <template>
   <div class="attachment">
     <div class="content">
@@ -28,18 +15,21 @@ sidebarDepth: 2
 <script>
   export default {
     props: {
+      // 附件内容
       contentText: {
         type: String,
         default: 'default.pdf',
       },
+      // 附件大小
       size: {
         type: String,
         default: '0.23M',
       },
+      // 附件图片
       attachPic: {
         type: String,
         default: () => {
-          return require('.vuepress/public/assets/img/common/icon_file.png');
+          return require('../../../.vuepress/public/assets/img/common/icon_file.png');
         },
       },
     },
@@ -69,7 +59,7 @@ sidebarDepth: 2
         display: -webkit-box;
         word-break: break-all;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2; 
+        -webkit-line-clamp: 2; //需要显示的行数
         overflow: hidden;
         text-overflow: ellipsis;
       }
@@ -84,17 +74,3 @@ sidebarDepth: 2
     }
   }
 </style>
-```
-
-2. 使用。在需要使用的地方引入即可。
-
-```vue
-<my-attachment content-text='附件名附件名附件名附件名附件名附件名.pdf' size='6.66M' />
-```
-如需改变左边的图标，传入对应的`attachPic`即可。
-
-效果如下：  
-
-<attach-cpn1 content-text='附件名附件名附件名附件名附件名附件名.pdf' size='6.66M' />
-
-

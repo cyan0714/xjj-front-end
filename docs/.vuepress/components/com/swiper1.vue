@@ -1,28 +1,17 @@
-
 <template>
   <swiper class="swiper" :options="swiperOption">
-    <div class="parallax-bg" slot="parallax-bg" data-swiper-parallax="-23%"></div>
-    <swiper-slide>
-      <div class="title" data-swiper-parallax="-100">Slide 1</div>
-      <div class="subtitle" data-swiper-parallax="-240">Subtitle</div>
-      <div class="text" data-swiper-parallax="-360">
-        <p>parallax effect</p>
-      </div>
-    </swiper-slide>
-    <swiper-slide>
-      <div class="title" data-swiper-parallax="-100">Slide 2</div>
-      <div class="subtitle" data-swiper-parallax="-240">Subtitle</div>
-      <div class="text" data-swiper-parallax="-360">
-        <p>parallax effect</p>
-      </div>
-    </swiper-slide>
-    <swiper-slide>
-      <div class="title" data-swiper-parallax="-100">Slide 3</div>
-      <div class="subtitle" data-swiper-parallax="-240">Subtitle</div>
-      <div class="text" data-swiper-parallax="-360">
-        <p>parallax effect</p>
-      </div>
-    </swiper-slide>
+    <div class="parallax-bg" slot="parallax-bg" data-swiper-parallax="-13%" :style="{backgroundImage:`url(${parallaxBg})`}"></div>
+    <slot name="slide">
+      <swiper-slide>
+        <div class="title">Slide 1</div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="title">Slide 2</div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="title">Slide 3</div>
+      </swiper-slide>
+    </slot>
     <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
     <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
     <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
@@ -30,15 +19,26 @@
 </template>
 
 <script>
-  import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-  import 'swiper/css/swiper.css'
+  import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+  import 'swiper/css/swiper.css';
 
   export default {
     name: 'swiper-example-parallax',
-    title: 'Parallax',
     components: {
       Swiper,
-      SwiperSlide
+      SwiperSlide,
+    },
+    props: {
+      slideHeight: {
+        type: String,
+        default: '380px',
+      },
+      parallaxBg: {
+        type: String,
+        default:()=>{
+          return require('../../public/assets/img/carousel/parallax.jpg')
+        },
+      },
     },
     data() {
       return {
@@ -47,16 +47,17 @@
           parallax: true,
           pagination: {
             el: '.swiper-pagination',
-            clickable: true
+            clickable: true,
           },
           navigation: {
             nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-          }
-        }
-      }
-    }
-  }
+            prevEl: '.swiper-button-prev',
+          },
+        },
+      };
+    },
+    
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -68,19 +69,13 @@
     height: 100%;
     background-size: cover;
     background-position: left;
-    background-image: url('../../public/assets/img/carousel/parallax.jpg');
   }
   .swiper {
     width: 100%;
     height: 380px;
-    .swiper-slide {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      color: #fff;
-      box-sizing: border-box;
-      padding: 0 80px;
-      background-color: transparent;
+    .title {
+      color: cyan;
+      font-size: 20px;
     }
   }
 </style>

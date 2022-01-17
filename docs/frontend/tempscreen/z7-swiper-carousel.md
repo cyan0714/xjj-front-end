@@ -5,60 +5,60 @@ title: 基于Swiper的轮播图
 ## 轮播图
 
 想要在`Vue2.x`中使用`Swiper`，需要安装`Swiper@5.x`版本，同时需要安装`vue-awesome-swiper`，可通过以下方式安装：
+
 ```sh
 npm install swiper@5.x vue-awesome-swiper
 
 yarn add swiper@5.x vue-awesome-swiper
 ```
-全局引入：
-```js
-import Vue from 'vue'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
-import 'swiper/css/swiper.css'
 
-Vue.use(VueAwesomeSwiper, /* { 默认选项配置 } */)
-```
-局部引入：
+全局引入：
+
 ```js
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-import 'swiper/css/swiper.css'
+import Vue from 'vue';
+import VueAwesomeSwiper from 'vue-awesome-swiper';
+import 'swiper/css/swiper.css';
+
+Vue.use(VueAwesomeSwiper /* { 默认选项配置 } */);
+```
+
+局部引入：
+
+```js
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+import 'swiper/css/swiper.css';
 
 export default {
   components: {
     Swiper,
-    SwiperSlide
+    SwiperSlide,
   },
-}
+};
 ```
+
 ### 1. 视差效果
+
 <br>
+
 <com-swiper1 />
+
+1. 注册
 
 ```vue
 <template>
   <swiper class="swiper" :options="swiperOption">
-    <div class="parallax-bg" slot="parallax-bg" data-swiper-parallax="-23%"></div>
-    <swiper-slide>
-      <div class="title" data-swiper-parallax="-100">Slide 1</div>
-      <div class="subtitle" data-swiper-parallax="-240">Subtitle</div>
-      <div class="text" data-swiper-parallax="-360">
-        <p>parallax effect</p>
-      </div>
-    </swiper-slide>
-    <swiper-slide>
-      <div class="title" data-swiper-parallax="-100">Slide 2</div>
-      <div class="subtitle" data-swiper-parallax="-240">Subtitle</div>
-      <div class="text" data-swiper-parallax="-360">
-        <p>parallax effect</p>
-      </div>
-    </swiper-slide>
-    <swiper-slide>
-      <div class="title" data-swiper-parallax="-100">Slide 3</div>
-      <div class="subtitle" data-swiper-parallax="-240">Subtitle</div>
-      <div class="text" data-swiper-parallax="-360">
-        <p>parallax effect</p>
-      </div>
-    </swiper-slide>
+    <div class="parallax-bg" slot="parallax-bg" data-swiper-parallax="-23%" :style="{ backgroundImage: `url(${parallaxBg})` }"></div>
+    <slot name="slide">
+      <swiper-slide>
+        <div class="title">Slide 1</div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="title">Slide 2</div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="title">Slide 3</div>
+      </swiper-slide>
+    </slot>
     <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
     <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
     <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
@@ -66,14 +66,26 @@ export default {
 </template>
 
 <script>
-  import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-  import 'swiper/css/swiper.css'
+  import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+  import 'swiper/css/swiper.css';
+
   export default {
     name: 'swiper-example-parallax',
-    title: 'Parallax',
     components: {
       Swiper,
-      SwiperSlide
+      SwiperSlide,
+    },
+    props: {
+      slideHeight: {
+        type: String,
+        default: '380px',
+      },
+      parallaxBg: {
+        type: String,
+        default: () => {
+          return require('../../public/assets/img/carousel/parallax.jpg');
+        },
+      },
     },
     data() {
       return {
@@ -82,16 +94,16 @@ export default {
           parallax: true,
           pagination: {
             el: '.swiper-pagination',
-            clickable: true
+            clickable: true,
           },
           navigation: {
             nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-          }
-        }
-      }
-    }
-  }
+            prevEl: '.swiper-button-prev',
+          },
+        },
+      };
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -103,32 +115,66 @@ export default {
     height: 100%;
     background-size: cover;
     background-position: left;
-    background-image: url('../../public/assets/img/carousel/parallax.jpg');
   }
   .swiper {
     width: 100%;
     height: 380px;
-    .swiper-slide {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      color: #fff;
-      box-sizing: border-box;
-      padding: 0 80px;
-      background-color: transparent;
+    .title {
+      color: cyan;
+      font-size: 20px;
     }
   }
 </style>
 ```
 
+2. 使用
+
+<com-use-swiper1 />
+
+```vue
+<template>
+  <com-swiper1 :parallaxBg="parallaxBg">
+    <template v-slot:slide>
+      <swiper-slide>
+        <div class="title">Slide 1</div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="title">Slide 2</div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="title">Slide 3</div>
+      </swiper-slide>
+    </template>
+  </com-swiper1>
+</template>
+
+<script>
+  export default {
+    data() {
+      return {
+        parallaxBg: require('../../public/assets/img/carousel/thumbs2.jpg'),
+      };
+    },
+  };
+</script>
+
+<style scoped lang="scss">
+  .title {
+    color: #fff;
+    font-size: 30px;
+  }
+</style>
+```
+
 ### 2. 切换效果：cube
+
 <br>
 <com-swiper2 />
 
 ```vue
 <template>
   <div class="example-3d">
-    <swiper class="swiper" ref="mySwiper" :options="swiperOptions"  >
+    <swiper class="swiper" ref="mySwiper" :options="swiperOptions">
       <swiper-slide>Slide 1</swiper-slide>
       <swiper-slide>Slide 2</swiper-slide>
       <swiper-slide>Slide 3</swiper-slide>
@@ -194,14 +240,14 @@ export default {
       background-position: center;
       background-size: cover;
       color: '#fff';
-      &:nth-child(1){
-        background-color: #D1BA74;
+      &:nth-child(1) {
+        background-color: #d1ba74;
       }
-      &:nth-child(3){
+      &:nth-child(3) {
         background-color: #8cc7b5;
       }
-      &:nth-child(5){
-        background-color: #ECAD9E;
+      &:nth-child(5) {
+        background-color: #ecad9e;
       }
     }
     .swiper-pagination {
@@ -214,13 +260,14 @@ export default {
 ```
 
 ### 3. 切换效果：coverflow
+
 <br>
 <com-swiper3 />
 
 ```vue
 <template>
   <div class="example-3d">
-    <swiper class="swiper" ref="mySwiper" :options="swiperOptions"  >
+    <swiper class="swiper" ref="mySwiper" :options="swiperOptions">
       <swiper-slide>Slide 1</swiper-slide>
       <swiper-slide>Slide 2</swiper-slide>
       <swiper-slide>Slide 3</swiper-slide>
@@ -243,7 +290,7 @@ export default {
     data() {
       return {
         swiperOptions: {
-          effect : 'coverflow',
+          effect: 'coverflow',
           slidesPerView: 3,
           centeredSlides: true,
           pagination: {
@@ -276,14 +323,14 @@ export default {
       background-position: center;
       background-size: cover;
       color: '#fff';
-      &:nth-child(1){
-        background-color: #D1BA74;
+      &:nth-child(1) {
+        background-color: #d1ba74;
       }
-      &:nth-child(3){
+      &:nth-child(3) {
         background-color: #8cc7b5;
       }
-      &:nth-child(5){
-        background-color: #ECAD9E;
+      &:nth-child(5) {
+        background-color: #ecad9e;
       }
     }
     .swiper-pagination {
@@ -296,6 +343,7 @@ export default {
 ```
 
 ### 4. 缩略图
+
 <br>
 <com-swiper4 />
 
@@ -324,12 +372,12 @@ export default {
 </template>
 
 <script>
-  import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-  import 'swiper/css/swiper.css'
+  import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+  import 'swiper/css/swiper.css';
   export default {
     components: {
       Swiper,
-      SwiperSlide
+      SwiperSlide,
     },
     data() {
       return {
@@ -339,8 +387,8 @@ export default {
           spaceBetween: 10,
           navigation: {
             nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev'
-          }
+            prevEl: '.swiper-button-prev',
+          },
         },
         swiperOptionThumbs: {
           loop: true,
@@ -348,19 +396,19 @@ export default {
           spaceBetween: 10,
           centeredSlides: true,
           slidesPerView: 'auto',
-          slideToClickedSlide: true
-        }
-      }
+          slideToClickedSlide: true,
+        },
+      };
     },
     mounted() {
       this.$nextTick(() => {
-        const swiperTop = this.$refs.swiperTop.$swiper
-        const swiperThumbs = this.$refs.swiperThumbs.$swiper
-        swiperTop.controller.control = swiperThumbs
-        swiperThumbs.controller.control = swiperTop
-      })
-    }
-  }
+        const swiperTop = this.$refs.swiperTop.$swiper;
+        const swiperThumbs = this.$refs.swiperThumbs.$swiper;
+        swiperTop.controller.control = swiperThumbs;
+        swiperThumbs.controller.control = swiperTop;
+      });
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -373,19 +421,19 @@ export default {
       background-size: cover;
       background-position: center;
       &.slide-1 {
-        background-image:url('../../public/assets/img/carousel/parallax.jpg');
+        background-image: url('../../public/assets/img/carousel/parallax.jpg');
       }
       &.slide-2 {
-        background-image:url('../../public/assets/img/carousel/thumbs2.jpg');
+        background-image: url('../../public/assets/img/carousel/thumbs2.jpg');
       }
       &.slide-3 {
-        background-image:url('../../public/assets/img/carousel/thumbs3.jpg');
+        background-image: url('../../public/assets/img/carousel/thumbs3.jpg');
       }
       &.slide-4 {
-        background-image:url('../../public/assets/img/carousel/thumbs4.jpg');
+        background-image: url('../../public/assets/img/carousel/thumbs4.jpg');
       }
       &.slide-5 {
-        background-image:url('../../public/assets/img/carousel/thumbs5.jpg');
+        background-image: url('../../public/assets/img/carousel/thumbs5.jpg');
       }
     }
     &.gallery-top {
@@ -407,5 +455,5 @@ export default {
   }
 </style>
 ```
-更多用法，请前往[Swiper官网](https://www.swiper.com.cn)
 
+更多用法，请前往[Swiper 官网](https://www.swiper.com.cn/api/index.html)
