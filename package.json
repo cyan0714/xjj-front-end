@@ -28,7 +28,7 @@
     "moment": "^2.24.0",
     "sass": "1.32.13",
     "sass-loader": "10.1.1",
-    "vuepress": "^1.8.2",
+    "vuepress": "^1.9.7",
     "vuepress-plugin-auto-sidebar": "^1.1.0",
     "vuepress-plugin-demo-container": "^0.2.0"
   },

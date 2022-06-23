@@ -11,10 +11,14 @@ const navConf = require('./config/navConf.js');
 const headConf = require('./config/headConf.js');
 
 module.exports = {
-  title: '智慧城市-前端组件化开发1.0',
+  title: '前端组件化开发',
   description: '前端开发者技术交流和学习的平台',
   head: headConf,
   plugins: pluginConf,
+  extraWatchFiles: [
+	  '/fontend/specification/README.md', // 使用绝对路径
+	  '/fontend/specification/README-CSS.md'   // 使用绝对路径
+	],
   themeConfig: {
     lastUpdated: '上次更新',
     // repo: 'shanyuhai123/documents',

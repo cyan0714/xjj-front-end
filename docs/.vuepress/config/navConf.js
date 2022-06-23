@@ -13,4 +13,6 @@ module.exports = [
   { text: '大屏组件库', link: '/frontend/tempscreen/' },
   { text: '模板库', link: '/frontend/htmlscreen/' },
   { text: '大屏地图', link: '/frontend/mapscreen/' },
+  { text: '鹿鸣组件库', link: '/frontend/lookui/' },
+  { text: '前端规范', link: '/frontend/specification/' },
 ];
