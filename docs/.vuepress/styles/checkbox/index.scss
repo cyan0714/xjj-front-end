@@ -1,0 +1,28 @@
+.lookui-checkbox {
+  .el-checkbox__input.is-checked+.el-checkbox__label {
+    color: #506eda;
+    padding-left: 8px;
+  }
+  .el-checkbox__input.is-checked .el-checkbox__inner,
+  .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: #506eda;
+    border-color: #506eda;
+    width: 16px;
+    height: 16px;
+  }
+  .el-checkbox__input.is-disabled+span.el-checkbox__label {
+    color:#bfbfbf;
+  }
+  .el-checkbox__input.is-disabled .el-checkbox__inner {
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    background-color:#f5f5f5;
+    border:1px solid #d9d9d9;
+    border-radius:2px;
+  }
+  .el-checkbox__inner::after {
+    left: 5px;
+    top: 2px;
+  }
+}

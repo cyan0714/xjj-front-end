@@ -4,9 +4,11 @@ import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 // import 'swiper/swiper-bundle.min.css';
 import VueAwesomeSwiper from 'vue-awesome-swiper'
- 
+
 // import style
 import 'swiper/css/swiper.css'
+import './styles/radio/index.scss'
+import './styles/checkbox/index.scss'
 
 export default ({ Vue, options, router }) => {
   Vue.use(Element);
