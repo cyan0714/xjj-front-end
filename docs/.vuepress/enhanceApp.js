@@ -9,6 +9,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import './styles/radio/index.scss'
 import './styles/checkbox/index.scss'
+import './styles/input/index.scss'
 
 export default ({ Vue, options, router }) => {
   Vue.use(Element);
