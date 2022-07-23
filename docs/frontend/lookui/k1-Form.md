@@ -10,7 +10,7 @@ title: Form
 
 <radio-base style="padding: 24px" />
 
-> 要使用 Radio 组件，只需要设置v-model绑定变量，选中意味着变量的值为相应 Radio label属性的值，label可以是String、Number或Boolean。
+要使用 Radio 组件，只需要设置`v-model`绑定变量，选中意味着变量的值为相应 Radio`label`属性的值，`label`可以是`String`、`Number`或`Boolean`。
 
 <<< @/docs/.vuepress/components/radio/base.vue
 
@@ -19,7 +19,7 @@ title: Form
 
 <radio-disable style="padding: 24px" />
 
-> 只要在el-radio元素中设置disabled属性即可，它接受一个Boolean，true为禁用。
+只要在`el-radio`元素中设置`disabled`属性即可，它接受一个`Boolean`，`true`为禁用。
 
 <<< @/docs/.vuepress/components/radio/disable.vue
 
@@ -28,7 +28,7 @@ title: Form
 
 <radio-group style="padding: 24px" />
 
-> 结合el-radio-group元素和子元素el-radio可以实现单选组，在el-radio-group中绑定v-model，在el-radio中设置好label即可，无需再给每一个el-radio绑定变量，另外，还提供了change事件来响应变化，它会传入一个参数value。
+结合`el-radio-group`元素和子元素`el-radio`可以实现单选组，在`el-radio-group`中绑定`v-model`，在`el-radio`中设置好`label`即可，无需再给每一个`el-radio`绑定变量，另外，还提供了`change`事件来响应变化，它会传入一个参数`value`。
 
 <<< @/docs/.vuepress/components/radio/group.vue
 
@@ -42,7 +42,7 @@ title: Form
 
 <checkbox-base style="padding: 24px" />
 
-> 在el-checkbox元素中定义v-model绑定变量，单一的checkbox中，默认绑定变量的值会是Boolean，选中为true。
+在`el-checkbox`元素中定义`v-model`绑定变量，单一的`checkbox`中，默认绑定变量的值会是`Boolean`，选中为`true`。
 
 <<< @/docs/.vuepress/components/checkbox/base.vue
 
@@ -60,7 +60,7 @@ title: Form
 
 <checkbox-group style="padding: 24px" />
 
-> checkbox-group元素能把多个 checkbox 管理为一组，只需要在 Group 中使用v-model绑定Array类型的变量即可。 el-checkbox 的 label属性是该 checkbox 对应的值，若该标签中无内容，则该属性也充当 checkbox 按钮后的介绍。label与数组中的元素值相对应，如果存在指定的值则为选中状态，否则为不选中。
+`checkbox-group`元素能把多个`checkbox`管理为一组，只需要在`Group`中使用`v-model`绑定Array类型的变量即可。 `el-checkbox`的`label`属性是该`checkbox`对应的值，若该标签中无内容，则该属性也充当`checkbox`按钮后的介绍。`label`与数组中的元素值相对应，如果存在指定的值则为选中状态，否则为不选中。
 
 <<< @/docs/.vuepress/components/checkbox/group.vue
 
@@ -76,36 +76,36 @@ title: Form
 
 ### 禁用状态
 <input-disabled style="padding: 24px" />
-通过 disabled 属性指定是否禁用 input 组件。
+通过`disabled`属性指定是否禁用`input`组件。
 
 <<< @/docs/.vuepress/components/input/disabled.vue
 
 ### 可清空
 <input-clearable style="padding: 24px; padding-right: 0" />
-使用clearable属性即可得到一个可清空的输入框。
+使用`clearable`属性即可得到一个可清空的输入框。
 
 <<< @/docs/.vuepress/components/input/clearable.vue
 
 ### 密码框
 <input-password style="padding: 24px; padding-right: 0" />
-使用show-password属性即可得到一个可切换显示隐藏的密码框。
+使用`show-password`属性即可得到一个可切换显示隐藏的密码框。
 
 <<< @/docs/.vuepress/components/input/password.vue
 
 ### 带icon的输入框
 <input-icon />
-可以通过 prefix-icon 和 suffix-icon 属性在 input 组件首部和尾部增加显示图标，也可以通过 slot 来放置图标。
+可以通过`prefix-icon`和`suffix-icon`属性在`input`组件首部和尾部增加显示图标，也可以通过`slot`来放置图标。
 
 <<< @/docs/.vuepress/components/input/icon.vue
 
 ### 文本域
 <input-textarea style="padding: 24px" />
-文本域高度可通过 rows 属性控制
+文本域高度可通过`rows`属性控制
 
 <<< @/docs/.vuepress/components/input/textarea.vue
 
 ### 尺寸
 <input-size style="padding: 24px" />
-可通过 size 属性指定输入框的尺寸，除了默认的大小外，还提供了 medium、small 和 mini 三种尺寸。
+可通过`size`属性指定输入框的尺寸，除了默认的大小外，还提供了`medium`、`small`和`mini`三种尺寸。
 
 <<< @/docs/.vuepress/components/input/size.vue
