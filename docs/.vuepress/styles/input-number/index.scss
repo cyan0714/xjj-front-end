@@ -1,0 +1,44 @@
+.lookui-input-number {
+  &.el-input-number--medium {
+    .el-input.el-input--medium {
+      .el-input__inner {
+        height: 36px;
+        line-height: 36px;
+      }
+    }
+  }
+  &.el-input-number--small {
+    .el-input.el-input--small {
+      .el-input__inner {
+        height: 32px;
+        line-height: 32px;
+      }
+    }
+  }
+  &.el-input-number--mini {
+    .el-input.el-input--mini {
+      .el-input__inner {
+        height: 28px;
+        line-height: 28px;
+      }
+    }
+  }
+  .el-input.is-active .el-input__inner,
+  .el-input__inner:focus {
+    border-color: #506eda;
+  }
+  input[type='text'] {
+    color: #000;
+    border-radius: 2px;
+  }
+  .el-input-number__decrease,
+  .el-input-number__increase {
+    width: 22px;
+    &:hover {
+      color: #506eda;
+    }
+  }
+  .el-input-number__increase:hover:not(.is-disabled)~.el-input .el-input__inner:not(.is-disabled) {
+    border-color: #506eda;
+  }
+}

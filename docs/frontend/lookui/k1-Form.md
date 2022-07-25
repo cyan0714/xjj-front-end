@@ -109,3 +109,50 @@ title: Form
 可通过`size`属性指定输入框的尺寸，除了默认的大小外，还提供了`medium`、`small`和`mini`三种尺寸。
 
 <<< @/docs/.vuepress/components/input/size.vue
+
+## InputNumber 计数器
+仅允许输入标准的数字值，可定义范围。
+
+### 基础用法
+<input-number-base style="margin-top:24px" />
+要使用它，只需要在el-input-number元素中使用v-model绑定变量即可，变量的初始值即为默认值。
+
+<<< @/docs/.vuepress/components/input-number/base.vue
+
+### 禁用状态
+<input-number-disabled style="margin-top:24px" />
+disabled属性接受一个Boolean，设置为true即可禁用整个组件，如果你只需要控制数值在某一范围内，可以设置min属性和max属性，不设置min和max时，最小值为 0。
+
+<<< @/docs/.vuepress/components/input-number/disabled.vue
+
+### 步数
+<input-number-step style="margin-top:24px" />
+设置step属性可以控制步长，接受一个Number。
+
+<<< @/docs/.vuepress/components/input-number/step.vue
+
+### 严格步数
+<input-number-strictstep style="margin-top:24px" />
+step-strictly属性接受一个Boolean。如果这个属性被设置为true，则只能输入步数的倍数。
+
+<<< @/docs/.vuepress/components/input-number/strictstep.vue
+
+### 严格步数
+<input-number-precision style="margin-top:24px" />
+设置 precision 属性可以控制数值精度，接收一个 Number。
+
+<<< @/docs/.vuepress/components/input-number/precision.vue
+
+> precision 的值必须是一个非负整数，并且不能小于 step 的小数位数。
+
+### 尺寸
+<input-number-size style="margin-top:24px" />
+额外提供了 medium、small、mini 三种尺寸的数字输入框
+
+<<< @/docs/.vuepress/components/input-number/size.vue
+
+### 位置
+<input-number-position style="margin-top:24px" />
+设置 controls-position 属性可以控制按钮位置。
+
+<<< @/docs/.vuepress/components/input-number/position.vue
