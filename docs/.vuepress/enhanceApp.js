@@ -11,6 +11,7 @@ import './styles/radio/index.scss'
 import './styles/checkbox/index.scss'
 import './styles/input/index.scss'
 import './styles/input-number/index.scss'
+import './styles/select/index.scss'
 
 export default ({ Vue, options, router }) => {
   Vue.use(Element);

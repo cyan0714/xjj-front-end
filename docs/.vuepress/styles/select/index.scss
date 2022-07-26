@@ -1,0 +1,42 @@
+.lookui-select {
+  .el-input.is-focus .el-input__inner {
+    border: 1px solid #506eda;
+  }
+  .el-input__inner:focus {
+    border-color: #506eda;
+  }
+  .el-select {
+    width: 100%;
+    height: 100%;
+  }
+  .el-select > .el-input {
+    height: 100%;
+  }
+  .el-select__caret.el-input__icon.el-icon-arrow-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.lookui-select-dropdown .el-select-dropdown__item.hover {
+  width: 100%;
+  background-color: #e4e8fb;
+}
+.lookui-select-dropdown .el-select-dropdown__item,
+.lookui-select-dropdown .el-select-dropdown__item.selected {
+  color: #666666;
+  font-weight: normal;
+  &.selected {
+    color: #506eda;
+  }
+}
+.lookui-select-dropdown .property-item input:focus {
+  border: 1px solid #506eda;
+}
+.lookui-select-dropdown .row-panel.select-panel {
+  background: none;
+}
+.lookui-select-dropdown .el-input__icon {
+  line-height: 32px;
+}

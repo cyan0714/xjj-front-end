@@ -156,3 +156,50 @@ step-strictly属性接受一个Boolean。如果这个属性被设置为true，�
 设置 controls-position 属性可以控制按钮位置。
 
 <<< @/docs/.vuepress/components/input-number/position.vue
+
+## Select 选择器
+当选项过多时，使用下拉菜单展示并选择内容。
+
+### 基础用法
+<select-base style="margin-top:24px" />
+v-model的值为当前被选中的el-option的 value 属性值
+
+<<< @/docs/.vuepress/components/select/base.vue
+
+### 禁用状态
+选择器不可用状态
+
+<select-disabled/>
+为el-select设置disabled属性，则整个选择器不可用
+
+<<< @/docs/.vuepress/components/select/disabled.vue
+
+### 有禁用选项
+<select-disabled-option style="margin-top:24px" />
+在el-option中，设定disabled值为 true，即可禁用该选项
+
+<<< @/docs/.vuepress/components/select/disabled-option.vue
+
+### 可清空单选
+包含清空按钮，可将选择器清空为初始状态
+
+<select-clearable />
+为el-select设置clearable属性，则可将选择器清空。需要注意的是，clearable属性仅适用于单选。
+
+<<< @/docs/.vuepress/components/select/clearable.vue
+
+### 基础多选
+适用性较广的基础多选，用 Tag 展示已选项
+
+<select-multiple />
+为el-select设置multiple属性即可启用多选，此时v-model的值为当前选中值所组成的数组。默认情况下选中值会以 Tag 的形式展现，你也可以设置collapse-tags属性将它们合并为一段文字。
+
+<<< @/docs/.vuepress/components/select/multiple.vue
+
+### 分组
+备选项进行分组展示
+
+<select-group />
+使用el-option-group对备选项进行分组，它的label属性为分组名
+
+<<< @/docs/.vuepress/components/select/group.vue
