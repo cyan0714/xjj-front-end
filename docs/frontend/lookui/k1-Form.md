@@ -1,5 +1,6 @@
 ---
 title: Form
+sidebarDepth: 3
 ---
 
 ## Radio 单选框
@@ -203,3 +204,57 @@ v-model的值为当前被选中的el-option的 value 属性值
 使用el-option-group对备选项进行分组，它的label属性为分组名
 
 <<< @/docs/.vuepress/components/select/group.vue
+
+## Cascader 级联选择器
+
+### 基础用法
+有两种触发子菜单的方式
+
+<cascader-base />
+只需为 Cascader 的options属性指定选项数组即可渲染出一个级联选择器。通过props.expandTrigger可以定义展开子级菜单的触发方式。
+
+<<< @/docs/.vuepress/components/cascader/base.vue
+
+
+### 禁用选项
+通过在数据源中设置 disabled 字段来声明该选项是禁用的
+
+<cascader-disabled />
+本例中，options指定的数组中的第一个元素含有disabled: true键值对，因此是禁用的。在默认情况下，Cascader 会检查数据中每一项的disabled字段是否为true，如果你的数据中表示禁用含义的字段名不为disabled，可以通过props.disabled属性来指定（详见下方 API 表格）。当然，value、label和children这三个字段名也可以通过同样的方式指定。
+
+<<< @/docs/.vuepress/components/cascader/disabled.vue
+
+
+### 可清空
+通过 clearable 设置输入框可清空
+
+<cascader-clearable />
+
+<<< @/docs/.vuepress/components/cascader/clearable.vue
+
+
+### 仅显示最后一级
+可以仅在输入框中显示选中项最后一级的标签，而不是选中项所在的完整路径。
+
+<cascader-last-level />
+属性show-all-levels定义了是否显示完整的路径，将其赋值为false则仅显示最后一级
+
+<<< @/docs/.vuepress/components/cascader/last-level.vue
+
+
+### 多选
+可通过 props.multiple = true 来开启多选模式
+
+<cascader-multiple />
+在开启多选模式后，默认情况下会展示所有已选中的选项的Tag，你可以使用collapse-tags来折叠Tag
+
+<<< @/docs/.vuepress/components/cascader/multiple.vue
+
+
+### 选择任意一级选项
+在单选模式下，你只能选择叶子节点；而在多选模式下，勾选父节点真正选中的都是叶子节点。启用该功能后，可让父子节点取消关联，选择任意一级选项。
+
+<cascader-free-level />
+可通过 props.checkStrictly = true 来设置父子节点取消选中关联，从而达到选择任意一级选项的目的。
+
+<<< @/docs/.vuepress/components/cascader/free-level.vue

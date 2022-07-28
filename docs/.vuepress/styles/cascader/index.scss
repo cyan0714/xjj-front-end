@@ -1,0 +1,24 @@
+.lookui-cascader {
+  .el-input .el-input__inner:focus,
+  .el-input.is-focus .el-input__inner {
+    border-color: #506eda;
+  }
+}
+
+.lookui-cascader-popper {
+  .el-cascader-node:not(.is-disabled):focus,
+  .el-cascader-node:not(.is-disabled):hover {
+    background: #e4e8fb;
+  }
+  .el-cascader-node.in-active-path,
+  .el-cascader-node.is-active,
+  .el-cascader-node.is-selectable.in-checked-path {
+    color: #506eda;
+    font-weight: 400;
+  }
+  .el-checkbox__input.is-checked .el-checkbox__inner,
+  .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+    background-color: #506eda;
+    border-color: #506eda;
+  }
+}
