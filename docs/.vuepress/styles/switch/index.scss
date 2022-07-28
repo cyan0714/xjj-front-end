@@ -1,0 +1,9 @@
+.lookui-switch {
+  &.is-checked .el-switch__core {
+    border-color: #506eda;
+    background-color: #506eda;
+  }
+  .el-switch__label.is-active {
+    color: #506eda;
+  }
+}

@@ -258,3 +258,25 @@ v-model的值为当前被选中的el-option的 value 属性值
 可通过 props.checkStrictly = true 来设置父子节点取消选中关联，从而达到选择任意一级选项的目的。
 
 <<< @/docs/.vuepress/components/cascader/free-level.vue
+
+## Switch 开关
+表示两种相互对立的状态间的切换，多用于触发「开/关」。
+### 基础用法
+
+<switch-base style="margin-top:24px" />
+
+<<< @/docs/.vuepress/components/switch/base.vue
+
+### 文字描述
+
+<switch-describe style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/switch/describe.md
+
+
+### 禁用状态
+
+<switch-disabled style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/switch/disabled.md
+
