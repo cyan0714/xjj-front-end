@@ -2,13 +2,15 @@
 const path = require('path')
 const fs = require("fs")
 
-const sourcePath = path.join(__dirname, "../.vuepress/components/slider")
-const targetPath = path.join(__dirname, "../.vuepress/documents/slider")
+const dirName = process.argv[2]
+
+const sourcePath = path.join(__dirname, `../.vuepress/components/${dirName}`)
+const targetPath = path.join(__dirname, `../.vuepress/documents/${dirName}`)
 
 if (!fs.existsSync(targetPath)) {
   fs.mkdirSync(targetPath);
 } else {
-  console.log(`the ${process.argv[2]} dir had existed!`);
+  console.log(`the ${dirName} dir had existed!`);
 }
 
 const files = fs.readdirSync(sourcePath)

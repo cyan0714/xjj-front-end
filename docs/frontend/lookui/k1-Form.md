@@ -322,3 +322,31 @@ v-model的值为当前被选中的el-option的 value 属性值
 
 <<< @/docs/.vuepress/documents/slider/marks.md
 
+## TimePicker 时间选择器
+### 固定时间点
+
+<time-picker-settled style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/time-picker/settled.md
+
+
+### 任意时间点
+
+<time-picker-free style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/time-picker/free.md
+
+
+### 固定时间范围
+
+<time-picker-settled-range style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/time-picker/settled-range.md
+
+
+### 任意时间范围
+
+<time-picker-free-range style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/time-picker/free-range.md
+

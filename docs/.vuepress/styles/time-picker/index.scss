@@ -1,0 +1,72 @@
+.lookui-time-picker {
+  &.el-input.is-active .el-input__inner {
+    border-color: #506eda;
+  }
+  .el-input__inner {
+    &:focus {
+      border-color: #506eda;
+    }
+  }
+
+  &.el-range-editor.is-active {
+    border-color: #506eda;
+    &:hover {
+      border-color: #506eda;
+    }
+  }
+}
+
+.lookui-time-date-editor {
+  .time-select-item {
+    &:hover {
+      background-color: #e4e8fb;
+      font-weight: normal;
+    }
+    &.selected:not(.disabled) {
+      color: #333;
+      font-weight: normal;
+    }
+  }
+  /*修改选中日期的背景色*/
+  .el-date-table td.current:not(.disabled) span {
+    background-color: #4364bf;
+  }
+  /*修改今天日期颜色*/
+  .el-date-table td.today span {
+    color: #4364bf;
+  }
+  .el-date-table td span {
+    border-radius: 2px;
+  }
+  input[type="text"] {
+    color: #000;
+  }
+  .el-button--text {
+    color: #4364bf;
+  }
+  .el-button {
+    color: #4364bf;
+    border-color: #4364bf;
+    &.is-plain {
+      &:focus,&:hover {
+        color: #4364bf;
+        border-color: #4364bf;
+      }
+    }
+  }
+  .el-date-table td.available:hover {
+    color: #4364bf;
+  }
+  .el-input.is-active .el-input__inner, .el-input__inner:focus {
+    border-color: #4364bf;
+  }
+  .el-time-panel__btn.confirm {
+    color: #506eda;
+  }
+  button:hover {
+    background: none;
+  }
+  .el-time-spinner__item:hover:not(.disabled):not(.active) {
+    background-color: #e4e8fb;
+  }
+}
