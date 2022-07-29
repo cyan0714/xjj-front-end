@@ -273,10 +273,52 @@ v-model的值为当前被选中的el-option的 value 属性值
 
 <<< @/docs/.vuepress/documents/switch/describe.md
 
-
 ### 禁用状态
 
 <switch-disabled style="margin-top:24px" />
 
 <<< @/docs/.vuepress/documents/switch/disabled.md
+
+## Slider 滑块
+
+### 基础用法
+
+<slider-base style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/slider/base.md
+
+
+### 离散值
+
+<slider-step style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/slider/step.md
+
+
+### 带有输入框
+
+<slider-input style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/slider/input.md
+
+
+### 范围选择
+
+<slider-range style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/slider/range.md
+
+
+### 竖向模式
+
+<slider-vertical style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/slider/vertical.md
+
+
+### 展示标记
+
+<slider-marks style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/slider/marks.md
 
