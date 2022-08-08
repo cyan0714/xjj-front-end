@@ -1,0 +1,31 @@
+.lookui-upload {
+  .el-upload-list__item.is-success .el-upload-list__item-name:focus, .el-upload-list__item.is-success .el-upload-list__item-name:hover {
+    color: #506eda;
+    cursor: pointer;
+  }
+  .el-tree-node__content:hover, .el-upload-list__item:hover {
+    border-color: #506eda;
+  }
+  .el-button--primary {
+    background-color: #506eda;
+    border-color: #506eda;
+  }
+  &.avatar-uploader .el-upload:hover {
+    border-color: #506eda;
+  }
+  .el-upload--picture-card:hover, .el-upload:focus {
+    border-color: #506eda;
+    color: #506eda;
+  }
+  .el-upload-dragger:hover {
+    border-color: #506eda;
+  }
+  .el-upload-dragger .el-upload__text em {
+    color: #506eda;
+    font-style: normal;
+  }
+  .el-button--success {
+    background-color: #55bf96;
+    border-color: #55bf96;
+  }
+}

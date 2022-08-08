@@ -350,3 +350,52 @@ v-model的值为当前被选中的el-option的 value 属性值
 
 <<< @/docs/.vuepress/documents/time-picker/free-range.md
 
+## 上传
+### 点击上传
+
+<upload-clicking style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/upload/clicking.md
+
+
+### 用户头像上传
+
+<upload-portrait style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/upload/portrait.md
+
+
+### 照片墙
+
+<upload-photos style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/upload/photos.md
+
+
+### 文件缩略图
+
+<upload-file-thumbnail style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/upload/file-thumbnail.md
+
+
+### 图片列表缩略图
+
+<upload-picture-thumbnail style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/upload/picture-thumbnail.md
+
+
+### 拖拽上传
+
+<upload-drag style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/upload/drag.md
+
+
+### 手动上传
+
+<upload-manual style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/upload/manual.md
+

@@ -16,6 +16,7 @@ import './styles/cascader/index.scss'
 import './styles/switch/index.scss'
 import './styles/slider/index.scss'
 import './styles/time-picker/index.scss'
+import './styles/upload/index.scss'
 
 export default ({ Vue, options, router }) => {
   Vue.use(Element);
