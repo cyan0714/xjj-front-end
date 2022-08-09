@@ -350,6 +350,35 @@ v-model的值为当前被选中的el-option的 value 属性值
 
 <<< @/docs/.vuepress/documents/time-picker/free-range.md
 
+## DatePicker 日期选择器
+
+### 选择日
+
+<date-picker-date style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/date-picker/date.md
+
+
+### 其他日期单位
+
+<date-picker-other-unit style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/date-picker/other-unit.md
+
+
+### 选择日期范围
+
+<date-picker-date-range style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/date-picker/date-range.md
+
+
+### 选择月份范围
+
+<date-picker-month-range style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/date-picker/month-range.md
+
 ## 上传
 ### 点击上传
 
