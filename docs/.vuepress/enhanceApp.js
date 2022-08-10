@@ -18,6 +18,7 @@ import './styles/slider/index.scss'
 import './styles/time-picker/index.scss'
 import './styles/date-picker/index.scss'
 import './styles/upload/index.scss'
+import './styles/transfer/index.scss'
 
 export default ({ Vue, options, router }) => {
   Vue.use(Element);

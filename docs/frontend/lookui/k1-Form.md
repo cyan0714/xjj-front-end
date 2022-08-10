@@ -428,3 +428,52 @@ v-model的值为当前被选中的el-option的 value 属性值
 
 <<< @/docs/.vuepress/documents/upload/manual.md
 
+## Rate 评分
+### 基础用法
+
+<rate-base style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/rate/base.md
+
+
+### 辅助文字
+
+<rate-auxiliary-text style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/rate/auxiliary-text.md
+
+
+### 其他 icon
+
+<rate-others-icon style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/rate/others-icon.md
+
+
+### 只读
+
+<rate-readonly style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/rate/readonly.md
+
+## Transfer 穿梭框
+### 基础用法
+
+<transfer-base style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/transfer/base.md
+
+
+### 可搜索
+
+<transfer-searchable style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/transfer/searchable.md
+
+
+### 可自定义
+
+<transfer-customable style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/transfer/customable.md
+
