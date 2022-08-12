@@ -2,8 +2,8 @@
   <div class="container">
     <p>可以选择任意时间</p>
     <el-time-picker
-      class="lookui-time-picker"
-      popper-class="lookui-time-date-editor"
+      class="lookui-picker"
+      popper-class="lookui-time-popper"
       v-model="value1"
       :picker-options="{
         selectableRange: '18:30:00 - 20:30:00'
@@ -12,8 +12,8 @@
     >
     </el-time-picker>
     <el-time-picker
-      class="lookui-time-picker"
-      popper-class="lookui-time-date-editor"
+      class="lookui-picker"
+      popper-class="lookui-time-popper"
       arrow-control
       v-model="value2"
       :picker-options="{

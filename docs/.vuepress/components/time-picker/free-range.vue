@@ -2,8 +2,8 @@
   <div class="container">
     <p>可选择任意的时间范围</p>
     <el-time-picker
-      class="lookui-time-picker"
-      popper-class="lookui-time-date-editor"
+      class="lookui-picker"
+      popper-class="lookui-time-popper"
       is-range
       v-model="value1"
       range-separator="至"
@@ -13,8 +13,8 @@
     >
     </el-time-picker>
     <el-time-picker
-      class="lookui-time-picker"
-      popper-class="lookui-time-date-editor"
+      class="lookui-picker"
+      popper-class="lookui-time-popper"
       is-range
       arrow-control
       v-model="value2"

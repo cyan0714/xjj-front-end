@@ -4,8 +4,8 @@
       <div class="block">
         <span class="demonstration">周</span>
         <el-date-picker
-          class="lookui-time-picker"
-          popper-class="lookui-date-picker"
+          class="lookui-picker"
+          popper-class="lookui-date-popper"
           v-model="value1"
           type="week"
           format="yyyy 第 WW 周"
@@ -16,8 +16,8 @@
       <div class="block">
         <span class="demonstration">月</span>
         <el-date-picker
-          class="lookui-time-picker"
-          popper-class="lookui-date-picker"
+          class="lookui-picker"
+          popper-class="lookui-date-popper"
           v-model="value2"
           type="month"
           placeholder="选择月"
@@ -29,8 +29,8 @@
       <div class="block">
         <span class="demonstration">年</span>
         <el-date-picker
-          class="lookui-time-picker"
-          popper-class="lookui-date-picker"
+          class="lookui-picker"
+          popper-class="lookui-date-popper"
           v-model="value3"
           type="year"
           placeholder="选择年"
@@ -40,8 +40,8 @@
       <div class="block">
         <span class="demonstration">多个日期</span>
         <el-date-picker
-          class="lookui-time-picker"
-          popper-class="lookui-date-picker"
+          class="lookui-picker"
+          popper-class="lookui-date-popper"
           type="dates"
           v-model="value4"
           placeholder="选择一个或多个日期"

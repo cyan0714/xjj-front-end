@@ -1,22 +1,4 @@
-.lookui-time-picker {
-  &.el-input.is-active .el-input__inner {
-    border-color: #506eda;
-  }
-  .el-input__inner {
-    &:focus {
-      border-color: #506eda;
-    }
-  }
-
-  &.el-range-editor.is-active {
-    border-color: #506eda;
-    &:hover {
-      border-color: #506eda;
-    }
-  }
-}
-
-.lookui-time-date-editor {
+.lookui-time-popper {
   .time-select-item {
     &:hover {
       background-color: #e4e8fb;

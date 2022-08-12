@@ -3,8 +3,8 @@
     <div class="block">
       <span class="demonstration">默认</span>
       <el-date-picker
-        class="lookui-time-picker"
-        popper-class="lookui-date-picker"
+        class="lookui-picker"
+        popper-class="lookui-date-popper"
         v-model="value1"
         type="monthrange"
         range-separator="至"
@@ -16,8 +16,8 @@
     <div class="block">
       <span class="demonstration">带快捷选项</span>
       <el-date-picker
-        class="lookui-time-picker"
-        popper-class="lookui-date-picker"
+        class="lookui-picker"
+        popper-class="lookui-date-popper"
         v-model="value2"
         type="monthrange"
         align="right"

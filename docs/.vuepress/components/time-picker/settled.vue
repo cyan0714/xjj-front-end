@@ -2,8 +2,8 @@
   <div class="container">
     <p>提供几个固定的时间点供用户选择</p>
     <el-time-select
-      class="lookui-time-picker"
-      popper-class="lookui-time-date-editor"
+      class="lookui-picker"
+      popper-class="lookui-time-popper"
       v-model="value"
       :picker-options="{
         start: '08:30',

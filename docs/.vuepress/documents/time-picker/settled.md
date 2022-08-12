@@ -1,7 +1,7 @@
 <template>
   <el-time-select
-    class="lookui-time-picker"
-    popper-class="lookui-time-date-editor"
+    class="lookui-picker"
+    popper-class="lookui-time-popper"
     v-model="value"
     :picker-options="{
       start: '08:30',

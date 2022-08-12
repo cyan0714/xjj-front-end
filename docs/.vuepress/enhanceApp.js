@@ -15,10 +15,12 @@ import './styles/select/index.scss'
 import './styles/cascader/index.scss'
 import './styles/switch/index.scss'
 import './styles/slider/index.scss'
+import './styles/picker/index.scss'
 import './styles/time-picker/index.scss'
 import './styles/date-picker/index.scss'
 import './styles/upload/index.scss'
 import './styles/transfer/index.scss'
+import './styles/form/index.scss'
 
 export default ({ Vue, options, router }) => {
   Vue.use(Element);

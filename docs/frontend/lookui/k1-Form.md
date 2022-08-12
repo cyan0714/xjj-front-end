@@ -477,3 +477,45 @@ v-model的值为当前被选中的el-option的 value 属性值
 
 <<< @/docs/.vuepress/documents/transfer/customable.md
 
+## 表单
+### 典型表单
+
+<form-typical style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/form/typical.md
+
+
+### 行内表单
+
+<form-inline style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/form/inline.md
+
+
+### 对齐方式
+
+<form-align-way style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/form/align-way.md
+
+
+### 表单验证
+
+<form-validator style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/form/validator.md
+
+
+### 自定义校验规则
+
+<form-diy-validator style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/form/diy-validator.md
+
+
+### 数字类型验证
+
+<form-number-validator style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/form/number-validator.md
+
