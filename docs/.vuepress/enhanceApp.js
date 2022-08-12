@@ -7,6 +7,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 // import style
 import 'swiper/css/swiper.css'
+import './styles/documents/index.scss'
 import './styles/radio/index.scss'
 import './styles/checkbox/index.scss'
 import './styles/input/index.scss'

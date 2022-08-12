@@ -51,4 +51,7 @@
   .el-time-spinner__item:hover:not(.disabled):not(.active) {
     background-color: #e4e8fb;
   }
+  .el-button--text {
+    border-color: transparent;
+  }
 }

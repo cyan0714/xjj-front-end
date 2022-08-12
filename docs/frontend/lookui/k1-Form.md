@@ -519,3 +519,24 @@ v-model的值为当前被选中的el-option的 value 属性值
 
 <<< @/docs/.vuepress/documents/form/number-validator.md
 
+## 日期时间选择器
+### 日期和时间点
+
+<date-time-picker-base style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/date-time-picker/base.md
+
+
+### 日期和时间范围
+
+<date-time-picker-range style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/date-time-picker/range.md
+
+
+### 默认的起始与结束时刻
+
+<date-time-picker-default-start-end style="margin-top:24px" />
+
+<<< @/docs/.vuepress/documents/date-time-picker/default-start-end.md
+
