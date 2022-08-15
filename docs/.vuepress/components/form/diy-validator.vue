@@ -1,36 +1,40 @@
 <template>
-  <el-form
-    class="lookui-form"
-    :model="ruleForm"
-    status-icon
-    :rules="rules"
-    ref="ruleForm"
-    label-width="100px"
-  >
-    <el-form-item label="密码" prop="pass">
-      <el-input
-        class="lookui-input"
-        type="password"
-        v-model="ruleForm.pass"
-        autocomplete="off"
-      ></el-input>
-    </el-form-item>
-    <el-form-item label="确认密码" prop="checkPass">
-      <el-input
-        class="lookui-input"
-        type="password"
-        v-model="ruleForm.checkPass"
-        autocomplete="off"
-      ></el-input>
-    </el-form-item>
-    <el-form-item label="年龄" prop="age">
-      <el-input class="lookui-input" v-model.number="ruleForm.age"></el-input>
-    </el-form-item>
-    <el-form-item>
-      <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
-      <el-button @click="resetForm('ruleForm')">重置</el-button>
-    </el-form-item>
-  </el-form>
+  <div class="container">
+    <p>这个例子中展示了如何使用自定义验证规则来完成密码的二次验证。</p>
+    <el-form
+      class="lookui-form"
+      :model="ruleForm"
+      status-icon
+      :rules="rules"
+      ref="ruleForm"
+      label-width="100px"
+    >
+      <el-form-item label="密码" prop="pass">
+        <el-input
+          class="lookui-input"
+          type="password"
+          v-model="ruleForm.pass"
+          autocomplete="off"
+        ></el-input>
+      </el-form-item>
+      <el-form-item label="确认密码" prop="checkPass">
+        <el-input
+          class="lookui-input"
+          type="password"
+          v-model="ruleForm.checkPass"
+          autocomplete="off"
+        ></el-input>
+      </el-form-item>
+      <el-form-item label="年龄" prop="age">
+        <el-input class="lookui-input" v-model.number="ruleForm.age"></el-input>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="submitForm('ruleForm')">提交</el-button>
+        <el-button @click="resetForm('ruleForm')">重置</el-button>
+      </el-form-item>
+    </el-form>
+    <p>本例还使用 status-icon 属性为输入框添加了表示校验结果的反馈图标。</p>
+  </div>
 </template>
 
 <script>

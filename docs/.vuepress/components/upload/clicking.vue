@@ -1,20 +1,23 @@
 <template>
-  <el-upload
-    class="lookui-upload"
-    action="https://jsonplaceholder.typicode.com/posts/"
-    :on-preview="handlePreview"
-    :on-remove="handleRemove"
-    :before-remove="beforeRemove"
-    multiple
-    :limit="3"
-    :on-exceed="handleExceed"
-    :file-list="fileList"
-  >
-    <el-button size="small" type="primary">点击上传</el-button>
-    <div slot="tip" class="el-upload__tip">
-      只能上传jpg/png文件，且不超过500kb
-    </div>
-  </el-upload>
+  <div class="container">
+    <el-upload
+      class="lookui-upload"
+      action="https://jsonplaceholder.typicode.com/posts/"
+      :on-preview="handlePreview"
+      :on-remove="handleRemove"
+      :before-remove="beforeRemove"
+      multiple
+      :limit="3"
+      :on-exceed="handleExceed"
+      :file-list="fileList"
+    >
+      <el-button size="small" type="primary">点击上传</el-button>
+      <div slot="tip" class="el-upload__tip">
+        只能上传jpg/png文件，且不超过500kb
+      </div>
+    </el-upload>
+    <p>通过 slot 你可以传入自定义的上传按钮类型和文字提示。可通过设置 limit 和 on-exceed 来限制上传文件的个数和定义超出限制时的行为。可通过设置 before-remove 来阻止文件移除操作。</p>
+  </div>
 </template>
 
 <script>

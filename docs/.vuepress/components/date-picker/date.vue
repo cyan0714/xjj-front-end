@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <p>以「日」为基本单位，基础的日期选择控件</p>
     <div class="block">
       <span class="demonstration">默认</span>
       <el-date-picker

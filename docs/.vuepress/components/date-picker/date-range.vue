@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <p>可在一个选择器中便捷地选择一个时间范围</p>
     <div class="block">
       <span class="demonstration">默认</span>
       <el-date-picker

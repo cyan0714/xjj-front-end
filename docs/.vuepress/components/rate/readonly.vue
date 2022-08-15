@@ -1,12 +1,15 @@
 <template>
-  <el-rate
-    v-model="value"
-    disabled
-    show-score
-    text-color="#ff9900"
-    score-template="{value}"
-  >
-  </el-rate>
+  <div class="container">
+    <p>只读的评分用来展示分数，允许出现半星</p>
+    <el-rate
+      v-model="value"
+      disabled
+      show-score
+      text-color="#ff9900"
+      score-template="{value}"
+    >
+    </el-rate>
+  </div>
 </template>
 
 <script>

@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <p>使用 scoped-slot 去设置缩略图模版。</p>
     <el-upload class="lookui-upload" action="#" list-type="picture-card" :auto-upload="false">
       <i slot="default" class="el-icon-plus"></i>
       <div slot="file" slot-scope="{ file }">

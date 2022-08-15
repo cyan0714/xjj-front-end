@@ -36,6 +36,7 @@
       >
       </el-date-picker>
     </div>
+    <p>通过设置 type 属性为 datetime，即可在同一个选择器里同时进行日期和时间的选择。快捷选项的使用方法与 Date Picker 相同。</p>
   </div>
 </template>
 

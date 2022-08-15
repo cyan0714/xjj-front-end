@@ -1,11 +1,14 @@
 <template>
-  <el-rate
-    v-model="value"
-    :icon-classes="iconClasses"
-    void-icon-class="icon-rate-face-off"
-    :colors="['#99A9BF', '#F7BA2A', '#FF9900']"
-  >
-  </el-rate>
+  <div class="container">
+    <p>当有多层评价时，可以用不同类型的 icon 区分评分层级</p>
+    <el-rate
+      v-model="value"
+      :icon-classes="iconClasses"
+      void-icon-class="icon-rate-face-off"
+      :colors="['#99A9BF', '#F7BA2A', '#FF9900']"
+    >
+    </el-rate>
+  </div>
 </template>
 
 <script>

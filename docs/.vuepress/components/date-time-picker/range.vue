@@ -28,6 +28,7 @@
       >
       </el-date-picker>
     </div>
+    <p>设置 type 为 datetimerange 即可选择日期和时间范围</p>
   </div>
 </template>
 

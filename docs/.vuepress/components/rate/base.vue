@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <p>评分默认被分为三个等级，可以利用颜色数组对分数及情感倾向进行分级（默认情况下不区分颜色）。三个等级所对应的颜色用colors属性设置，而它们对应的两个阈值则通过 low-threshold 和 high-threshold 设定。你也可以通过传入颜色对象来自定义分段，键名为分段的界限值，键值为对应的颜色。</p>
     <div class="block">
       <span class="demonstration">默认不区分颜色</span>
       <el-rate v-model="value1"></el-rate>

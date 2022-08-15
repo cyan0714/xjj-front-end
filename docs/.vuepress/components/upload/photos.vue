@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <p>使用 list-type 属性来设置文件列表的样式。</p>
     <el-upload
       class="lookui-upload"
       action="https://jsonplaceholder.typicode.com/posts/"
