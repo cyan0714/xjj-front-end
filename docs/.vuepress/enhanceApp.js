@@ -23,6 +23,8 @@ import './styles/upload/index.scss'
 import './styles/transfer/index.scss'
 import './styles/form/index.scss'
 
+import './styles/bread-crumb/index.scss'
+
 export default ({ Vue, options, router }) => {
   Vue.use(Element);
   Vue.use(VueAwesomeSwiper,{
