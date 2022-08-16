@@ -8,6 +8,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 // import style
 import 'swiper/css/swiper.css'
 import './styles/documents/index.scss'
+import './styles/button/index.scss'
 import './styles/radio/index.scss'
 import './styles/checkbox/index.scss'
 import './styles/input/index.scss'
@@ -24,6 +25,7 @@ import './styles/transfer/index.scss'
 import './styles/form/index.scss'
 
 import './styles/bread-crumb/index.scss'
+import './styles/dropdown/index.scss'
 
 export default ({ Vue, options, router }) => {
   Vue.use(Element);

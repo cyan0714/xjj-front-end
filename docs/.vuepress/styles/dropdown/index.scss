@@ -1,0 +1,14 @@
+.lookui-dropdown-menu {
+  .el-dropdown-menu__item:focus, .el-dropdown-menu__item:not(.is-disabled):hover {
+    background-color: #f1f5fd;
+    color: #666;
+  }
+}
+
+.lookui-dropdown {
+  .el-button--primary {
+    color: #FFF;
+    background-color: #506eda;
+    border-color: #506eda;
+  }
+}
