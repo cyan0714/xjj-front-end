@@ -1,0 +1,50 @@
+.lookui-submenu {
+  &.el-submenu {
+    &.is-opened {
+      .el-submenu__title {
+        font-weight: bold !important;
+        color:#333 !important;
+      }
+    }
+  }
+  .el-submenu__title:hover {
+    background-color: #e4e8fb !important;
+    color: #506eda !important;
+    i {
+      color: #506eda;
+    }
+  }
+}
+
+.lookui-menu-item {
+  &:hover {
+    background-color: #e4e8fb !important;
+    color: #506eda !important;
+    i {
+      color: #506eda;
+    }
+  }
+}
+
+.lookui-submenu-theme {
+  &.el-submenu {
+    &.is-opened {
+      .el-submenu__title {
+        font-weight: bold !important;
+        color: #fff !important;
+        i {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.lookui-menu-item-theme {
+  &:hover {
+    color: #fff !important;
+    i {
+      color: #fff !important;
+    }
+  }
+}
