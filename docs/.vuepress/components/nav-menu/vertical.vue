@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <el-row class="tac">
-      <el-col :span="12">
+      <el-col :span="10">
         <h5>默认颜色</h5>
         <el-menu
           default-active="2"
@@ -30,7 +30,7 @@
           </el-menu-item>
         </el-menu>
       </el-col>
-      <el-col :span="12">
+      <el-col :span="10">
         <h5>自定义颜色</h5>
         <el-menu
           default-active="2"
