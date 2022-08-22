@@ -27,6 +27,8 @@ import './styles/form/index.scss'
 import './styles/bread-crumb/index.scss'
 import './styles/dropdown/index.scss'
 import './styles/nav-menu/index.scss'
+import './styles/page-header/index.scss'
+import './styles/tabs/index.scss'
 
 export default ({ Vue, options, router }) => {
   Vue.use(Element);

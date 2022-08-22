@@ -89,3 +89,58 @@ sidebarDepth: 3
 
   <<< @/docs/.vuepress/documents/nav-menu/collapse.md
 </details>
+
+## PageHeader 页头
+
+### 基础用法
+
+<page-header-base style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/page-header/base.md
+</details>
+
+### 辅助文字
+
+<page-header-auxiliary-text style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/page-header/auxiliary-text.md
+</details>
+
+
+## Tabs 标签页
+
+### 基础用法
+
+<tabs-base style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/tabs/base.md
+</details>
+
+### 选项卡样式
+
+<tabs-card-style style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/tabs/card-style.md
+</details>
+
+### 卡片化
+
+<tabs-cardify style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/tabs/cardify.md
+</details>
