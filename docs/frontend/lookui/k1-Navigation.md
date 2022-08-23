@@ -144,3 +144,33 @@ sidebarDepth: 3
 
   <<< @/docs/.vuepress/documents/tabs/cardify.md
 </details>
+
+### 位置
+
+<tabs-position style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/tabs/position.md
+</details>
+
+### 动态增减标签页
+
+<tabs-dynamic-tab style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/tabs/dynamic-tab.md
+</details>
+
+### 自定义增加标签页触发器
+
+<tabs-diy-tab-trigger style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/tabs/diy-tab-trigger.md
+</details>
