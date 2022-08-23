@@ -174,3 +174,74 @@ sidebarDepth: 3
 
   <<< @/docs/.vuepress/documents/tabs/diy-tab-trigger.md
 </details>
+
+## Steps 步骤条
+### 基础用法
+
+<steps-base style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/steps/base.md
+</details>
+
+### 含状态步骤条
+
+<steps-has-state style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/steps/has-state.md
+</details>
+
+### 有描述的步骤条
+
+<steps-has-desc style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/steps/has-desc.md
+</details>
+
+### 居中的步骤条
+
+<steps-center style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/steps/center.md
+</details>
+
+### 带图标的步骤条
+
+<steps-has-icon style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/steps/has-icon.md
+</details>
+
+### 竖式步骤条
+
+<steps-vertical style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/steps/vertical.md
+</details>
+
+### 简洁风格的步骤条
+
+<steps-concise-style style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/steps/concise-style.md
+</details>

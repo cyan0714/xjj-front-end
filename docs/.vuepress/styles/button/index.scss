@@ -1,5 +1,6 @@
 .lookui-button {
-  &.el-button--primary {
+  &.el-button--primary,
+  &.el-button--default {
     color: #FFF;
     background-color: #506eda;
     border-color: #506eda;

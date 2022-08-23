@@ -1,0 +1,51 @@
+.lookui-steps {
+  .el-step__head.is-process {
+    border-color: #506eda;
+    .el-step__icon {
+      &.is-text {
+        background-color: #506eda;
+        color: #fff;
+        .el-step__icon-inner {
+          font-weight: normal;
+        }
+      }
+      &.is-icon {
+        background-color: rgba(255, 255, 255, 0);
+        color: #506eda;
+        .el-step__icon-inner {
+          font-weight: normal;
+        }
+      }
+    }
+  }
+  .el-step__head.is-success {
+    color: #506eda;
+    border-color: #506eda;
+    .el-step__line {
+      background-color: #506eda;
+    }
+  }
+  .el-step__head.is-finish {
+    color: #506eda;
+    border-color: #506eda;
+    .el-step__line {
+      background-color: #506eda;
+    }
+  }
+
+  .el-step__main {
+    .el-step__title.is-process {
+      font-weight: 400;
+      color: #000;
+    }
+    .el-step__title.is-success {
+      color: #666;
+    }
+    .el-step__description,
+    .el-step__title {
+      &.is-finish {
+        color: #666;
+      }
+    }
+  }
+}
