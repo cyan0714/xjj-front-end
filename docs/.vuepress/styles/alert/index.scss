@@ -1,0 +1,65 @@
+.lookui-alert {
+  &.el-alert--success {
+    &.is-light {
+      background-color: #def9f1;
+      color: #000;
+      border: 1px solid #8ee1c7;
+    }
+    &.is-dark {
+      background-color: #55bf96;
+    }
+  }
+  &.el-alert--info {
+    &.is-light {
+      background-color: #e4e8fb;
+      color: #000;
+      border: 1px solid #acb7f1;
+    }
+    &.is-dark {
+      background-color: #506eda;
+    }
+  }
+  &.el-alert--warning {
+    &.is-light {
+      background-color: #fff7e5;
+      color: #000;
+      border: 1px solid #fbdda2;
+    }
+    &.is-dark {
+      background-color: #f68d52;
+    }
+  }
+  &.el-alert--error {
+    &.is-light {
+      background-color: #fbeced;
+      color: #000;
+      border: 1px solid #fbbbbb;
+    }
+    &.is-dark {
+      background-color: #ff4d4f;
+    }
+  }
+  .el-icon {
+    &-success {
+      color: #55bf96;
+    }
+    &-info {
+      color: #506eda;
+    }
+    &-warning {
+      color: #f68d52;
+    }
+    &-error {
+      color: #ff4d4f;
+    }
+  }
+  .el-alert__content {
+    .el-alert__title.is-bold {
+      font-weight: normal;
+      font-size: 14px;
+    }
+    .el-alert__description {
+      color: #000;
+    }
+  }
+}

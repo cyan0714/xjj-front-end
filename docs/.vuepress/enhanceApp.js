@@ -9,6 +9,8 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import './styles/documents/index.scss'
 import './styles/button/index.scss'
+
+// 表单
 import './styles/radio/index.scss'
 import './styles/checkbox/index.scss'
 import './styles/input/index.scss'
@@ -24,12 +26,16 @@ import './styles/upload/index.scss'
 import './styles/transfer/index.scss'
 import './styles/form/index.scss'
 
+// 导航
 import './styles/bread-crumb/index.scss'
 import './styles/dropdown/index.scss'
 import './styles/nav-menu/index.scss'
 import './styles/page-header/index.scss'
 import './styles/tabs/index.scss'
 import './styles/steps/index.scss'
+
+// 通知和警告
+import './styles/alert/index.scss'
 
 export default ({ Vue, options, router }) => {
   Vue.use(Element);
