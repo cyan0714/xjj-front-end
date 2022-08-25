@@ -73,3 +73,38 @@ sidebarDepth: 3
 
   <<< @/docs/.vuepress/documents/alert/icon-auxiliary-text.md
 </details>
+
+
+## Loading 加载
+
+### 区域加载
+
+<loading-common style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/loading/common.md
+</details>
+
+### 自定义
+
+<loading-diy style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/loading/diy.md
+</details>
+
+
+## Notification 通知
+### 基本用法
+
+<notification-base style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/notification/base.md
+</details>

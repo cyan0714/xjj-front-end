@@ -36,6 +36,8 @@ import './styles/steps/index.scss'
 
 // 通知和警告
 import './styles/alert/index.scss'
+import './styles/loading/index.scss'
+import './styles/notification/index.scss'
 
 export default ({ Vue, options, router }) => {
   Vue.use(Element);
