@@ -108,3 +108,74 @@ sidebarDepth: 3
 
   <<< @/docs/.vuepress/documents/notification/base.md
 </details>
+
+## MessageBox 弹框
+### 消息提示
+
+<message-box-tips style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/message-box/tips.md
+</details>
+
+### 确认消息
+
+<message-box-confirm style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/message-box/confirm.md
+</details>
+
+### 提交内容
+
+<message-box-commit style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/message-box/commit.md
+</details>
+
+### 自定义
+
+<message-box-diy style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/message-box/diy.md
+</details>
+
+### 使用HTML片段
+
+<message-box-html style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/message-box/html.md
+</details>
+
+### 区分取消与关闭
+
+<message-box-distinguish style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/message-box/distinguish.md
+</details>
+
+### 居中布局
+
+<message-box-center style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/message-box/center.md
+</details>

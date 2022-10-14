@@ -6,3 +6,14 @@
     border-color: #506eda;
   }
 }
+
+.el-button--primary {
+  color: #FFF;
+  background-color: #506eda;
+  border-color: #506eda;
+  &:hover,
+  &:focus {
+    background-color: #506eda;
+    border-color: #506eda;
+  }
+}

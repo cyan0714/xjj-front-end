@@ -38,6 +38,7 @@ import './styles/steps/index.scss'
 import './styles/alert/index.scss'
 import './styles/loading/index.scss'
 import './styles/notification/index.scss'
+import './styles/message-box/index.scss'
 
 export default ({ Vue, options, router }) => {
   Vue.use(Element);

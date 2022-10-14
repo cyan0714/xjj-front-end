@@ -1,0 +1,22 @@
+.lookui-msgbox {
+  .el-message-box__header {
+    border-bottom: 1px solid #d9d9d9;
+    .el-message-box__title {
+      color: #506eda;
+    }
+  }
+  .el-message-box__content {
+    .el-input {
+      input {
+        &:focus {
+          border-color: #506eda;
+        }
+      }
+    }
+  }
+  &.el-message-box--center {
+    .el-message-box__header {
+      border-bottom: none;
+    }  
+  }
+}
