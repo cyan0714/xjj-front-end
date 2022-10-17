@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <el-dropdown class="lookui-dropdown">
-      <el-button class="lookui-button" type="primary">
+      <el-button class="lookui-btn" type="primary">
         更多菜单<i class="el-icon-arrow-down el-icon--right"></i>
       </el-button>
       <el-dropdown-menu class="lookui-dropdown-menu" slot="dropdown">

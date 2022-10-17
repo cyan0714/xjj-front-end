@@ -12,7 +12,6 @@
         <el-button type="primary" @click="dialogTableVisible = false">确 定</el-button>
       </div>
     </el-dialog>
-    <!-- Form -->
     <el-button type="text" @click="dialogFormVisible = true">打开嵌套表单的 Dialog</el-button>
     <el-dialog title="收货地址" custom-class="lookui-dialog" :visible.sync="dialogFormVisible">
       <el-form :model="form">
