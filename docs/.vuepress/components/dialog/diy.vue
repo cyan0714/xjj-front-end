@@ -8,8 +8,8 @@
         <el-table-column property="address" label="地址"></el-table-column>
       </el-table>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogTableVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogTableVisible = false">确 定</el-button>
+        <el-button class="lookui-btn" @click="dialogTableVisible = false">取 消</el-button>
+        <el-button class="lookui-btn" type="primary" @click="dialogTableVisible = false">确 定</el-button>
       </div>
     </el-dialog>
     <el-button type="text" @click="dialogFormVisible = true">打开嵌套表单的 Dialog</el-button>
@@ -26,8 +26,8 @@
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+        <el-button class="lookui-btn" @click="dialogFormVisible = false">取 消</el-button>
+        <el-button class="lookui-btn" type="primary" @click="dialogFormVisible = false">确 定</el-button>
       </div>
     </el-dialog>
   </div>

@@ -2,6 +2,7 @@
 title: Basic
 ---
 
+## Button按钮
 ### 基础用法
 
 <button-base style="margin-top:24px" />
