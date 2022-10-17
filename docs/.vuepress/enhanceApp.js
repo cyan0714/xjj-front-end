@@ -40,6 +40,9 @@ import './styles/loading/index.scss'
 import './styles/notification/index.scss'
 import './styles/message-box/index.scss'
 
+// 其他
+import './styles/dialog/index.scss'
+
 export default ({ Vue, options, router }) => {
   Vue.use(Element);
   Vue.use(VueAwesomeSwiper,{
