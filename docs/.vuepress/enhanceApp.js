@@ -5,6 +5,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 // import 'swiper/swiper-bundle.min.css';
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
+// global Var
+import './styles/index.scss';
+
 // import style
 import 'swiper/css/swiper.css'
 import './styles/documents/index.scss'
@@ -42,6 +45,8 @@ import './styles/message-box/index.scss'
 
 // 其他
 import './styles/dialog/index.scss'
+import './styles/popover/index.scss'
+import './styles/card/index.scss'
 
 export default ({ Vue, options, router }) => {
   Vue.use(Element);

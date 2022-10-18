@@ -17,7 +17,7 @@
       <el-button class="lookui-btn" type="danger" plain>危险按钮</el-button>
     </el-row>
     <el-row style="margin-top:14px">
-      <el-button round>圆角按钮</el-button>
+      <el-button class="lookui-btn" round>圆角按钮</el-button>
       <el-button class="lookui-btn" type="primary" round>主要按钮</el-button>
       <el-button class="lookui-btn" type="success" round>成功按钮</el-button>
       <el-button class="lookui-btn" type="info" round>预警按钮</el-button>

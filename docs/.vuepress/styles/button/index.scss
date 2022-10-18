@@ -258,5 +258,11 @@
         }
       }
     }
+    &--text {
+      color: #506eda;
+      &.is-disabled {
+        color: #bfbfbf;
+      }
+    }
   }
 }

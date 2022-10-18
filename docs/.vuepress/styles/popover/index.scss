@@ -1,0 +1,22 @@
+.lookui-popover {
+  &.el-popover {
+    &--plain {
+      padding: 14px;
+    }
+  }
+  .el-popover__title {
+    border-bottom: 1px solid #d9d9d9;
+    padding-bottom: 14px;
+    color: #506eda;
+  }
+
+  .el-button--text {
+    color: #506eda;
+  }
+
+  .el-button--primary {
+    color: #FFF;
+    background-color: #506eda;
+    border-color: #506eda;
+  }
+}

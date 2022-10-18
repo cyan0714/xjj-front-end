@@ -1,0 +1,33 @@
+.lookui-card {
+  .el-card__header {
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      > span {
+        color: #506eda;
+      }
+    }
+  }
+  .info {
+    padding: 8px 16px;
+    .name {
+      color: #506eda;
+      font-size: 14px;
+    }
+    .description {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+      .txt {
+        color: #666666;
+        font-size: 12px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        margin-right: 10px;
+      }
+    }
+  }
+}
