@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <el-button type="text" @click="dialogTableVisible = true">打开嵌套表格的 Dialog</el-button>
+    <el-button class="lookui-btn" type="text" @click="dialogTableVisible = true">打开嵌套表格的 Dialog</el-button>
     <el-dialog title="收货地址" custom-class="lookui-dialog" :visible.sync="dialogTableVisible">
       <el-table :data="gridData">
         <el-table-column property="date" label="日期" width="150"></el-table-column>
@@ -12,7 +12,7 @@
         <el-button class="lookui-btn" type="primary" @click="dialogTableVisible = false">确 定</el-button>
       </div>
     </el-dialog>
-    <el-button type="text" @click="dialogFormVisible = true">打开嵌套表单的 Dialog</el-button>
+    <el-button class="lookui-btn" type="text" @click="dialogFormVisible = true">打开嵌套表单的 Dialog</el-button>
     <el-dialog title="收货地址" custom-class="lookui-dialog" :visible.sync="dialogFormVisible">
       <el-form :model="form">
         <el-form-item label="活动名称" :label-width="formLabelWidth">

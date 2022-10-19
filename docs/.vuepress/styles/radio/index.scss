@@ -5,7 +5,7 @@
     height: 16px;
   }
   .el-radio__input.is-checked .el-radio__inner {
-    border-color: #506eda;
+    border-color: $--themeColor;
     background-color: #fff;
   }
   .el-radio__input.is-disabled.is-checked .el-radio__inner {
@@ -15,7 +15,7 @@
   .el-radio__inner::after {
     width: 8px;
     height: 8px;
-    background-color: #506eda;
+    background-color: $--themeColor;
   }
   .el-radio__input.is-checked + .el-radio__label {
     color: #666;

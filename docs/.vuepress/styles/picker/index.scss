@@ -1,17 +1,17 @@
 @import '../index.scss';
 .lookui-picker {
   &.el-input.is-active .el-input__inner {
-    border-color: #506eda;
+    border-color: $--themeColor;
   }
   .el-input__inner {
     &:focus {
-      border-color: #506eda;
+      border-color: $--themeColor;
     }
   }
   &.el-range-editor.is-active {
-    border-color: #506eda;
+    border-color: $--themeColor;
     &:hover {
-      border-color: #506eda;
+      border-color: $--themeColor;
     }
   }
 }

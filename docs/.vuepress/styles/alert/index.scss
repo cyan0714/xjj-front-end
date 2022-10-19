@@ -2,56 +2,56 @@
 .lookui-alert {
   &.el-alert--success {
     &.is-light {
-      background-color: #def9f1;
+      background-color: $--green-100;
       color: #000;
-      border: 1px solid #8ee1c7;
+      border: 1px solid $--green-400
     }
     &.is-dark {
-      background-color: #55bf96;
+      background-color: $--green-900;
     }
   }
   &.el-alert--info {
     &.is-light {
-      background-color: #e4e8fb;
+      background-color: $--themeColor-100;
       color: #000;
-      border: 1px solid #acb7f1;
+      border: 1px solid $--themeColor-400;
     }
     &.is-dark {
-      background-color: #506eda;
+      background-color: $--themeColor;
     }
   }
   &.el-alert--warning {
     &.is-light {
-      background-color: #fff7e5;
+      background-color: $--yellow-100;
       color: #000;
-      border: 1px solid #fbdda2;
+      border: 1px solid $--yellow-400;
     }
     &.is-dark {
-      background-color: #f68d52;
+      background-color: $--orange-900;
     }
   }
   &.el-alert--error {
     &.is-light {
-      background-color: #fbeced;
+      background-color: $--red-100;
       color: #000;
-      border: 1px solid #fbbbbb;
+      border: 1px solid $--red-400;
     }
     &.is-dark {
-      background-color: #ff4d4f;
+      background-color: $--red-900;
     }
   }
   .el-icon {
     &-success {
-      color: #55bf96;
+      color: $--green-900;
     }
     &-info {
-      color: #506eda;
+      color: $--themeColor;
     }
     &-warning {
-      color: #f68d52;
+      color: $--orange-900;
     }
     &-error {
-      color: #ff4d4f;
+      color: $--red-900;
     }
   }
   .el-alert__content {

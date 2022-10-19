@@ -26,7 +26,7 @@
   }
   .el-input.is-active .el-input__inner,
   .el-input__inner:focus {
-    border-color: #506eda;
+    border-color: $--themeColor;
   }
   input[type='text'] {
     color: #000;
@@ -36,10 +36,10 @@
   .el-input-number__increase {
     width: 22px;
     &:hover {
-      color: #506eda;
+      color: $--themeColor;
     }
   }
   .el-input-number__increase:hover:not(.is-disabled)~.el-input .el-input__inner:not(.is-disabled) {
-    border-color: #506eda;
+    border-color: $--themeColor;
   }
 }

@@ -1,6 +1,6 @@
 @import '../index.scss';
 .lookui-breadcrumb {
   .el-breadcrumb__inner a:hover, .el-breadcrumb__inner.is-link:hover {
-    color: #506eda;
+    color: $--themeColor;
   }
 }

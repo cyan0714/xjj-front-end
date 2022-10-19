@@ -47,6 +47,7 @@ import './styles/message-box/index.scss'
 import './styles/dialog/index.scss'
 import './styles/popover/index.scss'
 import './styles/card/index.scss'
+import './styles/calendar/index.scss'
 
 export default ({ Vue, options, router }) => {
   Vue.use(Element);

@@ -1,5 +1,5 @@
 <template>
-  <el-button plain @click="open"> 点击弹出通知 </el-button>
+  <el-button class="lookui-btn" plain @click="open"> 点击弹出通知 </el-button>
 </template>
 
 <script>

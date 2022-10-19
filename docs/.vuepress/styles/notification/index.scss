@@ -1,7 +1,7 @@
 @import '../index.scss';
 .lookui-notification {
   .el-notification__title {
-    color: #506eda;
+    color: $--themeColor;
     font-weight: normal;
   }
   h2 {

@@ -1,10 +1,10 @@
 @import '../index.scss';
 .lookui-select {
   .el-input.is-focus .el-input__inner {
-    border: 1px solid #506eda;
+    border: 1px solid $--themeColor;
   }
   .el-input__inner:focus {
-    border-color: #506eda;
+    border-color: $--themeColor;
   }
   .el-select {
     width: 100%;
@@ -22,18 +22,18 @@
 
 .lookui-select-dropdown .el-select-dropdown__item.hover {
   width: 100%;
-  background-color: #e4e8fb;
+  background-color: $--themeColor-100;
 }
 .lookui-select-dropdown .el-select-dropdown__item,
 .lookui-select-dropdown .el-select-dropdown__item.selected {
   color: #666666;
   font-weight: normal;
   &.selected {
-    color: #506eda;
+    color: $--themeColor;
   }
 }
 .lookui-select-dropdown .property-item input:focus {
-  border: 1px solid #506eda;
+  border: 1px solid $--themeColor;
 }
 .lookui-select-dropdown .row-panel.select-panel {
   background: none;

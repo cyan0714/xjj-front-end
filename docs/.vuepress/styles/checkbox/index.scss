@@ -1,13 +1,13 @@
 @import '../index.scss';
 .lookui-checkbox {
   .el-checkbox__input.is-checked+.el-checkbox__label {
-    color: #506eda;
+    color: $--themeColor;
     padding-left: 8px;
   }
   .el-checkbox__input.is-checked .el-checkbox__inner,
   .el-checkbox__input.is-indeterminate .el-checkbox__inner {
-    background-color: #506eda;
-    border-color: #506eda;
+    background-color: $--themeColor;
+    border-color: $--themeColor;
     width: 16px;
     height: 16px;
   }

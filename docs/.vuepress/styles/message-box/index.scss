@@ -3,14 +3,14 @@
   .el-message-box__header {
     border-bottom: 1px solid #d9d9d9;
     .el-message-box__title {
-      color: #506eda;
+      color: $--themeColor;
     }
   }
   .el-message-box__content {
     .el-input {
       input {
         &:focus {
-          border-color: #506eda;
+          border-color: $--themeColor;
         }
       }
     }
@@ -18,6 +18,26 @@
   &.el-message-box--center {
     .el-message-box__header {
       border-bottom: none;
-    }  
+    }
+  }
+
+  .el-button--default {
+    color: #666;
+    &:hover {
+      color: $--themeColor;
+      background-color: #f1f4fa;
+      border-color: $--themeColor-100;
+    }
+  }
+
+  .el-button--primary {
+    color: #fff;
+    background-color: $--themeColor;
+    border-color: $--themeColor;
+    &:hover {
+      color: #fff;
+      background-color: #8493e9;
+      border-color: #8493e9;
+    }
   }
 }

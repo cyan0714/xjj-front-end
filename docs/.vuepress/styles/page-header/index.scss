@@ -6,7 +6,7 @@
     background-color: #fff;
   }
   &.theme-bg {
-    background-color: #506eda;
+    background-color: $--themeColor;
     color: #fff;
   }
   .right {
@@ -24,13 +24,13 @@
 }
 
 .lookui-page-header {
-  background-color: #506eda;
+  background-color: $--themeColor;
   padding: 14px;
   &.white-bg {
     background-color: #fff;
   }
   &.theme-bg {
-    background-color: #506eda;
+    background-color: $--themeColor;
     color: #fff;
     .el-page-header__content {
       color: #fff;

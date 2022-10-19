@@ -1,10 +1,10 @@
 @import '../index.scss';
 .lookui-steps {
   .el-step__head.is-process {
-    border-color: #506eda;
+    border-color: $--themeColor;
     .el-step__icon {
       &.is-text {
-        background-color: #506eda;
+        background-color: $--themeColor;
         color: #fff;
         .el-step__icon-inner {
           font-weight: normal;
@@ -12,7 +12,7 @@
       }
       &.is-icon {
         background-color: rgba(255, 255, 255, 0);
-        color: #506eda;
+        color: $--themeColor;
         .el-step__icon-inner {
           font-weight: normal;
         }
@@ -20,17 +20,17 @@
     }
   }
   .el-step__head.is-success {
-    color: #506eda;
-    border-color: #506eda;
+    color: $--themeColor;
+    border-color: $--themeColor;
     .el-step__line {
-      background-color: #506eda;
+      background-color: $--themeColor;
     }
   }
   .el-step__head.is-finish {
-    color: #506eda;
-    border-color: #506eda;
+    color: $--themeColor;
+    border-color: $--themeColor;
     .el-step__line {
-      background-color: #506eda;
+      background-color: $--themeColor;
     }
   }
 

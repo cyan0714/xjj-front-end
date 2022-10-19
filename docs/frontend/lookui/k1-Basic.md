@@ -23,3 +23,12 @@ title: Basic
   <<< @/docs/.vuepress/documents/button/text-btn.md
 </details>
 
+### 禁用状态
+
+<button-disabled style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/button/disabled.md
+</details>

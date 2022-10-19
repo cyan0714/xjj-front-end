@@ -2,7 +2,7 @@
 .lookui-time-popper {
   .time-select-item {
     &:hover {
-      background-color: #e4e8fb;
+      background-color: $--themeColor-100;
       font-weight: normal;
     }
     &.selected:not(.disabled) {
@@ -44,13 +44,13 @@
     border-color: #4364bf;
   }
   .el-time-panel__btn.confirm {
-    color: #506eda;
+    color: $--themeColor;
   }
   button:hover {
     background: none;
   }
   .el-time-spinner__item:hover:not(.disabled):not(.active) {
-    background-color: #e4e8fb;
+    background-color: $--themeColor-100;
   }
   .el-button--text {
     border-color: transparent;

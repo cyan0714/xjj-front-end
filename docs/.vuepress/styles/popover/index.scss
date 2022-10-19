@@ -8,16 +8,16 @@
   .el-popover__title {
     border-bottom: 1px solid #d9d9d9;
     padding-bottom: 14px;
-    color: #506eda;
+    color: $--themeColor;
   }
 
   .el-button--text {
-    color: #506eda;
+    color: $--themeColor;
   }
 
   .el-button--primary {
     color: #FFF;
-    background-color: #506eda;
-    border-color: #506eda;
+    background-color: $--themeColor;
+    border-color: $--themeColor;
   }
 }

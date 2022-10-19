@@ -1,0 +1,22 @@
+@import '../index.scss';
+
+.lookui-calendar {
+  .el-calendar-table td {
+    &.is-selected {
+      background-color: $--themeColor;
+      color: #fff;
+    }
+  }
+  .el-calendar-table .el-calendar-day:hover {
+    background-color: $--themeColor;
+    color: #fff;
+  }
+  .el-button {
+    &:hover,
+    &:focus {
+      background-color: $--themeColor-100;
+      border-color: $--themeColor-400;
+      color: $--themeColor;
+    }
+  }
+}

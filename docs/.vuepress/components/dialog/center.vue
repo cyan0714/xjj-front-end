@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <el-button type="text" @click="centerDialogVisible = true">点击打开 Dialog</el-button>
+    <el-button class="lookui-btn" type="text" @click="centerDialogVisible = true">点击打开 Dialog</el-button>
     <el-dialog title="提示" custom-class="lookui-dialog" :visible.sync="centerDialogVisible" width="30%" center>
       <span>需要注意的是内容是默认不居中的</span>
       <span slot="footer" class="dialog-footer">

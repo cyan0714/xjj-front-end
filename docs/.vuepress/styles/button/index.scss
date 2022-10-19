@@ -1,39 +1,20 @@
 @import '../index.scss';
-// .lookui-button {
-//   &.el-button--primary,
-//   &.el-button--default {
-//     color: #FFF;
-//     background-color: #506eda;
-//     border-color: #506eda;
-//   }
-// }
-
-// .el-button--primary {
-//   color: #FFF;
-//   background-color: #506eda;
-//   border-color: #506eda;
-//   &:hover,
-//   &:focus {
-//     background-color: #506eda;
-//     border-color: #506eda;
-//   }
-// }
 
 .lookui-btn {
   &.el-button {
     &--default {
       color: #666;
-      // background-color: #506eda;
-      // border-color: #506eda;
+      // background-color: $--themeColor;
+      // border-color: $--themeColor;
       &:hover {
-        color: #506eda;
+        color: $--themeColor;
         background-color: #f1f4fa;
-        border-color: #e4e8fb;
+        border-color: $--themeColor-100;
       }
       &:focus {
-        color: #506eda;
+        color: $--themeColor;
         background-color: #f1f4fa;
-        border-color: #8493e9;
+        border-color: $--themeColor-700;
       }
       &.is-disabled {
         color: #bfbfbf;
@@ -43,14 +24,14 @@
       &.is-plain {
         color: #666;
         &:hover {
-          color: #506eda;
+          color: $--themeColor;
           background-color: #f1f4fa;
-          border-color: #e4e8fb;
+          border-color: $--themeColor-100;
         }
         &:focus {
-          color: #506eda;
+          color: $--themeColor;
           background-color: #f1f4fa;
-          border-color: #8493e9;
+          border-color: $--themeColor-700;
         }
         &.is-disabled {
           color: #bfbfbf;
@@ -61,12 +42,12 @@
     }
     &--primary {
       color: #fff;
-      background-color: #506eda;
-      border-color: #506eda;
+      background-color: $--themeColor;
+      border-color: $--themeColor;
       &:hover {
         color: #fff;
-        background-color: #8493e9;
-        border-color: #8493e9;
+        background-color: $--themeColor-700;
+        border-color: $--themeColor-700;
       }
       &:focus {
         color: #fff;
@@ -75,17 +56,17 @@
       }
       &.is-disabled {
         color: #fff;
-        background-color: #acb7f1;
-        border-color: #acb7f1;
+        background-color: $--themeColor-400;
+        border-color: $--themeColor-400;
       }
       &.is-plain {
-        color: #506eda;
-        background-color: #e4e8fb;
-        border-color: #acb7f1;
+        color: $--themeColor;
+        background-color: $--themeColor-100;
+        border-color: $--themeColor-400;
         &:hover {
           color: #fff;
-          background-color: #506eda;
-          border-color: #506eda;
+          background-color: $--themeColor;
+          border-color: $--themeColor;
         }
         &:focus {
           color: #fff;
@@ -93,20 +74,20 @@
           border-color: #3f57ae;
         }
         &.is-disabled {
-          color: #acb7f1;
-          background-color: #e4e8fb;
-          border-color: #acb7f1;
+          color: $--themeColor-400;
+          background-color: $--themeColor-100;
+          border-color: $--themeColor-400;
         }
       }
     }
     &--success {
       color: #fff;
-      background-color: #55bf96;
-      border-color: #55bf96;
+      background-color: $--green-900;
+      border-color: $--green-900;
       &:hover {
         color: #fff;
-        background-color: #6fcfaa;
-        border-color: #6fcfaa;
+        background-color: $--green-700;
+        border-color: $--green-700;
       }
       &:focus {
         color: #fff;
@@ -115,17 +96,17 @@
       }
       &.is-disabled {
         color: #fff;
-        background-color: #8ee1c7;
-        border-color: #8ee1c7;
+        background-color: $--green-400;
+        border-color: $--green-400;
       }
       &.is-plain {
-        color: #55bf96;
-        background-color: #def9f1;
-        border-color: #8ee1c7;
+        color: $--green-900;
+        background-color: $--green-100;
+        border-color: $--green-400;
         &:hover {
           color: #fff;
-          background-color: #55bf96;
-          border-color: #55bf96;
+          background-color: $--green-900;
+          border-color: $--green-900;
         }
         &:focus {
           color: #fff;
@@ -133,20 +114,20 @@
           border-color: #5ba88a;
         }
         &.is-disabled {
-          color: #8ee1c7;
-          background-color: #def9f1;
-          border-color: #8ee1c7;
+          color: $--green-400;
+          background-color: $--green-100;
+          border-color: $--green-400;
         }
       }
     }
     &--info {
       color: #6b5400;
-      background-color: #ffc800;
-      border-color: #ffc800;
+      background-color: $--yellow-900;
+      border-color: $--yellow-900;
       &:hover {
         color: #6b5400;
-        background-color: #f5d087;
-        border-color: #f5d087;
+        background-color: $--yellow-700;
+        border-color: $--yellow-700;
       }
       &:focus {
         color: #6b5400;
@@ -155,17 +136,17 @@
       }
       &.is-disabled {
         color: #fff;
-        background-color: #fbdda2;
-        border-color: #fbdda2;
+        background-color: $--yellow-400;
+        border-color: $--yellow-400;
       }
       &.is-plain {
         color: #6b5400;
-        background-color: #fff7e5;
-        border-color: #fbdda2;
+        background-color: $--yellow-100;
+        border-color: $--yellow-400;
         &:hover {
           color: #6b5400;
-          background-color: #ffc800;
-          border-color: #ffc800;
+          background-color: $--yellow-900;
+          border-color: $--yellow-900;
         }
         &:focus {
           color: #6b5400;
@@ -173,20 +154,20 @@
           border-color: #deb148;
         }
         &.is-disabled {
-          color: #fbdda2;
-          background-color: #fff7e5;
-          border-color: #fbdda2;
+          color: $--yellow-400;
+          background-color: $--yellow-100;
+          border-color: $--yellow-400;
         }
       }
     }
     &--warning {
       color: #fff;
-      background-color: #f68d52;
-      border-color: #f68d52;
+      background-color: $--orange-900;
+      border-color: $--orange-900;
       &:hover {
         color: #fff;
-        background-color: #f8a779;
-        border-color: #f8a779;
+        background-color: $--orange-700;
+        border-color: $--orange-700;
       }
       &:focus {
         color: #fff;
@@ -195,17 +176,17 @@
       }
       &.is-disabled {
         color: #fff;
-        background-color: #fbc2a2;
-        border-color: #fbc2a2;
+        background-color: $--orange-400;
+        border-color: $--orange-400;
       }
       &.is-plain {
-        color: #f68d52;
-        background-color: #ffeee5;
-        border-color: #fbc2a2;
+        color: $--orange-900;
+        background-color: $--orange-100;
+        border-color: $--orange-400;
         &:hover {
           color: #fff;
-          background-color: #f68d52;
-          border-color: #f68d52;
+          background-color: $--orange-900;
+          border-color: $--orange-900;
         }
         &:focus {
           color: #fff;
@@ -213,20 +194,20 @@
           border-color: #d4733d;
         }
         &.is-disabled {
-          color: #fbc2a2;
-          background-color: #ffeee5;
-          border-color: #fbc2a2;
+          color: $--orange-400;
+          background-color: $--orange-100;
+          border-color: $--orange-400;
         }
       }
     }
     &--danger {
       color: #fff;
-      background-color: #ff4d4f;
-      border-color: #ff4d4f;
+      background-color: $--red-900;
+      border-color: $--red-900;
       &:hover {
         color: #fff;
-        background-color: #fe8989;
-        border-color: #fe8989;
+        background-color: $--red-700;
+        border-color: $--red-700;
       }
       &:focus {
         color: #fff;
@@ -235,17 +216,17 @@
       }
       &.is-disabled {
         color: #fff;
-        background-color: #fbbbbb;
-        border-color: #fbbbbb;
+        background-color: $--red-400;
+        border-color: $--red-400;
       }
       &.is-plain {
-        color: #ff4d4f;
-        background-color: #fbeced;
-        border-color: #fbbbbb;
+        color: $--red-900;
+        background-color: $--red-100;
+        border-color: $--red-400;
         &:hover {
           color: #fff;
-          background-color: #ff4d4f;
-          border-color: #ff4d4f;
+          background-color: $--red-900;
+          border-color: $--red-900;
         }
         &:focus {
           color: #fff;
@@ -253,14 +234,14 @@
           border-color: #d2383a;
         }
         &.is-disabled {
-          color: #fbbbbb;
-          background-color: #fbeced;
-          border-color: #fbbbbb;
+          color: $--red-400;
+          background-color: $--red-100;
+          border-color: $--red-400;
         }
       }
     }
     &--text {
-      color: #506eda;
+      color: $--themeColor;
       &.is-disabled {
         color: #bfbfbf;
       }

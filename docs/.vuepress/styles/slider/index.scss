@@ -1,9 +1,9 @@
 @import '../index.scss';
 .lookui-slider {
   .el-slider__bar {
-    background-color: #506eda;
+    background-color: $--themeColor;
   }
   .el-slider__button {
-    border: 2px solid #506eda;
+    border: 2px solid $--themeColor;
   }
 }
