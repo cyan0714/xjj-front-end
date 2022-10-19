@@ -5,7 +5,7 @@ const componentName = process.argv[2]
 const componentSubName = process.argv[3]
 const titleText = process.argv[4]
 
-const targetPath = path.resolve(__dirname, '../frontend/lookui/k1-Navigation.md')
+const targetPath = path.resolve(__dirname, '../frontend/lookui/k1-Others.md')
 
 const docText = `${fs.readFileSync(targetPath)}
 ### ${titleText}${'\n'}

@@ -1,4 +1,4 @@
-// 自动添加 component、style
+// automatically generate component、style
 
 if (!process.argv[2]) {
   console.error('[组件名]必填 - Please enter new component name')
@@ -43,8 +43,8 @@ Files.forEach(file => {
 });
 
 // 创建 style
-Styles.forEach(file => {
-  fileSave(path.join(stylesPath, file.filename))
-    .write(file.content, 'utf8')
-    .end('\n');
-});
+// Styles.forEach(file => {
+//   fileSave(path.join(stylesPath, file.filename))
+//     .write(file.content, 'utf8')
+//     .end('\n');
+// });

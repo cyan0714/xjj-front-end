@@ -8,7 +8,10 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "cname": "bash cname.sh",
-    "algolia": "bash algolia.sh"
+    "algolia": "bash algolia.sh",
+    "new": "node docs/scripts/new.js",
+    "copy": "node docs/scripts/copy.js",
+    "addTitle": "node docs/scripts/addTitle.js"
   },
   "repository": {
     "type": "git",

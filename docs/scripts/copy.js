@@ -10,7 +10,7 @@ const targetPath = path.join(__dirname, `../.vuepress/documents/${dirName}`)
 if (!fs.existsSync(targetPath)) {
   fs.mkdirSync(targetPath);
 } else {
-  console.log(`the ${dirName} dir had existed!`);
+  console.log(`the ${dirName} dir had existed! copying...`);
 }
 
 const files = fs.readdirSync(sourcePath)
