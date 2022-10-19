@@ -13,6 +13,9 @@ import 'swiper/css/swiper.css'
 import './styles/documents/index.scss'
 import './styles/button/index.scss'
 
+// 表格
+import './styles/table/index.scss'
+
 // 表单
 import './styles/radio/index.scss'
 import './styles/checkbox/index.scss'

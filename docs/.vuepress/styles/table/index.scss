@@ -1,0 +1,272 @@
+.lookui-table {
+  font-family: Helvetica CE;
+  &::before {
+    display: none;
+  }
+  .el-table__header-wrapper {
+    .el-table__header {
+      .is-leaf {
+        border-bottom: 2px solid #506eda;
+      }
+      .el-table__cell {
+        font-weight: 700;
+        color: #333333;
+        font-size: 14px;
+        padding: 14px 0;
+        background-color: #f1f4fa;
+        border-radius: 4px 4px 0px 0px;
+        .cell {
+          line-height: 24px;
+          .caret-wrapper {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            .descending {
+              border-top-color: #506eda;
+            }
+          }
+        }
+      }
+    }
+  }
+  .el-table__body-wrapper {
+    .el-table__body {
+      tr {
+        &:hover td {
+          &.el-table__cell {
+            background-color: #f1f4fa;
+          }
+        }
+      }
+      .el-table__cell {
+        padding: 14px 0;
+
+        .cell {
+          color: #666;
+          .lookui-table-status {
+            position: relative;
+            box-sizing: border-box;
+            padding-left: 14px;
+            &::before {
+              content: '';
+              width: 6px;
+              height: 6px;
+              border-radius: 50%;
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+              background-color: currentColor;
+            }
+          }
+          .lookui-table-option {
+            .el-button {
+              padding: 0;
+              &:hover {
+                opacity: 0.65;
+              }
+            }
+            .el-button + .el-button {
+              margin-left: 16px;
+              position: relative;
+              &::after {
+                content: '';
+                height: 80%;
+                width: 1px;
+                background-color: #d9d9d9;
+                position: absolute;
+                top: 50%;
+                left: -9px;
+                transform: translateY(-50%);
+              }
+            }
+          }
+          .lookui-status__primary {
+            color: #506eda;
+          }
+          .lookui-status__warning {
+            color: #f68d52;
+          }
+          .lookui-status__danger {
+            color: #ff4d4f;
+          }
+          .lookui-status__success {
+            color: #55bf96;
+          }
+          .lookui-status__process {
+            color: #43bcff;
+          }
+          .lookui-status__info {
+            color: #000000a6;
+          }
+        }
+      }
+      .el-table__row {
+        &.lookui-table-status__primary {
+          background-color: #e1e7ff;
+        }
+        &.lookui-table-status__warning {
+          background-color: #ffede2;
+        }
+        &.lookui-table-status__danger {
+          background-color: #ffe1e1;
+        }
+        &.lookui-table-status__success {
+          background-color: #def9f1;
+        }
+        &.lookui-table-status__process {
+          background-color: #e4f5ff;
+        }
+        &.lookui-table-status__info {
+          background-color: #fff9f9;
+        }
+      }
+      .el-table__row--striped {
+        .el-table__cell {
+          background-color: #d3d9f91a;
+        }
+      }
+    }
+  }
+  .el-table__fixed,
+  .el-table__fixed-right {
+    .el-table__fixed-header-wrapper {
+      .el-table__header {
+        .el-table__cell {
+          font-weight: 700;
+          color: #333333;
+          font-size: 14px;
+          padding: 14px 0;
+          background-color: #f1f4fa;
+          border-radius: 4px 4px 0px 0px;
+          border-bottom: 2px solid #506eda;
+          .cell {
+            line-height: 24px;
+            .caret-wrapper {
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              .descending {
+                border-top-color: #506eda;
+              }
+            }
+          }
+        }
+      }
+    }
+    .el-table__fixed-body-wrapper {
+      .el-table__body {
+        tr {
+          &:hover td {
+            &.el-table__cell {
+              background-color: #f1f4fa;
+            }
+          }
+        }
+        .el-table__cell {
+          padding: 14px 0;
+          .cell {
+            color: #666;
+            .lookui-table-status {
+              position: relative;
+              box-sizing: border-box;
+              padding-left: 14px;
+              &::before {
+                content: '';
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                background-color: currentColor;
+              }
+            }
+            .lookui-table-option {
+              .el-button {
+                padding: 0;
+                &:hover {
+                  opacity: 0.65;
+                }
+              }
+              .el-button + .el-button {
+                margin-left: 16px;
+                position: relative;
+                &::after {
+                  content: '';
+                  height: 80%;
+                  width: 1px;
+                  background-color: #d9d9d9;
+                  position: absolute;
+                  top: 50%;
+                  left: -9px;
+                  transform: translateY(-50%);
+                }
+              }
+            }
+            .lookui-status__primary {
+              color: #506eda;
+            }
+            .lookui-status__warning {
+              color: #f68d52;
+            }
+            .lookui-status__danger {
+              color: #ff4d4f;
+            }
+            .lookui-status__success {
+              color: #55bf96;
+            }
+            .lookui-status__process {
+              color: #43bcff;
+            }
+            .lookui-status__info {
+              color: #000000a6;
+            }
+          }
+        }
+        .el-table__row {
+          &.lookui-table-status__primary {
+            background-color: #e1e7ff;
+          }
+          &.lookui-table-status__warning {
+            background-color: #ffede2;
+          }
+          &.lookui-table-status__danger {
+            background-color: #ffe1e1;
+          }
+          &.lookui-table-status__success {
+            background-color: #def9f1;
+          }
+          &.lookui-table-status__process {
+            background-color: #e4f5ff;
+          }
+          &.lookui-table-status__info {
+            background-color: #fff9f9;
+          }
+        }
+        .el-table__row--striped {
+          .el-table__cell {
+            background-color: #d3d9f91a;
+          }
+        }
+      }
+    }
+  }
+  .el-checkbox {
+    .is-checked {
+      .el-checkbox__inner {
+        background-color: #506eda;
+        border-color: #506eda;
+      }
+    }
+  }
+  // 取消文档默认样式
+  th, td {
+    border: 0;
+  }
+  // 取消文档默认样式
+  tr:nth-child(2n) {
+    background-color: #fff;
+  }
+}
