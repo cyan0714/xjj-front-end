@@ -4,6 +4,10 @@
     background-color: #f1f5fd;
     color: #666;
   }
+  .el-badge__content--primary {
+    background-color: $--themeColor;
+    margin-top: 9px;
+  }
 }
 
 .lookui-dropdown {

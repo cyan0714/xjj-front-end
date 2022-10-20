@@ -93,3 +93,75 @@ title: Data
 
   <<< @/docs/.vuepress/documents/table/merge-cell.md
 </details>
+
+## Badge标记
+### 基础用法
+
+<badge-base style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/badge/base.md
+</details>
+
+### 自定义内容
+
+<badge-diy-content style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/badge/diy-content.md
+</details>
+
+### 小红点
+
+<badge-red-dot style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/badge/red-dot.md
+</details>
+
+## Pagination分页
+### 基础用法
+
+<pagination-base style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/pagination/base.md
+</details>
+
+### 完整功能
+
+<pagination-full style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/pagination/full.md
+</details>
+
+### 带有背景色的分页
+
+<pagination-background style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/pagination/background.md
+</details>
+
+### 小型分页
+
+<pagination-small-size style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/pagination/small-size.md
+</details>

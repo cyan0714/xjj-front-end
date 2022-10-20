@@ -1,0 +1,40 @@
+@import '../index.scss';
+
+.lookui-pagination {
+  .el-pager li {
+    &.active,
+    &:hover {
+      color: $--themeColor;
+    }
+  }
+  button:hover {
+    color: $--themeColor;
+  }
+  &.is-background .el-pager li:not(.disabled) {
+    &.active,
+    &:hover {
+      background-color: $--themeColor;
+      color: #fff;
+    }
+  }
+  .el-pagination__sizes .el-input .el-input__inner:hover {
+    border-color: $--themeColor;
+  }
+  .el-select .el-input.is-focus .el-input__inner {
+    border-color: $--themeColor;
+  }
+  .el-select .el-input__inner:focus {
+    border-color: $--themeColor;
+  }
+  .el-pagination__jump {
+    .el-input__inner:focus {
+      border-color: $--themeColor;
+      outline: 0;
+    }
+  }
+}
+
+.el-select-dropdown__item.selected {
+  color: $--themeColor;
+  font-weight: 700;
+}
