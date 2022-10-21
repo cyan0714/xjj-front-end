@@ -8,10 +8,10 @@ title: 开发指南
 
 ## 准备
 
-1. 安装 elementui
+1. 安装 element-ui、look-ui
 
 ```sh
-npm i element-ui -S
+npm i element-ui look-ui -S
 ```
 
 2. 在 main.js 中引入 element 组件和样式
@@ -19,7 +19,7 @@ npm i element-ui -S
 ```js
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
-import './styles/lookui.all.min.css'
+import 'look-ui'
 
 Vue.use(ElementUI)
 ```
