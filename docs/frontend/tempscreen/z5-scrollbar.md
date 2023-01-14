@@ -12,14 +12,14 @@ sidebarDepth: 2
 ::: demo 以`webkit`为前缀的支持谷歌，Safari，edge，360 安全和 360 极速浏览器的极速模式，不支持火狐，IE，opera。其中，要想修改火狐的滚动条默认样式，可以通过`scrollbar-width`和`scrollbar-color`来修改。上面展示的是局部滚动条样式修改，如果想作用于整个浏览器，则可以放在根元素中。
 ```vue
 <template>
-  <div class="container">
+  <div class="scroll-wrapper">
     <div class="scroll-bar">
       自定义滚动条样式自定义滚动条样式自定义滚动条样式
     </div>
   </div>
 </template>
 <style>
-  .container {
+  .scroll-wrapper {
     width: 100%;
     height: 300px;
     overflow: auto;
@@ -34,19 +34,19 @@ sidebarDepth: 2
     width: 200%;
     background-color: #ccc;
   }
-  .container::-webkit-scrollbar {
+  .scroll-wrapper::-webkit-scrollbar {
     /* 定义 y 轴方向滚动条厚度 */
     width: 12px;
     /* 定义 x 轴方向滚动条厚度 */
     height: 12px;
   }
-  .container::-webkit-scrollbar-thumb {
+  .scroll-wrapper::-webkit-scrollbar-thumb {
     /* 控制滚动条滑轨样式 */
     border-radius: 8px;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #316fff;
   }
-  .container::-webkit-scrollbar-track {
+  .scroll-wrapper::-webkit-scrollbar-track {
     /* 控制滚动条轨道样式 */
     /* border-radius: 8px; */
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);

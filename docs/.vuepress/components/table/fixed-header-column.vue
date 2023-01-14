@@ -1,7 +1,7 @@
 <template>
-  <el-table class="lookui-table" :data="tableData" border height="300">
+  <el-table class="lookui-table" :data="tableData" border height="270">
     <el-table-column type="selection" width="100" align="center" fixed="left" />
-    <el-table-column prop="id" label="规则编号" width="300" />
+    <el-table-column prop="id" label="规则编号" width="150" />
     <el-table-column prop="descrip" label="描述" width="700" />
     <el-table-column prop="count" label="调用服务次数" width="160" sortable />
     <el-table-column prop="status" label="状态" width="300">
