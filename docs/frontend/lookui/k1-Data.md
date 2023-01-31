@@ -165,3 +165,15 @@ title: Data
 
   <<< @/docs/.vuepress/documents/pagination/small-size.md
 </details>
+
+## Empty空状态
+
+### 基础用法
+
+<empty-base style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/empty/base.md
+</details>

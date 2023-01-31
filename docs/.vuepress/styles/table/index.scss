@@ -262,10 +262,10 @@
     }
   }
   // 修复element-ui表格表头与表体不对齐
-  .el-table th.gutter {
+  &.el-table th.gutter {
     display: table-cell !important;
   }
-  .el-table::before {
+  &.el-table::before {
     height: 0;
   }
   // 调整滚动条样式
