@@ -1,9 +1,14 @@
 @import '../index.scss';
 .lookui-dialog {
   .el-dialog__header {
+    background-color: $--themeColor;
     border-bottom: 1px solid #d9d9d9;
+    padding: 12px;
     .el-dialog__title {
-      color: $--themeColor;
+      color: #fff;
+    }
+    .el-dialog__headerbtn {
+      color: #fff;
     }
   }
 }
