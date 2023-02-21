@@ -6,13 +6,24 @@ sidebarDepth: 3
 
 ### 基础用法
 
-<alert-base style="margin-top:24px" />
+<!-- <alert-base style="margin-top:24px" /> -->
 
-<details>
+:::demo 
+```html
+  <div class="container">
+    <el-alert class="lookui-alert" title="成功提示的文案" type="success"> </el-alert>
+    <el-alert class="lookui-alert" title="消息提示的文案" type="info"> </el-alert>
+    <el-alert class="lookui-alert" title="警告提示的文案" type="warning"> </el-alert>
+    <el-alert class="lookui-alert" title="错误提示的文案" type="error"> </el-alert>
+  </div>
+```
+:::
+
+<!-- <details>
   <summary>显示代码</summary>
 
   <<< @/docs/.vuepress/documents/alert/base.md
-</details>
+</details> -->
 
 ### 主题
 

@@ -9,6 +9,9 @@
     }
     .el-dialog__headerbtn {
       color: #fff;
+      .el-dialog__close {
+        color: #fff;
+      }
     }
   }
 }

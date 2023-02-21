@@ -773,6 +773,16 @@ sidebarDepth: 3
   <<< @/docs/.vuepress/documents/form/typical.md
 </details>
 
+### 配置表单
+
+<form-config style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/form/config.md
+</details>
+
 ### 行内表单
 
 <form-inline style="margin-top:24px" />
