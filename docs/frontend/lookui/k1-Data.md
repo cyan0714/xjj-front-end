@@ -177,3 +177,15 @@ title: Data
 
   <<< @/docs/.vuepress/documents/empty/base.md
 </details>
+
+## Descriptions 描述列表
+
+### 带边框列表
+
+<descriptions-border style="margin-top:24px" />
+
+<details>
+  <summary>显示代码</summary>
+
+  <<< @/docs/.vuepress/documents/descriptions/border.md
+</details>

@@ -16,6 +16,7 @@ import './styles/button/index.scss'
 // 数据
 import './styles/table/index.scss'
 import './styles/pagination/index.scss'
+import './styles/descriptions/index.scss'
 
 // 表单
 import './styles/radio/index.scss'
