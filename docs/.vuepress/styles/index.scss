@@ -40,3 +40,13 @@ $--secondary-font-color: #bfbfbf;
 $--solid-border-color: #d9d9d9;
 $--dashed-border-color: #bfbfbf;
 
+// 定义可视区域宽度
+.theme-default-content:not(.custom) {
+  max-width: 1040px !important;
+}
+.page-edit {
+  max-width: 1040px !important;
+}
+.page-nav {
+  max-width: 1040px !important;
+}

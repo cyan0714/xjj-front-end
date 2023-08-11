@@ -20,7 +20,7 @@ npm i element-ui look-ui -S
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import LookUI from 'look-ui'
-import 'look-ui/index.scss'
+import 'look-ui/dist/look-ui.css'
 
 Vue.use(ElementUI)
 Vue.use(LookUI)
