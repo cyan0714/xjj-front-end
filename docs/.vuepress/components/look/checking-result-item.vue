@@ -1,15 +1,15 @@
 <template>
   <div class="checking-result-item">
     <div class="content">
-      <div class="title">{{ item.title }}</div>
+      <div class="title">{{ item.name }}</div>
       <div class="tags-wrap">
-        <div v-for="(tag, tagIndex) in item.tags" :key="tagIndex" class="tag-item">
+        <div v-for="(tag, tagIndex) in item.feature && item.feature.split(',')" :key="tagIndex" class="tag-item">
           {{ tag }}
         </div>
       </div>
       <div class="source-and-request">
         <div class="title">来源及要求:</div>
-        <div class="text-area">{{ item.sourceTxt }}</div>
+        <div class="text-area">{{ item.requirement }}</div>
       </div>
       <div class="other-info">
         <div class="left">
@@ -17,19 +17,17 @@
             <span class="key">牵头单位:</span>
             <div class="value">
               <span
-                v-for="(leaderUnit, leaderUnitIndex) in item.leaderUnits"
+                v-for="(leaderUnit, leaderUnitIndex) in item.qtOrgs && item.qtOrgs.split(',')"
                 :key="leaderUnitIndex"
                 class="leader-unit-item"
-                >{{ leaderUnit
-                }}<span v-if="leaderUnitIndex < item.leaderUnits.length - 1">，</span></span
-              >
+                >{{ leaderUnit }}</span>
             </div>
           </div>
           <div class="supervise-unit">
             <span class="key">督办单位:</span>
             <div class="value">
               <span
-                v-for="(superviseUnit, superviseUnitIndex) in item.superviseUnits"
+                v-for="(superviseUnit, superviseUnitIndex) in item.createdOrg && item.createdOrg.split(',')"
                 :key="superviseUnitIndex"
                 class="supervise-unit-item"
                 >{{ superviseUnit }}</span
@@ -39,7 +37,7 @@
         </div>
         <div class="right">
           <span class="key">下达时间:</span>
-          <div class="value">{{ item.arriveTime }}</div>
+          <div class="value">{{ item.beginTime }}</div>
         </div>
       </div>
     </div>
@@ -48,7 +46,7 @@
         <span class="key">推荐依据:</span>
         <div class="value">
           <span
-            v-for="(recommandTag, recommandTagIndex) in item.recommandTags"
+            v-for="(recommandTag, recommandTagIndex) in recommandTags"
             :key="recommandTagIndex"
             class="recommand-tag-item"
             >{{ recommandTag }}</span
@@ -78,6 +76,10 @@ export default {
       type: Object,
       default: () => {},
     },
+    recommandTags: {
+      type: Array,
+      default: () => ([]),
+    }
   },
   computed: {},
   created() {},

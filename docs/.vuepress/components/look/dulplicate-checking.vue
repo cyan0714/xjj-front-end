@@ -80,7 +80,7 @@
               class="lookui-checkbox"
               v-model="checkedAllNoDeal"
               @change="handleCheckAllNoDeal"
-              >全选未处理任务</el-checkbox>
+              >全选</el-checkbox>
             <span>已选 {{ hadCheckNoDealCount }} 条任务</span>
           </div>
           <div class="bb-right" @click="createTasks">批量创建任务</div>
@@ -130,10 +130,11 @@
         <span class="txt">查重结果: </span>
         <span class="count"> 3</span>
       </header>
-      <section class="right-container-section">
+      <section class="right-container-section" v-loading="loadingCheckResultList">
         <checking-result-item
           v-for="(item, index) in checkingResultList"
           :item="item"
+          :recommandTags="checkedTags"
           :key="index"
           @handleSubscribe="handleSubscribe(item)"
           @handleMerge="handleMerge(item)"
@@ -167,166 +168,9 @@ export default {
       currentNoDealDissimilarIndex: -1, //未处理任务-不存在相似任务-当前选中任务下标
       checkAllNoDealOfDissimilar: false, //未处理任务-不存在相似任务-是否全选
       checkAllNoDealOfSimilar: false, //未处理任务-存在相似任务-是否全选
-      // 未处理任务-存在相似任务列表
-      noDealSimilarList: [
-        {
-          title:
-            '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
-          checked: false,
-          matchingResultCount: 8,
-          checkResultList: [
-            {
-              name: '省政府督查',
-              count: 3,
-            },
-            {
-              name: '省委督查',
-              count: 3,
-            },
-            {
-              name: '深改办(自贸办)',
-              count: 2,
-            },
-          ],
-        },
-        {
-          title:
-            '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
-          checked: false,
-          matchingResultCount: 8,
-          checkResultList: [
-            {
-              name: '省政府督查',
-              count: 3,
-            },
-            {
-              name: '省委督查',
-              count: 3,
-            },
-            {
-              name: '深改办(自贸办)',
-              count: 2,
-            },
-          ],
-        },
-        {
-          title:
-            '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
-          checked: false,
-          matchingResultCount: 8,
-          checkResultList: [
-            {
-              name: '省政府督查',
-              count: 3,
-            },
-            {
-              name: '省委督查',
-              count: 3,
-            },
-            {
-              name: '深改办(自贸办)',
-              count: 2,
-            },
-          ],
-        },
-      ],
-      // 未处理任务-不存在相似任务列表
-      noDealDissimilarList: [
-        {
-          title:
-            '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
-          checked: false,
-        },
-        {
-          title:
-            '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
-          checked: false,
-        },
-        {
-          title:
-            '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
-          checked: false,
-        },
-      ],
 
       currentDealSimilarIndex: 0, //已处理任务-存在相似任务-当前选中任务下标
       currentDealDissimilarIndex: -1, //已处理任务-不存在相似任务-当前选中任务下标
-      // 已处理任务-存在相似任务列表
-      hadDealSimilarList: [
-        {
-          title:
-            '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
-          checked: false,
-          matchingResultCount: 8,
-          checkResultList: [
-            {
-              name: '省政府督查',
-              count: 3,
-            },
-            {
-              name: '省委督查',
-              count: 3,
-            },
-            {
-              name: '深改办(自贸办)',
-              count: 2,
-            },
-          ],
-          status: 3,
-          relation:
-            '《习近平主席出席金砖国家领导人第十五次会晤并对南非进行国事访问。立足南非和金砖，放眼非洲和世 界。》',
-        },
-        {
-          title:
-            '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
-          checked: false,
-          matchingResultCount: 8,
-          checkResultList: [
-            {
-              name: '省政府督查',
-              count: 3,
-            },
-            {
-              name: '省委督查',
-              count: 3,
-            },
-            {
-              name: '深改办(自贸办)',
-              count: 2,
-            },
-          ],
-          status: 3,
-          relation:
-            '《习近平主席出席金砖国家领导人第十五次会晤并对南非进行国事访问。立足南非和金砖，放眼非洲和世 界。》',
-        },
-      ],
-      // 已处理任务-不存在相似任务列表
-      hadDealDissimilarList: [
-        {
-          title:
-            '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
-          checked: false,
-          status: 3,
-          relation:
-            '《习近平主席出席金砖国家领导人第十五次会晤并对南非进行国事访问。立足南非和金砖，放眼非洲和世 界。》',
-        },
-        {
-          title:
-            '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
-          checked: false,
-          status: 3,
-          relation:
-            '《习近平主席出席金砖国家领导人第十五次会晤并对南非进行国事访问。立足南非和金砖，放眼非洲和世 界。》',
-        },
-        {
-          title:
-            '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
-          checked: false,
-          status: 3,
-          relation:
-            '《习近平主席出席金砖国家领导人第十五次会晤并对南非进行国事访问。立足南非和金砖，放眼非洲和世 界。》',
-        },
-      ],
 
       currentMissionType: 0, //当前选中任务类型(已处理1, 未处理0)
       missionCount: {
@@ -340,7 +184,6 @@ export default {
       },
       checkedTags: ['任务标题'],
       tags: ['任务标题', '任务标签', '事项来源及依据'],
-      checkingResultList: [],
     };
   },
   watch: {
@@ -360,7 +203,36 @@ export default {
       this.checkAllNoDealOfDissimilar = this.noDealDissimilarList.every(item => item.checked);
     },
   },
-  props: {},
+  props: {
+    // 未处理任务-存在相似任务列表
+    noDealSimilarList: {
+      type: Array,
+      default: () => [],
+    },
+    // 未处理任务-不存在相似任务列表
+    noDealDissimilarList: {
+      type: Array,
+      default: () => [],
+    },
+    // 已处理任务-存在相似任务列表
+    hadDealSimilarList: {
+      type: Array,
+      default: () => [],
+    },
+    // 已处理任务-不存在相似任务列表
+    hadDealDissimilarList: {
+      type: Array,
+      default: () => [],
+    },
+    loadingCheckResultList: {
+      type: Boolean,
+      default: false,
+    },
+    checkingResultList: {
+      type: Array,
+      default: () => [],
+    },
+  },
   computed: {
     hadCheckNoDealCount() {
       return (
@@ -370,27 +242,6 @@ export default {
     },
   },
   created() {
-    for (let i = 0; i < 3; i++) {
-      this.checkingResultList.push({
-        title:
-          '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
-        tags: [
-          '坚持生态立省',
-          '放眼非洲和世界',
-          '习近平主席出席金砖国家领导人第十五次会晤并对南非进行国事访问',
-          '其他发展中国家加强团结合作',
-          '南非进行国事访问',
-          '共同维护联合国宪章宗旨和原则维护广大发展中国家共同利益',
-        ],
-        sourceTxt:
-          '总书记进话:要认真学习领会、深入贯彻落实习近平总书记重要进话精神，牢记嘱托、不负厚望，奋力追赶、敢于超越封关运作“三张清单”:要认真学习领会、深入贯彻落实习近平总书记重要讲话精神，牢记嘱托、不负厚望，奋力追赶、敢于金砖国家一带一路超越敢于超越敢于超越超深入贯彻落实习近平总书记重要讲话精神，牢记嘱托、不深入贯彻落实习近平总书记重要讲话精神，牢记嘱托。',
-        leaderUnits: ['省发展改革委员会', '海口市政府', '三亚市政府'],
-        superviseUnits: ['省政府督查'],
-        arriveTime: '2023-02-30 12:12',
-        recommandTags: ['任务标题相似', '任务标签相同', '来源及要求相似'],
-        status: 0,
-      });
-    }
   },
   mounted() {},
   methods: {
@@ -421,8 +272,16 @@ export default {
     },
     // 切换来源
     handleCheckedTagsChange(val) {
-      console.log('val', val)
-      this.$emit('toggleSource', val);
+      const field = {
+        '任务标题': 'name',
+        '任务标签': 'feature',
+        '事项来源及依据': 'sourceName'
+      }
+      const sources = []
+      val.forEach(item => {
+        sources.push(field[item])
+      })
+      this.$emit('toggle-source', sources, this.currentNoDealSimilarIndex);
     },
     // 全选未处理任务
     handleCheckAllNoDeal(val) {
@@ -461,9 +320,9 @@ export default {
     },
     // 点击 item (未处理任务-存在相似任务)
     handleNoDealSimilarClick(item, index) {
-      console.log('row', item)
       this.currentNoDealSimilarIndex = index;
       this.currentNoDealDissimilarIndex = -1;
+      this.$emit('onClickNoDealSimilar', index);
     },
 
     // 点击 item (已处理任务-不存在相似任务)

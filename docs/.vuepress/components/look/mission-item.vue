@@ -1,20 +1,20 @@
 <template>
   <div class="mission-item">
     <div class="left">
-      <div class="title">{{ item.title }}</div>
+      <div class="title">{{ item.name }}</div>
       <div class="txt-btn" @click="goDetail">查看详情<i class="el-icon-arrow-right"></i></div>
       <div class="result">
         <div class="result-left">
           <div :class="['rl-txt', hasList ? '' : 'dissimilar']">查重结果</div>
-          <div class="rl-count" v-if="hasList">匹配任务数 · {{ item.matchingResultCount }} 条</div>
+          <div class="rl-count" v-if="hasList">匹配任务数 · {{ item.checkResultListLength }} 条</div>
           <div class="rl-count dissimilar" v-else>暂无相似任务</div>
         </div>
-        <div class="result-list" v-if="hasList">
+        <!-- <div class="result-list" v-if="hasList">
           <div v-for="(iten, indey) in item.checkResultList" :key="indey" class="result-item">
             <span>{{ iten.name }} · </span>
             <span class="count">{{ iten.count }} </span>条
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="result-detail" v-if="isDealMission">
         <div class="rd-title">处理结果</div>
@@ -53,7 +53,7 @@ export default {
   },
   computed: {
     hasList() {
-      return this.item.checkResultList && this.item.checkResultList.length > 0;
+      return this.item.checkResultListLength > 0;
     },
   },
   created() {},
