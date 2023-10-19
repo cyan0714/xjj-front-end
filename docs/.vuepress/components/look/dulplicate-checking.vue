@@ -7,7 +7,7 @@
           其中存在相似任务共<span class="similar-count">{{ importCount.similarCount }}</span>条,
           无相似任务共<span class="dissimilar-count">{{ importCount.disSimilarCount }}</span>条。
         </div>
-        <div class="checkboxs">
+        <div class="checkboxs" v-if="isShowSource">
           <span>来源及要求:</span>
           <el-checkbox-group v-model="checkedTags" @change="handleCheckedTagsChange">
             <el-checkbox class="lookui-checkbox" v-for="tag in tags" :label="tag" :key="tag">{{ tag }}</el-checkbox>
@@ -135,6 +135,7 @@
           v-for="(item, index) in checkingResultList"
           :item="item"
           :recommandTags="checkedTags"
+          :isShowSource="isShowSource"
           :key="index"
           @handleSubscribe="handleSubscribe(item)"
           @handleMerge="handleMerge(item)"
@@ -204,6 +205,10 @@ export default {
     },
   },
   props: {
+    isShowSource: {
+      type: Boolean,
+      default: true
+    },
     // 未处理任务-存在相似任务列表
     noDealSimilarList: {
       type: Array,

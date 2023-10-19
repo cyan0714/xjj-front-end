@@ -15,7 +15,6 @@ title: DuplicateChecking
     :hadDealSimilarList="hadDealSimilarList"
     :hadDealDissimilarList="hadDealDissimilarList"
     :checkingResultList="checkingResultList"
-    @mission-click="handleMissionClick"
     @toggle-source="toggleSource"
     @detail-click="handleDetailClick"
     @subscription-click="handleSubscribe"
@@ -191,7 +190,6 @@ export default {
           }
         });
       });
-      // 获取当前任务的查重结果列表
       this.getCurrMissionCheckingResultList(0);
     }, 1000)
   },
@@ -209,6 +207,7 @@ export default {
     }
   },
   methods: {
+    // 获取查重结果列表
     fetchCheckingResultList(index) {
       this.loadingCheckResultList = true
       setTimeout(() => {
@@ -216,24 +215,23 @@ export default {
         this.getCurrMissionCheckingResultList(index)
       }, 1000)
     },
-    handleDetailClick() {
-
-    },
     onClickNoDealSimilar(index) {
       this.fetchCheckingResultList(index)
     },
+    // 获取当前任务的查重结果列表
     getCurrMissionCheckingResultList(index) {
       const currentMissionKeyId = this.noDealSimilarList[index].taskId;
       const resObj = this.allCheckingResultList.find(item => item.keyId == currentMissionKeyId) || {};
       this.checkingResultList = resObj.hitRes || [];
       this.loadingCheckResultList = false;
     },
-    handleMissionClick(row) {
-      console.log('row', row);
-    },
     toggleSource(val, index) {
+      // 修改来源及要求参数
       this.paramsData.names = val.toString()
       this.fetchCheckingResultList(index)
+    },
+    handleDetailClick() {
+
     },
     // 关注
     handleSubscribe(row) {
@@ -258,7 +256,7 @@ export default {
 
 | 参数                  | 说明                          | 类型    | 可选值 | 默认值 |
 | --------------------- | ----------------------------- | ------- | ------ | ------ |
-| loadingCheckResultList | 是否展示查重结果loading           | boolean | -      | false  |
+| loadingCheckResultList | 是否展示查重结果列表loading           | boolean | -      | false  |
 | isShowSource          | 是否展示来源及要求            | boolean | -      | true   |
 | noDealSimilarList     | 未处理任务-存在相似任务列表   | array   | -      | -      |
 | noDealDissimilarList  | 未处理任务-不存在相似任务列表 | array   | -      | -      |
@@ -270,7 +268,6 @@ export default {
 
 | 事件名             | 说明                         | 回调参数   |
 | ------------------ | ---------------------------- | ---------- |
-| mission-click      | 当某个任务被点击时触发该事件 | row, index |
 | toggle-source      | 当切换来源及要求时触发该事件 | val, index(当前选中任务的下标) |
 | detail-click       | 当点击查看详情时触发该事件   | row        |
 | subscription-click | 当点击关注时触发该事件       | row        |

@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="footer">
-      <div class="left">
+      <div class="left" v-if="isShowSource">
         <span class="key">推荐依据:</span>
         <div class="value">
           <span
@@ -72,6 +72,10 @@ export default {
     };
   },
   props: {
+    isShowSource: {
+      type: Boolean,
+      default: true
+    },
     item: {
       type: Object,
       default: () => {},
