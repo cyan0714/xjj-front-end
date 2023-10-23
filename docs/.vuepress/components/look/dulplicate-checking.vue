@@ -3,9 +3,9 @@
     <div class="left-container">
       <header class="left-container-header">
         <div class="intro">
-          本次共导入<span class="all-count">{{ importCount.allCount }}</span>条任务,
-          其中存在相似任务共<span class="similar-count">{{ importCount.similarCount }}</span>条,
-          无相似任务共<span class="dissimilar-count">{{ importCount.disSimilarCount }}</span>条。
+          本次共导入<span class="all-count">{{ noDealSimilarList.length + noDealDissimilarList.length }}</span>条任务,
+          其中存在相似任务共<span class="similar-count">{{ noDealSimilarList.length }}</span>条,
+          无相似任务共<span class="dissimilar-count">{{ noDealDissimilarList.length }}</span>条。
         </div>
         <div class="checkboxs" v-if="isShowSource">
           <span>来源及要求:</span>
@@ -20,13 +20,13 @@
             :class="['mission-tag', currentMissionType === 0 ? 'mission-tag-actived' : '']"
             @click="toggleTag(0)">
             <span>未处理任务</span>
-            <span>（{{ missionCount.noDealCount }}）</span>
+            <span>（{{ noDealSimilarList.length + noDealDissimilarList.length }}）</span>
           </div>
           <div
             :class="['mission-tag', currentMissionType === 1 ? 'mission-tag-actived' : '']"
             @click="toggleTag(1)">
             <span>已处理任务</span>
-            <span>（{{ missionCount.hadDealCount }}）</span>
+            <span>（{{ hadDealSimilarList.length + hadDealDissimilarList.length }}）</span>
           </div>
         </div>
 
@@ -37,7 +37,7 @@
               <template slot="title">
                 <mission-header
                   :type="SIMILAR"
-                  :count="3"
+                  :count="noDealSimilarList.length"
                   :checkAll="checkAllNoDealOfSimilar"
                   @toggleCheckAll="handleCheckAllNoDealOfSimilar"/>
               </template>
@@ -57,7 +57,7 @@
               <template slot="title">
                 <mission-header
                   :type="DISSIMILAR"
-                  :count="4"
+                  :count="noDealDissimilarList.length"
                   :checkAll="checkAllNoDealOfDissimilar"
                   @toggleCheckAll="handleCheckAllNoDealOfDissimilar"/>
               </template>
@@ -91,7 +91,7 @@
             <!-- 已处理任务-存在相似任务 -->
             <el-collapse-item name="dealSimilar">
               <template slot="title">
-                <mission-header isDealMission :type="SIMILAR" :count="4"/>
+                <mission-header isDealMission :type="SIMILAR" :count="hadDealSimilarList.length"/>
               </template>
               <section class="collapse-content">
                 <mission-item
@@ -107,7 +107,7 @@
             <!-- 已处理任务-不存在相似任务 -->
             <el-collapse-item name="dealDissimilar">
               <template slot="title">
-                <mission-header isDealMission :type="DISSIMILAR" :count="5"/>
+                <mission-header isDealMission :type="DISSIMILAR" :count="hadDealDissimilarList.length"/>
               </template>
               <section class="collapse-content">
                 <mission-item
@@ -128,7 +128,7 @@
       <header class="right-contiainer-header">
         <img :src="require(`./imgs/icon_4.png`)" alt="" />
         <span class="txt">查重结果: </span>
-        <span class="count"> 3</span>
+        <span class="count"> {{ checkingResultList.length }}</span>
       </header>
       <section class="right-container-section" v-loading="loadingCheckResultList">
         <checking-result-item

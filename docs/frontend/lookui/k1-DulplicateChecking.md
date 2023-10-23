@@ -66,10 +66,10 @@ export default {
       // 已处理任务-存在相似任务列表
       hadDealSimilarList: [
         {
-          title:
+          name:
             '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
           checked: false,
-          matchingResultCount: 8,
+          checkResultListLength: 0,
           checkResultList: [
             { name: '省政府督查', count: 3 },
             { name: '省委督查', count: 3 },
@@ -80,10 +80,10 @@ export default {
             '《习近平主席出席金砖国家领导人第十五次会晤并对南非进行国事访问。立足南非和金砖，放眼非洲和世 界。》',
         },
         {
-          title:
+          name:
             '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
           checked: false,
-          matchingResultCount: 8,
+          checkResultListLength: 0,
           checkResultList: [
             { name: '省政府督查', count: 3 },
             { name: '省委督查', count: 3 },
@@ -97,7 +97,7 @@ export default {
       // 已处理任务-不存在相似任务列表
       hadDealDissimilarList: [
         {
-          title:
+          name:
             '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
           checked: false,
           status: 3,
@@ -105,7 +105,7 @@ export default {
             '《习近平主席出席金砖国家领导人第十五次会晤并对南非进行国事访问。立足南非和金砖，放眼非洲和世 界。》',
         },
         {
-          title:
+          name:
             '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
           checked: false,
           status: 3,
@@ -113,7 +113,7 @@ export default {
             '《习近平主席出席金砖国家领导人第十五次会晤并对南非进行国事访问。立足南非和金砖，放眼非洲和世 界。》',
         },
         {
-          title:
+          name:
             '春风验荡。历经百年沧桑的南非比勒陀利亚总统府，习近平主席同拉马福萨总统并肩而立，俯瞰欣欣向荣的城。',
           checked: false,
           status: 3,
@@ -260,14 +260,13 @@ export default {
 
 | 参数                  | 说明                          | 类型    | 可选值 | 默认值 |
 | --------------------- | ----------------------------- | ------- | ------ | ------ |
-| importCount | 导入的任务数量信息           | object | -      | { allCount: 8, similarCount: 4, disSimilarCount: 4 } |
-| loadingCheckResultList | 是否展示查重结果列表loading           | boolean | -      | false  |
-| isShowSource          | 是否展示来源及要求            | boolean | -      | true   |
-| noDealSimilarList     | 未处理任务-存在相似任务列表   | array   | -      | -      |
+| loadingCheckResultList | 是否展示查重结果列表loading | boolean | -      | false  |
+| isShowSource          | 是否展示来源及要求 | boolean | -      | true   |
+| noDealSimilarList     | 未处理任务-存在相似任务列表 | array   | -      | -      |
 | noDealDissimilarList  | 未处理任务-不存在相似任务列表 | array   | -      | -      |
-| hadDealSimilarList    | 已处理任务-存在相似任务列表   | array   | -      | -      |
+| hadDealSimilarList    | 已处理任务-存在相似任务列表 | array   | -      | -      |
 | hadDealDissimilarList | 已处理任务-不存在相似任务列表 | array   | -      | -      |
-| checkingResultList    | 当前任务的查重结果列表                  | array   | -      | -      |
+| checkingResultList    | 当前任务的查重结果列表 | array   | -      | -      |
 
 ### 事件
 
