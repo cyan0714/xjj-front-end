@@ -210,20 +210,24 @@ export default {
     // 获取查重结果列表
     fetchCheckingResultList(index) {
       this.loadingCheckResultList = true
+      // 使用setTimeout模拟异步请求, 实际项目使用axios发送请求
       setTimeout(() => {
         this.allCheckingResultList = this.fakeAllCheckingResultList;
         this.getCurrMissionCheckingResultList(index)
       }, 1000)
     },
     onClickNoDealSimilar(index) {
-      this.fetchCheckingResultList(index)
+      this.getCurrMissionCheckingResultList(index)
     },
     // 获取当前任务的查重结果列表
     getCurrMissionCheckingResultList(index) {
-      const currentMissionKeyId = this.noDealSimilarList[index].taskId;
-      const resObj = this.allCheckingResultList.find(item => item.keyId == currentMissionKeyId) || {};
-      this.checkingResultList = resObj.hitRes || [];
-      this.loadingCheckResultList = false;
+      this.loadingCheckResultList = true
+      setTimeout(() => {
+        const currentMissionKeyId = this.noDealSimilarList[index].taskId;
+        const resObj = this.allCheckingResultList.find(item => item.keyId == currentMissionKeyId) || {};
+        this.checkingResultList = resObj.hitRes || [];
+        this.loadingCheckResultList = false;
+      }, 500);
     },
     toggleSource(val, index) {
       // 修改来源及要求参数
@@ -256,13 +260,14 @@ export default {
 
 | 参数                  | 说明                          | 类型    | 可选值 | 默认值 |
 | --------------------- | ----------------------------- | ------- | ------ | ------ |
+| importCount | 导入的任务数量信息           | object | -      | { allCount: 8, similarCount: 4, disSimilarCount: 4 } |
 | loadingCheckResultList | 是否展示查重结果列表loading           | boolean | -      | false  |
 | isShowSource          | 是否展示来源及要求            | boolean | -      | true   |
 | noDealSimilarList     | 未处理任务-存在相似任务列表   | array   | -      | -      |
 | noDealDissimilarList  | 未处理任务-不存在相似任务列表 | array   | -      | -      |
 | hadDealSimilarList    | 已处理任务-存在相似任务列表   | array   | -      | -      |
 | hadDealDissimilarList | 已处理任务-不存在相似任务列表 | array   | -      | -      |
-| checkingResultList    | 查重结果列表                  | array   | -      | -      |
+| checkingResultList    | 当前任务的查重结果列表                  | array   | -      | -      |
 
 ### 事件
 
@@ -273,7 +278,11 @@ export default {
 | subscription-click | 当点击关注时触发该事件       | row        |
 | merging-click      | 当点击归并时触发该事件       | row        |
 | insertion-click    | 当点击插入时触发该事件       | row        |
+| createTasks | 当点击批量创建任务按钮时触发该事件 | - |
 | onClickNoDealSimilar | 当点击未处理任务-存在相似任务item时触发该事件 | index |
+| onClickNoDealDissimilar | 当点击未处理任务-不存在相似任务item时触发该事件 | index |
+| onClickDealSimilar | 当点击已处理任务-存在相似任务item时触发该事件 | index |
+| onClickDealDissimilar | 当点击已处理任务-不存在相似任务item时触发该事件 | index |
 
 ### 方法
 

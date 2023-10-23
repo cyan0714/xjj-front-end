@@ -205,6 +205,16 @@ export default {
     },
   },
   props: {
+    importCount: {
+      type: Object,
+      default: () => {
+        return {
+          allCount: 8,
+          similarCount: 4,
+          disSimilarCount: 4,
+        };
+      },
+    },
     isShowSource: {
       type: Boolean,
       default: true
@@ -322,6 +332,7 @@ export default {
       console.log('row', item)
       this.currentNoDealDissimilarIndex = index;
       this.currentNoDealSimilarIndex = -1;
+      this.$emit('onClickNoDealDissimilar', index);
     },
     // 点击 item (未处理任务-存在相似任务)
     handleNoDealSimilarClick(item, index) {
@@ -335,12 +346,14 @@ export default {
       console.log('row', item)
       this.currentDealDissimilarIndex = index;
       this.currentDealSimilarIndex = -1;
+      this.$emit('onClickDealDissimilar', index);
     },
     // 点击 item (已处理任务-存在相似任务)
     handleDealSimilarClick(item, index) {
       console.log('row', item)
       this.currentDealSimilarIndex = index;
       this.currentDealDissimilarIndex = -1;
+      this.$emit('onClickDealSimilar', index);
     },
 
     toggleTag(index) {
