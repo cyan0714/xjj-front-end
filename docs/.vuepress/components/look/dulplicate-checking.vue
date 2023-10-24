@@ -3,9 +3,9 @@
     <div class="left-container">
       <header class="left-container-header">
         <div class="intro">
-          本次共导入<span class="all-count">{{ noDealSimilarList.length + noDealDissimilarList.length }}</span>条任务,
-          其中存在相似任务共<span class="similar-count">{{ noDealSimilarList.length }}</span>条,
-          无相似任务共<span class="dissimilar-count">{{ noDealDissimilarList.length }}</span>条。
+          本次共导入<span class="all-count">{{ noDealMission.similar.length + noDealMission.dissimilar.length }}</span>条任务,
+          其中存在相似任务共<span class="similar-count">{{ noDealMission.similar.length }}</span>条,
+          无相似任务共<span class="dissimilar-count">{{ noDealMission.dissimilar.length }}</span>条。
         </div>
         <div class="checkboxs" v-if="isShowSource">
           <span>来源及要求:</span>
@@ -20,13 +20,13 @@
             :class="['mission-tag', currentMissionType === 0 ? 'mission-tag-actived' : '']"
             @click="toggleTag(0)">
             <span>未处理任务</span>
-            <span>（{{ noDealSimilarList.length + noDealDissimilarList.length }}）</span>
+            <span>（{{ noDealMission.similar.length + noDealMission.dissimilar.length }}）</span>
           </div>
           <div
             :class="['mission-tag', currentMissionType === 1 ? 'mission-tag-actived' : '']"
             @click="toggleTag(1)">
             <span>已处理任务</span>
-            <span>（{{ hadDealSimilarList.length + hadDealDissimilarList.length }}）</span>
+            <span>（{{ hadDealMission.similar.length + hadDealMission.dissimilar.length }}）</span>
           </div>
         </div>
 
@@ -37,13 +37,13 @@
               <template slot="title">
                 <mission-header
                   :type="SIMILAR"
-                  :count="noDealSimilarList.length"
+                  :count="noDealMission.similar.length"
                   :checkAll="checkAllNoDealOfSimilar"
                   @toggleCheckAll="handleCheckAllNoDealOfSimilar"/>
               </template>
               <section class="collapse-content">
                 <mission-item
-                  v-for="(item, index) in noDealSimilarList"
+                  v-for="(item, index) in noDealMission.similar"
                   :item="item"
                   :key="index"
                   :class="['mission-item', currentNoDealSimilarIndex === index ? 'mission-item-actived' : '']"
@@ -57,13 +57,13 @@
               <template slot="title">
                 <mission-header
                   :type="DISSIMILAR"
-                  :count="noDealDissimilarList.length"
+                  :count="noDealMission.dissimilar.length"
                   :checkAll="checkAllNoDealOfDissimilar"
                   @toggleCheckAll="handleCheckAllNoDealOfDissimilar"/>
               </template>
               <section class="collapse-content">
                 <mission-item
-                  v-for="(item, index) in noDealDissimilarList"
+                  v-for="(item, index) in noDealMission.dissimilar"
                   :item="item"
                   :key="index"
                   :class="['mission-item', currentNoDealDissimilarIndex === index ? 'mission-item-actived' : '']"
@@ -91,11 +91,11 @@
             <!-- 已处理任务-存在相似任务 -->
             <el-collapse-item name="dealSimilar">
               <template slot="title">
-                <mission-header isDealMission :type="SIMILAR" :count="hadDealSimilarList.length"/>
+                <mission-header isDealMission :type="SIMILAR" :count="hadDealMission.similar.length"/>
               </template>
               <section class="collapse-content">
                 <mission-item
-                  v-for="(item, index) in hadDealSimilarList"
+                  v-for="(item, index) in hadDealMission.similar"
                   :item="item"
                   :key="index"
                   :class="['mission-item', currentDealSimilarIndex === index ? 'mission-item-actived' : '']"
@@ -107,11 +107,11 @@
             <!-- 已处理任务-不存在相似任务 -->
             <el-collapse-item name="dealDissimilar">
               <template slot="title">
-                <mission-header isDealMission :type="DISSIMILAR" :count="hadDealDissimilarList.length"/>
+                <mission-header isDealMission :type="DISSIMILAR" :count="hadDealMission.dissimilar.length"/>
               </template>
               <section class="collapse-content">
                 <mission-item
-                  v-for="(item, index) in hadDealDissimilarList"
+                  v-for="(item, index) in hadDealMission.dissimilar"
                   :item="item"
                   :key="index"
                   :class="['mission-item', currentDealDissimilarIndex === index ? 'mission-item-actived' : '']"
@@ -178,11 +178,6 @@ export default {
         noDealCount: 5,
         hadDealCount: 2,
       },
-      importCount: {
-        allCount: 8,
-        similarCount: 4,
-        disSimilarCount: 4,
-      },
       checkedTags: ['任务标题'],
       tags: ['任务标题', '任务标签', '事项来源及依据'],
     };
@@ -200,44 +195,34 @@ export default {
     },
     //未处理任务是否全选
     checkedAllNoDeal(val) {
-      this.checkAllNoDealOfSimilar = this.noDealSimilarList.every(item => item.checked);
-      this.checkAllNoDealOfDissimilar = this.noDealDissimilarList.every(item => item.checked);
+      this.checkAllNoDealOfSimilar = this.noDealMission.similar.every(item => item.checked);
+      this.checkAllNoDealOfDissimilar = this.noDealMission.dissimilar.every(item => item.checked);
     },
   },
   props: {
-    importCount: {
-      type: Object,
-      default: () => {
-        return {
-          allCount: 8,
-          similarCount: 4,
-          disSimilarCount: 4,
-        };
-      },
-    },
     isShowSource: {
       type: Boolean,
       default: true
     },
-    // 未处理任务-存在相似任务列表
-    noDealSimilarList: {
-      type: Array,
-      default: () => [],
+    // 未处理任务
+    noDealMission: {
+      type: Object,
+      default: () => {
+        return {
+          similar: [], // 存在相似任务列表
+          dissimilar: [], // 不存在相似任务列表
+        };
+      },
     },
-    // 未处理任务-不存在相似任务列表
-    noDealDissimilarList: {
-      type: Array,
-      default: () => [],
-    },
-    // 已处理任务-存在相似任务列表
-    hadDealSimilarList: {
-      type: Array,
-      default: () => [],
-    },
-    // 已处理任务-不存在相似任务列表
-    hadDealDissimilarList: {
-      type: Array,
-      default: () => [],
+    // 已处理任务
+    hadDealMission: {
+      type: Object,
+      default: () => {
+        return {
+          similar: [], // 存在相似任务列表
+          dissimilar: [], // 不存在相似任务列表
+        };
+      },
     },
     loadingCheckResultList: {
       type: Boolean,
@@ -251,8 +236,8 @@ export default {
   computed: {
     hadCheckNoDealCount() {
       return (
-        this.noDealSimilarList.filter(item => item.checked).length +
-        this.noDealDissimilarList.filter(item => item.checked).length
+        this.noDealMission.similar.filter(item => item.checked).length +
+        this.noDealMission.dissimilar.filter(item => item.checked).length
       );
     },
   },
@@ -300,29 +285,29 @@ export default {
     },
     // 全选未处理任务
     handleCheckAllNoDeal(val) {
-      this.noDealSimilarList.forEach(item => (item.checked = val));
-      this.noDealDissimilarList.forEach(item => (item.checked = val));
+      this.noDealMission.similar.forEach(item => (item.checked = val));
+      this.noDealMission.dissimilar.forEach(item => (item.checked = val));
     },
     // 全选(未处理任务-不存在相似任务)
     handleCheckAllNoDealOfDissimilar(val) {
       this.checkAllNoDealOfDissimilar = val
-      this.noDealDissimilarList.forEach(item => (item.checked = val));
+      this.noDealMission.dissimilar.forEach(item => (item.checked = val));
     },
     // 全选(未处理任务-存在相似任务)
     handleCheckAllNoDealOfSimilar(val) {
       this.checkAllNoDealOfSimilar = val;
-      this.noDealSimilarList.forEach(item => (item.checked = val));
+      this.noDealMission.similar.forEach(item => (item.checked = val));
     },
     // 点击 checkbox (未处理任务-不存在相似任务)
     handleNoDealDissimilarCheckedChange(val) {
-      this.checkAllNoDealOfDissimilar = this.noDealDissimilarList.every(item => item.checked);
+      this.checkAllNoDealOfDissimilar = this.noDealMission.dissimilar.every(item => item.checked);
       if (!val) {
         this.checkedAllNoDeal = false;
       }
     },
     // 点击 checkbox (未处理任务-存在相似任务)
     handleNoDealSimilarCheckedChange(val) {
-      this.checkAllNoDealOfSimilar = this.noDealSimilarList.every(item => item.checked);
+      this.checkAllNoDealOfSimilar = this.noDealMission.similar.every(item => item.checked);
       if (!val) {
         this.checkedAllNoDeal = false;
       }
