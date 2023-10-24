@@ -9,24 +9,15 @@ title: DuplicateChecking
 ```vue
 <template>
   <look-dulplicate-checking
-    :loadingCheckResultList="loadingCheckResultList"
     :noDealMission="noDealMission"
     :hadDealMission="hadDealMission"
-    :checkingResultList="checkingResultList"
-    @toggle-source="toggleSource"
-    @detail-click="handleDetailClick"
-    @subscription-click="handleSubscribe"
-    @merging-click="handleMerge"
-    @insertion-click="handleInsert"
-    @onClickNoDealSimilar="onClickNoDealSimilar" />
+    :checkingResultList="checkingResultList"/>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      loadingCheckResultList: false,
-      allCheckingResultList: [],
       // 未处理任务
       noDealMission: {
         // 存在相似任务列表
@@ -124,134 +115,10 @@ export default {
         ],
       },
       checkingResultList: [],
-      fakeAllCheckingResultList: [
-        {
-          hitRes: [
-            {
-              beginTime : "2023-09-12 15:03:18",
-              name : "四证齐全！三亚市第一艘海洋休闲渔船从威海启航返程三亚",
-              qtOrgs : "三亚市财政局",
-              source : "gzls",
-              sourceName : "工作落实",
-              status : "督办中"
-            },
-            {
-              beginTime : "2023-10-12 15:03:18",
-              name : "四证齐全！三亚市第一艘海洋休闲渔船从威海启航返程三亚",
-              qtOrgs : "三亚市财政局",
-              source : "gzls",
-              sourceName : "工作落实",
-              status : "督办中"
-            }
-          ],
-          keyId : "1",
-          size : 2
-        },
-        {
-          hitRes: [
-            {
-              beginTime : "2023-09-12 15:03:18",
-              name : "四证齐全！三亚市第一艘海洋休闲渔船从威海启航返程三亚",
-              qtOrgs : "三亚市财政局",
-              source : "gzls",
-              sourceName : "工作落实",
-              status : "督办中"
-            },
-            {
-              beginTime : "2023-10-12 15:03:18",
-              name : "四证齐全！三亚市第一艘海洋休闲渔船从威海启航返程三亚",
-              qtOrgs : "三亚市财政局",
-              source : "gzls",
-              sourceName : "工作落实",
-              status : "督办中"
-            },
-            {
-              beginTime : "2023-11-12 15:03:18",
-              name : "四证齐全！三亚市第一艘海洋休闲渔船从威海启航返程三亚",
-              qtOrgs : "三亚市财政局",
-              source : "gzls",
-              sourceName : "工作落实",
-              status : "督办中"
-            },
-          ],
-          keyId : "2",
-          size : 3
-        }
-      ]
     };
   },
-  created() {
-    // 使用setTimeout模拟异步请求, 实际项目使用axios发送请求
-    setTimeout(() => {
-      this.allCheckingResultList = this.fakeAllCheckingResultList;
-      this.allCheckingResultList.forEach(item => {
-        this.noDealMission.similar.forEach(iten => {
-          if (item.keyId == iten.taskId) {
-            // 未处理任务-存在相似任务数量
-            iten.checkResultListLength = item.size;
-          }
-        });
-      });
-      this.getCurrMissionCheckingResultList(0);
-    }, 1000)
-  },
-  computed: {
-    paramsData() {
-      return {
-        from: 0,
-        jsonStr: JSON.stringify(this.noDealMission.similar),
-        keyId: 'taskId',
-        modelIndex: 'common_task',
-        modelType: 'task',
-        names: 'name',
-        size: 10000,
-      }
-    }
-  },
   methods: {
-    // 获取查重结果列表
-    fetchCheckingResultList(index) {
-      this.loadingCheckResultList = true
-      // 使用setTimeout模拟异步请求, 实际项目使用axios发送请求
-      setTimeout(() => {
-        this.allCheckingResultList = this.fakeAllCheckingResultList;
-        this.getCurrMissionCheckingResultList(index)
-      }, 1000)
-    },
-    onClickNoDealSimilar(index) {
-      this.getCurrMissionCheckingResultList(index)
-    },
-    // 获取当前任务的查重结果列表
-    getCurrMissionCheckingResultList(index) {
-      this.loadingCheckResultList = true
-      setTimeout(() => {
-        const currentMissionKeyId = this.noDealMission.similar[index].taskId;
-        const resObj = this.allCheckingResultList.find(item => item.keyId == currentMissionKeyId) || {};
-        this.checkingResultList = resObj.hitRes || [];
-        this.loadingCheckResultList = false;
-      }, 500);
-    },
-    toggleSource(val, index) {
-      // 修改来源及要求参数
-      this.paramsData.names = val.toString()
-      this.fetchCheckingResultList(index)
-    },
-    handleDetailClick() {
-
-    },
-    // 关注
-    handleSubscribe(row) {
-      console.log('row', row);
-    },
-    // 归并
-    handleMerge(row) {
-      console.log('row', row);
-    },
-    // 插入
-    handleInsert(row) {
-      console.log('row', row);
-    },
-  },
+  }
 };
 </script>
 ```
@@ -262,7 +129,6 @@ export default {
 
 | 参数                  | 说明                          | 类型    | 可选值 | 默认值 |
 | --------------------- | ----------------------------- | ------- | ------ | ------ |
-| loadingCheckResultList | 是否展示查重结果列表loading | boolean | -      | false  |
 | isShowSource   | 是否展示来源及要求 | boolean | -      | true   |
 | noDealMission    | 未处理任务 | array   | -      | { similar: [ ], dissimilar: [ ] }      |
 | hadDealMission    | 已处理任务 | array   | -      | { similar: [ ], dissimilar: [ ] }    |
@@ -272,7 +138,7 @@ export default {
 
 | 事件名             | 说明                         | 回调参数   |
 | ------------------ | ---------------------------- | ---------- |
-| toggle-source      | 当切换来源及要求时触发该事件 | val, index(当前选中任务的下标) |
+| toggle-source      | 当切换来源及要求时触发该事件 | val(当前选中的任务), index(当前选中任务的下标) |
 | detail-click       | 当点击查看详情时触发该事件   | row        |
 | subscription-click | 当点击关注时触发该事件       | row        |
 | merging-click      | 当点击归并时触发该事件       | row        |

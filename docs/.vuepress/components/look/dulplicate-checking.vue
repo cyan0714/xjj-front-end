@@ -3,14 +3,17 @@
     <div class="left-container">
       <header class="left-container-header">
         <div class="intro">
-          本次共导入<span class="all-count">{{ noDealMission.similar.length + noDealMission.dissimilar.length }}</span>条任务,
-          其中存在相似任务共<span class="similar-count">{{ noDealMission.similar.length }}</span>条,
-          无相似任务共<span class="dissimilar-count">{{ noDealMission.dissimilar.length }}</span>条。
+          本次共导入<span class="all-count">{{ noDealMission.similar.length + noDealMission.dissimilar.length }}</span
+          >条任务, 其中存在相似任务共<span class="similar-count">{{ noDealMission.similar.length }}</span
+          >条, 无相似任务共<span class="dissimilar-count">{{ noDealMission.dissimilar.length }}</span
+          >条。
         </div>
         <div class="checkboxs" v-if="isShowSource">
           <span>来源及要求:</span>
           <el-checkbox-group v-model="checkedTags" @change="handleCheckedTagsChange">
-            <el-checkbox class="lookui-checkbox" v-for="tag in tags" :label="tag" :key="tag">{{ tag }}</el-checkbox>
+            <el-checkbox class="lookui-checkbox" v-for="tag in tags" :label="tag" :key="tag">{{
+              tag
+            }}</el-checkbox>
           </el-checkbox-group>
         </div>
       </header>
@@ -39,17 +42,20 @@
                   :type="SIMILAR"
                   :count="noDealMission.similar.length"
                   :checkAll="checkAllNoDealOfSimilar"
-                  @toggleCheckAll="handleCheckAllNoDealOfSimilar"/>
+                  @toggleCheckAll="handleCheckAllNoDealOfSimilar" />
               </template>
               <section class="collapse-content">
                 <mission-item
                   v-for="(item, index) in noDealMission.similar"
                   :item="item"
                   :key="index"
-                  :class="['mission-item', currentNoDealSimilarIndex === index ? 'mission-item-actived' : '']"
-                  @click.native="handleNoDealSimilarClick(item, index)"
-                  @onViewDetailsClick="goDetail($event, item)"
-                  @checkChange="handleNoDealSimilarCheckedChange"/>
+                  :class="[
+                    'mission-item',
+                    currentNoDealSimilarIndex === index ? 'mission-item-actived' : '',
+                  ]"
+                  @click.native="handleNoDealSimilarClick(index)"
+                  @onViewDetailsClick="goDetail"
+                  @checkChange="handleNoDealSimilarCheckedChange" />
               </section>
             </el-collapse-item>
             <!-- 未处理任务-不存在相似任务 -->
@@ -59,17 +65,20 @@
                   :type="DISSIMILAR"
                   :count="noDealMission.dissimilar.length"
                   :checkAll="checkAllNoDealOfDissimilar"
-                  @toggleCheckAll="handleCheckAllNoDealOfDissimilar"/>
+                  @toggleCheckAll="handleCheckAllNoDealOfDissimilar" />
               </template>
               <section class="collapse-content">
                 <mission-item
                   v-for="(item, index) in noDealMission.dissimilar"
                   :item="item"
                   :key="index"
-                  :class="['mission-item', currentNoDealDissimilarIndex === index ? 'mission-item-actived' : '']"
-                  @click.native="handleNoDealDissimilarClick(item, index)"
-                  @onViewDetailsClick="goDetail($event, item)"
-                  @checkChange="handleNoDealDissimilarCheckedChange"/>
+                  :class="[
+                    'mission-item',
+                    currentNoDealDissimilarIndex === index ? 'mission-item-actived' : '',
+                  ]"
+                  @click.native="handleNoDealDissimilarClick(index)"
+                  @onViewDetailsClick="goDetail"
+                  @checkChange="handleNoDealDissimilarCheckedChange" />
               </section>
             </el-collapse-item>
           </el-collapse>
@@ -80,7 +89,8 @@
               class="lookui-checkbox"
               v-model="checkedAllNoDeal"
               @change="handleCheckAllNoDeal"
-              >全选</el-checkbox>
+              >全选</el-checkbox
+            >
             <span>已选 {{ hadCheckNoDealCount }} 条任务</span>
           </div>
           <div class="bb-right" @click="createTasks">批量创建任务</div>
@@ -91,33 +101,39 @@
             <!-- 已处理任务-存在相似任务 -->
             <el-collapse-item name="dealSimilar">
               <template slot="title">
-                <mission-header isDealMission :type="SIMILAR" :count="hadDealMission.similar.length"/>
+                <mission-header isDealMission :type="SIMILAR" :count="hadDealMission.similar.length" />
               </template>
               <section class="collapse-content">
                 <mission-item
                   v-for="(item, index) in hadDealMission.similar"
                   :item="item"
                   :key="index"
-                  :class="['mission-item', currentDealSimilarIndex === index ? 'mission-item-actived' : '']"
-                  @onViewDetailsClick="goDetail($event, item)"
-                  @click.native="handleDealSimilarClick(item, index)"
-                  isDealMission/>
+                  :class="[
+                    'mission-item',
+                    currentDealSimilarIndex === index ? 'mission-item-actived' : '',
+                  ]"
+                  @onViewDetailsClick="goDetail"
+                  @click.native="handleDealSimilarClick(index)"
+                  isDealMission />
               </section>
             </el-collapse-item>
             <!-- 已处理任务-不存在相似任务 -->
             <el-collapse-item name="dealDissimilar">
               <template slot="title">
-                <mission-header isDealMission :type="DISSIMILAR" :count="hadDealMission.dissimilar.length"/>
+                <mission-header isDealMission :type="DISSIMILAR" :count="hadDealMission.dissimilar.length" />
               </template>
               <section class="collapse-content">
                 <mission-item
                   v-for="(item, index) in hadDealMission.dissimilar"
                   :item="item"
                   :key="index"
-                  :class="['mission-item', currentDealDissimilarIndex === index ? 'mission-item-actived' : '']"
-                  @onViewDetailsClick="goDetail($event, item)"
-                  @click.native="handleDealDissimilarClick(item, index)"
-                  isDealMission/>
+                  :class="[
+                    'mission-item',
+                    currentDealDissimilarIndex === index ? 'mission-item-actived' : '',
+                  ]"
+                  @onViewDetailsClick="goDetail"
+                  @click.native="handleDealDissimilarClick(index)"
+                  isDealMission />
               </section>
             </el-collapse-item>
           </el-collapse>
@@ -135,30 +151,30 @@
           v-for="(item, index) in checkingResultList"
           :item="item"
           :recommandTags="checkedTags"
-          :isShowSource="isShowSource"
           :key="index"
-          @handleSubscribe="handleSubscribe(item)"
-          @handleMerge="handleMerge(item)"
-          @handleInsert="handleInsert(item)"/>
+          @handleSubscribe="handleSubscribe"
+          @handleMerge="handleMerge"
+          @handleInsert="handleInsert" />
       </section>
     </div>
   </div>
 </template>
 
 <script>
-import MissionHeader from './mission-header'
-import MissionItem from './mission-item'
-import CheckingResultItem from './checking-result-item'
+import MissionHeader from './mission-header';
+import MissionItem from './mission-item';
+import CheckingResultItem from './checking-result-item';
 import { SIMILAR, DISSIMILAR } from './constants';
 export default {
-  name: 'dulplicateChecking',
+  name: 'look-dulplicate-checking',
   components: {
     MissionHeader,
     MissionItem,
-    CheckingResultItem
+    CheckingResultItem,
   },
   data() {
     return {
+      loadingCheckResultList: false,
       SIMILAR,
       DISSIMILAR,
       activeDealNames: ['dealSimilar', 'dealDissimilar'],
@@ -172,7 +188,6 @@ export default {
 
       currentDealSimilarIndex: 0, //已处理任务-存在相似任务-当前选中任务下标
       currentDealDissimilarIndex: -1, //已处理任务-不存在相似任务-当前选中任务下标
-
       currentMissionType: 0, //当前选中任务类型(已处理1, 未处理0)
       missionCount: {
         noDealCount: 5,
@@ -180,6 +195,62 @@ export default {
       },
       checkedTags: ['任务标题'],
       tags: ['任务标题', '任务标签', '事项来源及依据'],
+      allCheckingResultList: [],
+      checkingResultList: [],
+      fakeAllCheckingResultList: [
+        {
+          hitRes: [
+            {
+              beginTime : "2023-09-12 15:03:18",
+              name : "四证齐全！三亚市第一艘海洋休闲渔船从威海启航返程三亚",
+              qtOrgs : "三亚市财政局",
+              source : "gzls",
+              sourceName : "工作落实",
+              status : "督办中"
+            },
+            {
+              beginTime : "2023-10-12 15:03:18",
+              name : "四证齐全！三亚市第一艘海洋休闲渔船从威海启航返程三亚",
+              qtOrgs : "三亚市财政局",
+              source : "gzls",
+              sourceName : "工作落实",
+              status : "督办中"
+            }
+          ],
+          keyId : "1",
+          size : 2
+        },
+        {
+          hitRes: [
+            {
+              beginTime : "2023-09-12 15:03:18",
+              name : "四证齐全！三亚市第一艘海洋休闲渔船从威海启航返程三亚",
+              qtOrgs : "三亚市财政局",
+              source : "gzls",
+              sourceName : "工作落实",
+              status : "督办中"
+            },
+            {
+              beginTime : "2023-10-12 15:03:18",
+              name : "四证齐全！三亚市第一艘海洋休闲渔船从威海启航返程三亚",
+              qtOrgs : "三亚市财政局",
+              source : "gzls",
+              sourceName : "工作落实",
+              status : "督办中"
+            },
+            {
+              beginTime : "2023-11-12 15:03:18",
+              name : "四证齐全！三亚市第一艘海洋休闲渔船从威海启航返程三亚",
+              qtOrgs : "三亚市财政局",
+              source : "gzls",
+              sourceName : "工作落实",
+              status : "督办中"
+            },
+          ],
+          keyId : "2",
+          size : 3
+        }
+      ]
     };
   },
   watch: {
@@ -224,13 +295,19 @@ export default {
         };
       },
     },
-    loadingCheckResultList: {
-      type: Boolean,
-      default: false,
-    },
-    checkingResultList: {
-      type: Array,
-      default: () => [],
+    paramsData: {
+      type: Object,
+      default: () => {
+        return {
+          from: 0,
+          jsonStr: [],
+          keyId: 'taskId',
+          modelIndex: 'common_task',
+          modelType: 'task',
+          names: 'name',
+          size: 10000,
+        }
+      },
     },
   },
   computed: {
@@ -241,34 +318,51 @@ export default {
       );
     },
   },
+  activated() {},
   created() {
+    this.paramsData.jsonStr = JSON.stringify(this.noDealMission.similar)
+    setTimeout(() => {
+      this.allCheckingResultList = this.fakeAllCheckingResultList;
+      this.allCheckingResultList.forEach(item => {
+        this.noDealMission.similar.forEach(iten => {
+          if (item.keyId == iten.taskId) {
+            iten.checkResultListLength = item.size;
+          }
+        });
+      });
+      this.getCurrMissionCheckingResultList(0);
+    }, 500)
   },
   mounted() {},
   methods: {
+    getCurrMissionCheckingResultList(index) {
+      this.loadingCheckResultList = true
+      setTimeout(() => {
+        const currentMissionKeyId = this.noDealMission.similar[index].taskId;
+        const resObj = this.allCheckingResultList.find(item => item.keyId == currentMissionKeyId) || {};
+        this.checkingResultList = resObj.hitRes || [];
+        this.loadingCheckResultList = false;
+      }, 500);
+    },
     // 查看详情
-    goDetail(e, row) {
-      e.stopPropagation()
-      console.log('row', row)
-      this.$emit('detail-click', row)
+    goDetail() {
+      this.$emit('onViewDetailsClick');
     },
     // 批量创建任务
     createTasks() {
       this.$emit('createTasks');
     },
     // 关注
-    handleSubscribe(row) {
-      console.log('row', row)
-      this.$emit('subscription-click', row);
+    handleSubscribe() {
+      this.$emit('handleSubscribe');
     },
     // 归并
-    handleMerge(row) {
-      console.log('row', row)
-      this.$emit('merging-click', row);
+    handleMerge() {
+      this.$emit('handleMerge');
     },
     // 插入
-    handleInsert(row) {
-      console.log('row', row)
-      this.$emit('insertion-click', row);
+    handleInsert() {
+      this.$emit('handleInsert');
     },
     // 切换来源
     handleCheckedTagsChange(val) {
@@ -281,7 +375,9 @@ export default {
       val.forEach(item => {
         sources.push(field[item])
       })
-      this.$emit('toggle-source', sources, this.currentNoDealSimilarIndex);
+      this.paramsData.names = sources.toString()
+      this.checkingResultList = []
+      this.fetchCheckingResultList(this.currentNoDealSimilarIndex)
     },
     // 全选未处理任务
     handleCheckAllNoDeal(val) {
@@ -290,7 +386,7 @@ export default {
     },
     // 全选(未处理任务-不存在相似任务)
     handleCheckAllNoDealOfDissimilar(val) {
-      this.checkAllNoDealOfDissimilar = val
+      this.checkAllNoDealOfDissimilar = val;
       this.noDealMission.dissimilar.forEach(item => (item.checked = val));
     },
     // 全选(未处理任务-存在相似任务)
@@ -313,29 +409,34 @@ export default {
       }
     },
     // 点击 item (未处理任务-不存在相似任务)
-    handleNoDealDissimilarClick(item, index) {
-      console.log('row', item)
+    handleNoDealDissimilarClick(index) {
       this.currentNoDealDissimilarIndex = index;
       this.currentNoDealSimilarIndex = -1;
       this.$emit('onClickNoDealDissimilar', index);
     },
     // 点击 item (未处理任务-存在相似任务)
-    handleNoDealSimilarClick(item, index) {
+    handleNoDealSimilarClick(index) {
       this.currentNoDealSimilarIndex = index;
       this.currentNoDealDissimilarIndex = -1;
+      this.getCurrMissionCheckingResultList(index)
       this.$emit('onClickNoDealSimilar', index);
+    },
+    fetchCheckingResultList(index) {
+      this.loadingCheckResultList = true
+      setTimeout(() => {
+        this.allCheckingResultList = this.fakeAllCheckingResultList;
+        this.getCurrMissionCheckingResultList(index)
+      }, 500)
     },
 
     // 点击 item (已处理任务-不存在相似任务)
-    handleDealDissimilarClick(item, index) {
-      console.log('row', item)
+    handleDealDissimilarClick(index) {
       this.currentDealDissimilarIndex = index;
       this.currentDealSimilarIndex = -1;
       this.$emit('onClickDealDissimilar', index);
     },
     // 点击 item (已处理任务-存在相似任务)
-    handleDealSimilarClick(item, index) {
-      console.log('row', item)
+    handleDealSimilarClick(index) {
       this.currentDealSimilarIndex = index;
       this.currentDealDissimilarIndex = -1;
       this.$emit('onClickDealSimilar', index);
@@ -344,7 +445,6 @@ export default {
     toggleTag(index) {
       this.currentMissionType = index;
     },
-
   },
 };
 </script>
