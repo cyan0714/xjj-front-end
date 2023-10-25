@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/shanyuhai123/documents#readme",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
     "@vuepress/plugin-back-to-top": "^1.2.0",
     "@vuepress/plugin-google-analytics": "^1.2.0",
     "@vuepress/plugin-medium-zoom": "^1.2.0",
@@ -42,7 +43,7 @@
     "echarts": "^5.2.2",
     "element-ui": "^2.15.8",
     "file-save": "^0.2.0",
-    "look-ui": "^1.0.1",
+    "look-ui": "^1.1.20",
     "swiper": "5.x",
     "vue-awesome-swiper": "^4.1.1",
     "vuepress-plugin-code-copy": "^1.0.6",

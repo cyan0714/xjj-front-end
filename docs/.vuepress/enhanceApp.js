@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Element from 'element-ui';
 // import Swiper from 'swiper';
 import 'element-ui/lib/theme-chalk/index.css';
+import LookUI from 'look-ui';
+import 'look-ui/dist/look-ui.css';
 // import 'swiper/swiper-bundle.min.css';
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
@@ -54,8 +56,10 @@ import './styles/popover/index.scss'
 import './styles/card/index.scss'
 import './styles/calendar/index.scss'
 
+
 export default ({ Vue, options, router }) => {
   Vue.use(Element);
+  Vue.use(LookUI);
   Vue.use(VueAwesomeSwiper,{
     speed: 600,
     parallax: true,

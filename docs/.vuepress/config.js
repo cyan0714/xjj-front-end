@@ -16,9 +16,16 @@ module.exports = {
   head: headConf,
   plugins: pluginConf,
   extraWatchFiles: [
-	  '/fontend/specification/README.md', // 使用绝对路径
-	  '/fontend/specification/README-CSS.md'   // 使用绝对路径
-	],
+    '/fontend/specification/README.md', // 使用绝对路径
+    '/fontend/specification/README-CSS.md', // 使用绝对路径
+  ],
+  configureWebpack: {
+    node: {
+      global: true,
+      process: true,
+      Buffer: true,
+    },
+  },
   themeConfig: {
     lastUpdated: '上次更新',
     // repo: 'shanyuhai123/documents',
@@ -32,8 +39,8 @@ module.exports = {
       indexName: 'shanyuhai_documents',
       algoliaOptions: {
         hitsPerPage: 10,
-        facetFilters: ""
-      }
-    }
+        facetFilters: '',
+      },
+    },
   },
-}
+};
