@@ -58,6 +58,13 @@ export default {
       console.log('关注', row)
     },
     mergingClick(row) {
+      // this.data = []
+      this.data.forEach((task, index) => {
+        if (task.taskId == 2) {
+          console.log('xxx', task)
+          this.$set(this.data[index], 'status', '以归并');
+        }
+      })
       console.log('归并', row)
     },
   },
