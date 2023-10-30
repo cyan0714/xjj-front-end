@@ -12,7 +12,8 @@ title: DuplicateChecking
     :data="data"
     @merging-click="mergingClick"
     @subscription-click="subscriptionClick"
-    @insertion-click="insertionClick" />
+    @insertion-click="insertionClick"
+    @onCancelBtnClick="handleCancelBtnClick"/>
 </template>
 
 <script>
@@ -25,6 +26,7 @@ export default {
           name: '三亚市第一艘海洋休闲渔船',
           checked: false,
           tenantId: '4602000038',
+          status: '',
           checkResultListLength: 0,
         },
         {
@@ -32,6 +34,7 @@ export default {
           name: '事项工作内容',
           checked: false,
           tenantId: '4602000038',
+          status: '已关注',
           checkResultListLength: 0,
         },
         {
@@ -40,7 +43,7 @@ export default {
           checked: false,
           tenantId: '4602000038',
           checkResultListLength: 0,
-          status: '已关注', // 已处理任务的状态
+          status: '', // 已处理任务的状态
           relation: '《习近平主席出席金砖国家领导人第十五次会晤并对南非进行国事访问。立足南非和金砖，放眼非洲和世 界。》', // 已处理任务的关联任务的名字
         },
       ],
@@ -51,6 +54,9 @@ export default {
   computed: {
   },
   methods: {
+    handleCancelBtnClick(item) {
+      console.log('取消', item)
+    },
     insertionClick(row) {
       console.log('插入', row)
     },
@@ -58,13 +64,6 @@ export default {
       console.log('关注', row)
     },
     mergingClick(row) {
-      // this.data = []
-      this.data.forEach((task, index) => {
-        if (task.taskId == 2) {
-          console.log('xxx', task)
-          this.$set(this.data[index], 'status', '以归并');
-        }
-      })
       console.log('归并', row)
     },
   },
@@ -96,6 +95,7 @@ export default {
 | onClickNoDealDissimilar | 当点击未处理任务-不存在相似任务item时触发该事件 | index |
 | onClickDealSimilar | 当点击已处理任务-存在相似任务item时触发该事件 | index |
 | onClickDealDissimilar | 当点击已处理任务-不存在相似任务item时触发该事件 | index |
+| onCancelBtnClick | 当点击取消关注、合并、插入等按钮时触发该事件 | item(当前任务对象) |
 
 ### 方法
 
