@@ -21,7 +21,7 @@ module.exports = {
   ],
   configureWebpack: {
     node: {
-      global: true,
+      global: true, // 防止报找不到 global 的错误
       process: true,
       Buffer: true,
     },

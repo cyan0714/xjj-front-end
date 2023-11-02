@@ -8,12 +8,15 @@ title: DuplicateChecking
 
 ```vue
 <template>
-  <look-dulplicate-checking
-    :data="data"
-    @merging-click="mergingClick"
-    @subscription-click="subscriptionClick"
-    @insertion-click="insertionClick"
-    @onCancelBtnClick="handleCancelBtnClick"/>
+  <div style="height: 700px">
+    <look-dulplicate-checking
+      :data="data"
+      @merging-click="mergingClick"
+      @subscription-click="subscriptionClick"
+      @insertion-click="insertionClick"
+      @detail-click="handleViewDetail"
+      @onCancelBtnClick="handleCancelBtnClick"/>
+  </div>
 </template>
 
 <script>
