@@ -15,7 +15,12 @@ title: DuplicateChecking
       @subscription-click="subscriptionClick"
       @insertion-click="insertionClick"
       @detail-click="handleViewDetail"
-      @onCancelBtnClick="handleCancelBtnClick"/>
+      @onCancelBtnClick="handleCancelBtnClick">
+        <!-- 自定义查重结果列表操作按钮 -->
+        <!-- <template v-slot:operating-btns="{source}">
+          <el-button size="small" @click="handleDiyBtnClick(source)">自定义按钮</el-button>
+        </template> -->
+    </look-dulplicate-checking>
   </div>
 </template>
 
@@ -57,6 +62,12 @@ export default {
   computed: {
   },
   methods: {
+    handleDiyBtnClick(row) {
+      console.log('自定义按钮', row);
+    },
+    handleViewDetail(row) {
+      console.log('查看', row);
+    },
     handleCancelBtnClick(item) {
       console.log('取消', item)
     },
@@ -78,6 +89,7 @@ export default {
 
 
 ### 属性
+<br/>
 
 | 参数                  | 说明                          | 类型    | 可选值 | 默认值 |
 | --------------------- | ----------------------------- | ------- | ------ | ------ |
@@ -85,22 +97,33 @@ export default {
 | isShowSource           | 是否展示来源及要求          | boolean | -      | true   |
 
 ### 事件
+<br/>
 
 | 事件名             | 说明                         | 回调参数   |
 | ------------------ | ---------------------------- | ---------- |
 | toggle-source      | 当切换来源及要求时触发该事件 | val(当前任务的查重结果列表), index(当前选中任务的下标) |
 | detail-click       | 当点击查看详情时触发该事件   | row        |
+| name-click       | 当点击任务标题名称时触发该事件   | row        |
+| checking-name-click  | 当点击查重结果标题名称时触发该事件   | row        |
 | subscription-click | 当点击关注时触发该事件       | row        |
 | merging-click      | 当点击归并时触发该事件       | row        |
 | insertion-click    | 当点击插入时触发该事件       | row        |
 | createTasks | 当点击批量创建任务按钮时触发该事件 | - |
+| onCancelBtnClick | 当点击取消关注、合并、插入等按钮时触发该事件 | item(当前任务对象) |
 | onClickNoDealSimilar | 当点击未处理任务-存在相似任务item时触发该事件 | index |
 | onClickNoDealDissimilar | 当点击未处理任务-不存在相似任务item时触发该事件 | index |
 | onClickDealSimilar | 当点击已处理任务-存在相似任务item时触发该事件 | index |
 | onClickDealDissimilar | 当点击已处理任务-不存在相似任务item时触发该事件 | index |
-| onCancelBtnClick | 当点击取消关注、合并、插入等按钮时触发该事件 | item(当前任务对象) |
 
 ### 方法
+<br/>
 
 | 方法名 | 说明 | 回调参数 |
 | ------ | ---- | -------- |
+
+### 插槽 Slot
+<br/>
+
+| name | 说明 |
+| ------ | ---- |
+| operating-btns | 自定义查重结果列表操作按钮, 参数为 { source(当前查重结果对象) } |
