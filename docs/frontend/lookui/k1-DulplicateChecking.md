@@ -95,6 +95,7 @@ export default {
 | --------------------- | ----------------------------- | ------- | ------ | ------ |
 | data                   | 导入的任务数据             | array   | -      | [] |
 | isShowSource           | 是否展示来源及要求          | boolean | -      | true   |
+| searchRepeatedUrl      | 查重接口ip                 | string | -      | http://59.212.30.45:6068  |
 
 ### 事件
 <br/>
