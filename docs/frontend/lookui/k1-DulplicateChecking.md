@@ -31,7 +31,9 @@ export default {
       data: [
         {
           taskId: '1',
-          name: '三亚市第一艘海洋休闲渔船',
+          name: '三亚市第一艘海洋休闲渔船', // 来源及要求选中 任务标题 后必须有该字段
+          feature: '', // 来源及要求选中 任务标签 后必须有该字段
+          requirement: '', // 来源及要求选中 事项来源及依据 后必须有该字段
           checked: false,
           tenantId: '4602000038',
           status: '',
@@ -39,7 +41,9 @@ export default {
         },
         {
           taskId: '2',
-          name: '事项工作内容',
+          name: '事项工作内容', // 来源及要求选中 任务标题 后必须有该字段
+          feature: '', // 来源及要求选中 任务标签 后必须有该字段
+          requirement: '', // 来源及要求选中 事项来源及依据 后必须有该字段
           checked: false,
           tenantId: '4602000038',
           status: '已关注',
@@ -47,7 +51,9 @@ export default {
         },
         {
           taskId: '3',
-          name: '琼海',
+          name: '琼海', // 来源及要求选中 任务标题 后必须有该字段
+          feature: '', // 来源及要求选中 任务标签 后必须有该字段
+          requirement: '', // 来源及要求选中 事项来源及依据 后必须有该字段
           checked: false,
           tenantId: '4602000038',
           checkResultListLength: 0,
@@ -93,7 +99,7 @@ export default {
 
 | 参数                  | 说明                          | 类型    | 可选值 | 默认值 |
 | --------------------- | ----------------------------- | ------- | ------ | ------ |
-| data                   | 导入的任务数据             | array   | -      | [] |
+| data                   | 导入的任务数据(其中 taskId、checked、tenantId、status、relation 是必传的。 来源及要求选中"任务标题"后必须有 name 字段、来源及要求选中"任务标签"后必须有 feature、来源及要求选中"任务标签"后必须有 requirement, 建议这3个字段一起传进来, 防止查重时出现问题)             | array   | -      | [] |
 | isShowSource           | 是否展示来源及要求          | boolean | -      | true   |
 | searchRepeatedUrl      | 查重接口ip                 | string | -      | http://59.212.30.45:6068  |
 
