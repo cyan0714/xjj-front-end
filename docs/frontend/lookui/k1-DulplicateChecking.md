@@ -135,6 +135,7 @@ export default {
 | data                   | 导入的任务数据(其中每个对象的 taskId、checked、tenantId、status、relation 是必传的。 来源及要求选中"任务标题"后必须有 name 字段、来源及要求选中"任务标签"后必须有 feature、来源及要求选中"任务标签"后必须有 requirement, 建议这3个字段一起传进来, 防止查重时出现问题)             | array   | [{orgId: '机构id'}]      | [] |
 | isShowSource           | 是否展示来源及要求          | boolean | -      | true   |
 | isShowCustomSource           | 是否展示自定义来源          | boolean | -      | false   |
+| isShowCheckAllNoDealBar           | 是否显示底部全选未处理任务Bar          | boolean | -      | true   |
 | searchRepeatedUrl      | 查重接口ip                 | string | -      | http://59.212.30.45:6068  |
 | customSource           | 自定义来源字段（{ label: '自定义来源名称', checkboxs: [ { key: 'checkbox名称', value: '来源的code', checked: '初始化时是否选中', style: { 自定义样式 } ] } ），具体可看示例代码                | object | -      | 示例代码中的 customSource |
 
