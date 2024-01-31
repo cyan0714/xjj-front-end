@@ -10,7 +10,7 @@ title: AssociatedDocument
 <template>
   <section>
     <look-associated-document
-      :data="data"
+      :selectedData="selectedData"
       :url="url"
       :ticket="ticket"
       @add="onAdd"
@@ -25,10 +25,7 @@ title: AssociatedDocument
 export default {
   data() {
     return {
-      data: [
-          {title: '流程实例迁移（公文标题）', type: 1, showTime: '2023-12-01 14:12', procInstId: 690180},
-          {title: '省府办发文流程（多发节点）(20087sfy)', type: 0, showTime: '2024-01-01 12:12', procInstId: 689554 },
-      ],
+      selectedData: [],
       url: 'http://192.168.230.186:9099',
       ticket: '8e6b6a197a6d1a25b5b476cc11b24bd3'
     }
@@ -77,7 +74,7 @@ export default {
 
 | 参数                        | 说明                          | 类型      | 可选值 | 默认值  |
 | --------------------------- | ----------------------------- | -------  | ------ | ------ |
-| data                        | 含公文信息的一个数组            | Array    | —      | []     |
+| selectedData                | 被关联的公文信息            | Array    | —      | []     |
 | url                         | 接口请求地址                   | String   | —      | —      |
 | ticket                      | 用户票据                       | String   | —      | —      |
 
@@ -87,7 +84,11 @@ export default {
 
 | 事件                   | 说明                  | 回调参数             |
 | --------------------- | -------------------- | --------------------- |
-| onAdd                 | 关联事件              | 返回关联的公文信息     | 
-| onDelete              | 取消关联事件          | 返回取消关联的公文信息 |
-| onClear               | 清空事件              | 返回一个空数组        |
-| onNext                | 下一步事件            | 返回已经关联的公文信息 |  
+| add                 | 关联事件              | 返回关联的公文信息     | 
+| delete              | 取消关联事件          | 返回取消关联的公文信息 |
+| clear               | 清空事件              | 返回一个空数组        |
+| next                | 下一步事件            | 返回已经关联的公文信息 |  
+| search                | 查询事件              | 返回查询结果集 | 
+| sizeChange                | 页码改变事件            | 返回当前页码大小和查询结果 | 
+| currentChange                | 当前页改变事件            | 返回当前页和查询结果| 
+| tabClick             | tabbar 切换事件            | 返回被点击的 tab | 
