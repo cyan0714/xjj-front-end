@@ -138,7 +138,7 @@ export default {
 | isShowCheckAllNoDealBar           | 是否显示底部全选未处理任务Bar          | boolean | -      | true   |
 | searchRepeatedUrl      | 查重接口ip                 | string | -      | http://59.212.30.45:6068  |
 | customSource           | 自定义来源字段（{ label: '自定义来源名称', checkboxs: [ { key: 'checkbox名称', value: '来源的code', checked: '初始化时是否选中', style: { 自定义样式 } ] } ），具体可看示例代码                | object | -      | 示例代码中的 customSource |
-
+| customNames           | 自定义 names 字段     | array | -      | ["taskType"] |
 
 ### 事件
 <br/>
