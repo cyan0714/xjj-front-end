@@ -150,9 +150,9 @@ export default {
 | name-click       | 当点击任务标题名称时触发该事件   | row        |
 | relation-click       | 当点击已处理任务的处理结果时触发该事件   | row        |
 | checking-name-click  | 当点击查重结果标题名称时触发该事件   | row        |
-| subscription-click | 当点击关注时触发该事件       | row, instance(当前选中的任务)        |
-| merging-click      | 当点击归并时触发该事件       | row, instance(当前选中的任务)        |
-| insertion-click    | 当点击插入时触发该事件       | row, instance(当前选中的任务)        |
+| subscription-click | 当点击关注时触发该事件       | row(查重的、当前点击的任务), instance(导入的、当前选中的任务)        |
+| merging-click      | 当点击归并时触发该事件       | row(查重的、当前点击的任务), instance(导入的、当前选中的任务)        |
+| insertion-click    | 当点击插入时触发该事件       | row(查重的、当前点击的任务), instance(导入的、当前选中的任务)        |
 | createTasks | 当点击批量创建任务按钮时触发该事件 | task(选中的任务列表) |
 | onCancelBtnClick | 当点击取消关注、合并、插入等按钮时触发该事件 | item(当前任务对象) |
 | onClickNoDealSimilar | 当点击未处理任务-存在相似任务item时触发该事件 | index |
