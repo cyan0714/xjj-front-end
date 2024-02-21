@@ -132,8 +132,8 @@ export default {
 
 | 参数                  | 说明                          | 类型    | 可选值 | 默认值 |
 | --------------------- | ----------------------------- | ------- | ------ | ------ |
-| data                   | 导入的任务数据(其中每个对象的 taskId、checked、tenantId、status、relation 是必传的。 来源及要求选中"任务标题"后必须有 name 字段、来源及要求选中"任务标签"后必须有 feature、来源及要求选中"任务标签"后必须有 requirement, 建议这3个字段一起传进来, 防止查重时出现问题)             | array   | [{orgId: '机构id'}]      | [] |
-| isShowSource           | 是否展示来源及要求          | boolean | -      | true   |
+| data                   | 导入的任务数据(其中每个对象的 taskId、checked、tenantId、status、relation 是必传的。 查重点选中"任务标题"后需要传 name 字段、选中"任务标签"后需要传 feature、选中"任务标签"后需要传 requirement, 建议这3个字段一起传进来, 防止查重时出现问题)             | array   | [{orgId: '机构id'}]      | [] |
+| isShowSource           | 是否展示查重点          | boolean | -      | true   |
 | isShowCustomSource           | 是否展示自定义来源          | boolean | -      | false   |
 | isShowCheckAllNoDealBar           | 是否显示底部全选未处理任务Bar          | boolean | -      | true   |
 | searchRepeatedUrl      | 查重接口ip                 | string | -      | http://59.212.30.45:6068  |
