@@ -152,7 +152,7 @@ export default {
 | tenantId          | 租户id, 必传  | string  |
 | status           | 任务状态, 必传， 已关注就传已关注，已归并就传已归并，没有状态就传空  | string |
 | relation           | 已处理任务的处理结果, 当 status 不为空且处理结果只为1个时必传 | string |
-| relations           | 已处理任务的处理结果, 当 status 不为空且 isShowBtnsInHadDealMission 为 true 时必传 | array |
+| relations           | 已处理任务的处理结果, 当 status 不为空且 isShowBtnsInHadDealMission 为 true 时必传, 每个对象必须包含 name 属性 | array |
 | name          | 查重点包含"任务标题"时, 必传  | string  |
 | feature          | 查重点包含"任务标签"时, 必传  | string  |
 | requirement          | 查重点包含"事项来源及依据"时, 必传  | string  |
