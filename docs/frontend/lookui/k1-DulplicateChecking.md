@@ -132,7 +132,7 @@ export default {
 <br/>
 
 | 参数                  | 说明                          | 类型    | 可选值 | 默认值 |
-| --------------------- | ----------------------------- | ------- | ------ | ------ |
+| :---------------------: | :-----------------------------: | :-------: | :------: | :------: |
 | data                   | 导入的任务数据，详见([data中对象属性说明](#data中对象属性说明))             | array   | -  | [  ] |
 | isShowSource           | 是否展示查重点          | boolean | -      | true   |
 | isShowCustomSource           | 是否展示自定义来源          | boolean | -      | false   |
@@ -145,23 +145,24 @@ export default {
 ### data中对象属性说明
 <br/>
 
-| 属性               | 说明                 | 类型        |
-| --------------------- | ----------------------------- | ------- | 
-| taskId            | 任务id, 必传                 |  string  |
-| checked           | 是否选中, 必传, 传 false 就行  |  boolean  |
-| tenantId          | 租户id, 必传  | string  |
-| status           | 任务状态, 必传， 已关注就传已关注，已归并就传已归并，没有状态就传空  | string |
-| relation           | 已处理任务的处理结果, 当 status 不为空且处理结果只为1个时必传 | string |
-| relations           | 已处理任务的处理结果, 当 status 不为空且 isShowBtnsInHadDealMission 为 true 时必传, 每个对象必须包含 name 属性 | array |
-| name          | 查重点包含"任务标题"时, 必传  | string  |
-| feature          | 查重点包含"任务标签"时, 必传  | string  |
-| requirement          | 查重点包含"事项来源及依据"时, 必传  | string  |
+| 属性               | 说明      | 类型    | 是否必传 | 可选值 | 默认值 |
+| :-----------------:  | :--------: | :-------: | :-------: | :-------: | :-------: | 
+| taskId            | 任务id   |  string  | 是 | - | - |
+| checked           | 是否选中 |  boolean  | 是 | false、true | false |
+| tenantId          | 租户id  | string  | 是 | - | - |
+| status           | 任务状态, 已关注就传“已关注”，已归并就传“已归并”，没有状态就传空  | string | 是 | - | ‘’ |
+| relation           | 已处理任务的处理结果, 当 status 不为空且处理结果只为1个时必传 | string | 否 | - | - |
+| relations           | 已处理任务的处理结果, 当 status 不为空且 isShowBtnsInHadDealMission 为 true 时必传, 每个对象必须包含 name 属性 | array | 否 | - | - |
+| name          | 查重点包含"任务标题"时, 必传  | string  | 否 | - | - |
+| feature          | 查重点包含"任务标签"时, 必传  | string  | 否 | - | - |
+| requirement          | 查重点包含"事项来源及依据"时, 必传  | string  | 否 | - | - |
+| isShowViewBtn          | 是否显示“查看详情”按钮  | boolean  | 否 | false、true | true |
 
 ### 事件
 <br/>
 
 | 事件名             | 说明                         | 回调参数   |
-| ------------------ | ---------------------------- | ---------- |
+| :------------------: | :----------------------------: | :----------: |
 | toggle-source      | 当切换来源及要求时触发该事件 | val(当前任务的查重结果列表), index(当前选中任务的下标) |
 | detail-click       | 当点击查看详情时触发该事件   | row        |
 | name-click       | 当点击任务标题名称时触发该事件   | row        |
@@ -189,5 +190,5 @@ export default {
 <br/>
 
 | name | 说明 |
-| ------ | ---- |
+| :------: | :----: |
 | operating-btns | 自定义查重结果列表操作按钮, 参数为 { source(当前查重结果对象) } |
